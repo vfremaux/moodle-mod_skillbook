@@ -1,0 +1,21 @@
+Réferentiel de compétences
+par Jean Cédeuzy, dimanche 16 août 2009, 05:10
+> Le certificat final ne doit-il pas passer par APOGEE ? Il me semble que ce soit la seule façon d'en assurer l'homogénéité et le suivi. Et d'autre part, pour le C2i 1, il faut entrer les notes de la partie théorique.
+
+Au delà de la réponse pertinente de Daniel, que le Référentiel puisse produire ses propres certificats, il est vrai que pour certains référentiels il est nécessaire de disposer d'un outil permettant d'exporter les données vers des systèmes d'information institutionnels.
+
+Il y a deux façons de répondre à cette exigence :
+- Comme le module Moodle Référentiel exporte les données de certification au format XML (et CSV) il suffit de rédiger la moulinette qui adapte ces données au système d'information cible.
+- Alternativement le système d'information externe attaque directement les tables de la base de données Moodle pour extraire les informations pertinentes.
+
+Vous conviendrez que cela ne demande pas le même type de développement.
+Bien entendu si certains d'entre-vous ont des spécifications pour telle ou telle application d'exportation, je suis preneur.
+
+Pour ceux que ça intéresse j'ai écrit un module qui récupère les données exportées de Moodle Référentiel vers EvalC2i pour générer les certificats C2i2e sur le modèle imposé par le MEN.
+
+Il y a aussi le problème inverse, qui consiste à récupérer dans Moodle Référentiel des données externes.
+Il faut distinguer plusieurs situations :
+- importer des données de scolarité depuis les services de scolarité.
+Pour cela le module d'importation (au format XML et/ou CSV) est déjà implanté dans le module. Il suffir donc que système d'information externe puisse exporter ces données dans l'un de ces deux formats. Ensuite l'import dans Moodle marche toute seule (pourvu de disposer des droits).
+- importer des "compétences" validées dans un autre système (Gibii, EvalC2i, EvalComp, etc.) C'est là beaucoup plus délicat, car dans son architecture actuelle le Certificat ne fait que refléter l'état à l'instant T de l'ensemble des activités validées dans le module. Autrement dit il ne sert à rien de modifier le contenu de la table referentiel_certificate "à la main".
+La seule solution opérationnelle est probablement que les étudiants crée individuellement une déclaration d'activité reprennant la liste des compétences obtenues "à l'extérieur".

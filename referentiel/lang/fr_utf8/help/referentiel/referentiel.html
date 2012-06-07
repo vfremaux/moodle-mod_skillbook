@@ -1,0 +1,126 @@
+<!-- Version: $Id$ -->
+
+<h1>Référentiels</h1>
+
+<p>Un référentiel de compétence est une hiérarchie d’objets :<br />
+  <pre>
+Référentiel  
+   Domaine 1 (Code, Description)
+      Compétence 1.1 (Code, Description)
+         Item 1.1.1 (Code, Description, Poids)
+         Item 1.1.2 (Code, Description, Poids)
+      Compétence 1.2 (Code, Description)
+         Item 1.2.1 (Code, Description, Poids)
+         Item 1.2.2 (Code, Description, Poids)
+         Item 1.2.3 (Code, Description, Poids)					 
+   Domaine 2 (Code, Description)
+      Compétence 2.1 (Code, Description)
+         Item 2.1.1 (Code, Description, Poids)
+         Item 2.1.2 (Code, Description, Poids)
+...				 
+</pre>
+</p>
+<p>Pour que le référentiel soit opérationnel, il doit comporter au moins un domaine, une compérence, un item</p>
+
+<h2>Référentiel</h2>
+<ul>
+  <li><b>Nom</b> [<em>obligatoir</em>e] : C'est l'identité du référentiel.</li>
+  <li><b>Code</b> [<em>obligatoire</em>] : C'est une étiquette commode pour identifier 
+    le référentiel.</li>
+  <li><b>URL</b> [<em>facultatif</em>] : La référence sur le Web de l'initiateur 
+    du référentiel (par exemple le N° d'un Bulletin officiel de l'Education nationale 
+    française...).</li>
+  <li><b>Seuil de certification</b> [<em>valeur décimale ; facultatif</em>] : 
+    Si un barème et des notes sont associées à l'obtention de chaque compétence, 
+    le seuil est la valeur au delà de laquelle l'impétrant est certifié.</li>
+  <li><b>Référentiel global</b> [<em>oui / non ; par défaut oui</em>] : Un référentiel 
+    global est accessible depuis d'autres cours que celui où il a été créé.</li>
+  <li><b>Nombre de domaines à enregistrer pour ce référentiel</b> [<em>valeur 
+    numérique ; obligatoire</em>] : Le nombre de domaines à créer. <br />
+    <em>On peut démarrer à un et augmenter par la suite cette valeur pour définir 
+    de nouveaux domaines.</em></li>
+</ul>
+
+<h2>Domaine</h2>
+<ul>
+  <li><b>Code</b> [<em>obligatoire</em>] : C'est une étiquette commode pour identifier 
+    le domaine.</li>
+  <li><b>Description</b> [<em>obligatoire</em>] : Le texte qui définit le domaine, 
+    en termes de savoir, savoir faire, compétences, capacités, habiletés, rôle, 
+    attitude, etc..</li>
+  <li><b>Numéro</b> [<em>valeur numérique ; obligatoire</em>] : Le numéro d'ordre 
+    du domaine dans la hiérarchie des objets du référentiel. <br />
+    Les domaines sont affichées dans l'ordre croissant de ce numéro. </li>
+  <li><b>Nombre de compétences à enregistrer pour ce domaine</b> [<em>valeur numérique 
+    ; obligatoire</em>] : Le nombre de compétences à créer pour ce domaine. <br />
+    <em>On peut démarrer à un et augmenter par la suite cette valeur pour définir 
+    de nouvelles compétences</em>.</li>
+</ul>
+
+<h2>Compétence</h2>
+<ul>
+  <li><b>Code</b> [<em>obligatoire</em>] : C'est une étiquette commode pour identifier 
+    la compétence.</li>
+  <li><b>Description</b> [<em>obligatoire</em>] : Le texte qui définit la compétence, 
+    en termes de savoir, savoir faire, compétences, capacités, habiletés, rôle, 
+    attitude, etc..</li>
+  <li><b>Numéro</b> [<em>valeur numérique ; obligatoire</em>] : Le numéro d'ordre 
+    de la compétence dans la liste des compétences de ce domaine. <br />
+    Les compétences sont affichées dans l'ordre croissant de ce numéro. </li>
+  <li><b>Nombre d'items à enregistrer pour cette compétence</b> [<em>valeur numérique 
+    ; obligatoire</em>] : Le nombre d'items inclus dans cette compétences. <br />
+    <em>On peut démarrer à un et augmenter par la suite cette valeur pour définir 
+    de nouveaux items</em>.</li>
+</ul>
+
+<h2>Item</h2>
+<ul>
+  <li><b>Code</b> [<em>obligatoire</em>] : C'est une étiquette commode pour identifier 
+    l'item. <em>Il convient de veiller à l'unicité du code des items car tout 
+    le référentiel repose sur cette propriété, </em>autrement dit <em>il faut 
+    éviter de désigner par le même code deux items appartenant à des compétences 
+    différentes</em> du même référentiel :) ! </li>
+  <li><b>Description</b> [<em>obligatoire</em>] : Le texte qui définit l'item, 
+    en termes de savoir, savoir faire, compétences, capacités, habiletés, rôle, 
+    attitude, etc..</li>
+  <li><b>Type d'item [Obligatoire, Optionnel]</b> [<em>facultatif </em>] : Caractérisation 
+    de l'importance de l'item dans la certification.<br />
+    Si l'item n'est pas obligatoire pour l'obtention du certificat laisser vide 
+    ou utiliser &quot;Optionnel&quot;.</li>
+  <li><b>Poids de l'item (valeur numérique décimale) </b> : Coefficient affecté à l'item dans le calcul de 
+    la note de certification. La formule de calcul prend en compte les 
+    poids et les empreintes des différents items.</li>
+  <li><b>Empreinte de l'item (valeur numérique entière; [0..999]) </b> : L'empreinte détermine le nombre d'activités qui doivent pointer la dite 
+ compétence pour que celle-ci soit validée. </li>
+  <li><b>Numéro</b> [<em>valeur numérique ; obligatoire</em>] : Le numéro d'ordre 
+    de l'item dans la liste des items de la compétence contenant cet item. <br />
+    Les items sont affichées dans l'ordre croissant de ce numéro. </li>
+</ul>
+<h2>Instance du référentiel</h2>
+<p>Une instance du référentiel est une activité au sens Moodle (comme le sont 
+  "Devoir", "Forum" ou "Leçon") s'appuyant sur un référentiel et qui permet aux 
+  élèves / étudiants :</p>
+<p>- de déclarer des activités mobilisant les compétences du référentiel <br>
+  - de pointer ces compétences </p>
+<p>et qui permet aux enseignants d'évaluer ces compétences...</p>
+<p>Lors de la création d'une nouvelle instance (il peut en cohabiter plusieurs, 
+  dans le même cours, soit pointant vers le même référentiel, soit vers des référentiels 
+  différents) il faut définir :</p>
+<ul>
+  <li><strong>Titre de l'instance</strong> [<em>obligatoir</em>e] : C'est le nom 
+    sous lequel cette instance du référentiel apparaît comme activité intégrée 
+    à un cours...
+  </li>
+  <li><strong>Description de l'instance</strong> [<em>facultatif</em>] : Courte 
+    notice destinée à éclairer les élèves / étudiants sur les objectifs de cette 
+    activité.
+  </li>
+  <li><strong>Comment faut-il dénommer un domaine ?</strong> [<em>facultatif</em>] 
+    : Pour les affichages, sous quel terme est renommé le concept de &quot;domaine&quot;.
+  </li>
+  <li><strong>Comment faut-il dénommer une compétence ?</strong> : Pour les affichages, 
+    sous quel terme est renommé le concept de &quot;compétence&quot;.
+  </li>
+  <li><strong>Comment faut-il dénommer un item ?</strong> : Pour les affichages, 
+    sous quel terme est renommé le concept d'&quot;item&quot;.</li>
+</ul>

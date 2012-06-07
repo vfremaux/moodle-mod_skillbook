@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>Brevet Informatique et Internet - Ecole</name>
+ <code>B2i Ecole</code>
+ <description>
+<text>Le B2i Ecole ® constitue une attestation de compétences développées par les élèves tout au long de leur cursus lors d’activités intégrant les TIC dans le cadre de l’enseignement scolaire. Il donne une vision d'ensemble du dispositif (objectifs, capacités à atteindre, feuilles de position) et permet de comparer  les niveaux, en comprenant l'évolution.</text>
+</description>
+ <url>http://www.educnet.education.fr/textes/reglementaires/b2i.htm</url>
+ <certificatethreshold>11</certificatethreshold>
+ <timemodified>1261210318</timemodified>
+ <nb_domaines>1</nb_domaines>
+ <liste_codes_competence>Eco_1.1/Eco_1.2/Eco_1.3/Eco_1.4/Eco_2.1/Eco_2.2/Eco_2.3/Eco_2.4/Eco_3.1/Eco_3.2/Eco_3.3/Eco_3.4/Eco_3.5/Eco_3.6/Eco_4.1/Eco_4.2/Eco_4.3/Eco_4.4/Eco_5.1/Eco_5.2/Eco_5.3/Eco_5.4/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>B2i Ecole</code>
+  <description>
+<text>Les 5 domaines du B2i  : - S'approprier un environnement informatique de travail - Adopter une attitude responsable - Créer, produire, traiter, exploiter des domaines - S'informer, se documenter - Communiquer, échanger.</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>Eco_1</code>
+   <description>
+<text>S'approprier un environnement informatique de travail</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>Eco_1.1</code>
+    <description>
+<text>Je sais désigner et nommer les principaux éléments composant l'équipement informatique que j'utilise et je sais à quoi ils servent.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_1.2</code>
+    <description>
+<text>1.2) Je sais allumer et éteindre l'équipement informatique</text>
+</description>
+    <type>je sais lancer et qu</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_1.3</code>
+    <description>
+<text>Je sais déplacer le pointeur, placer le curseur, sélectionner, effacer et valider.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_1.4</code>
+    <description>
+<text>Je sais accéder à un dossier, ouvrir et enregistrer un fichier.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Eco_2</code>
+   <description>
+<text>Adopter une attitude responsable</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>Eco_2.1</code>
+    <description>
+<text>Je connais les droits et devoirs indiqués dans la charte d’usage des TIC de mon école.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_2.2</code>
+    <description>
+<text>Je respecte les autres et je me protège moi-même dans le cadre de la communication et de la publication électroniques.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_2.3</code>
+    <description>
+<text>Si je souhaite récupérer un document, je vérifie que j'ai le droit de l'utiliser et à quelles conditions.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_2.4</code>
+    <description>
+<text>Je trouve des indices avant d’accorder ma confiance aux informations et propositions que la machine me fournit.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Eco_3</code>
+   <description>
+<text>Créer, produire, traiter, exploiter des données</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>Eco_3.1</code>
+    <description>
+<text>Je sais produire et modifier un texte, une image ou un son.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_3.2</code>
+    <description>
+<text>Je sais saisir les caractères en minuscules, en majuscules, les différentes lettres accentuées et les signes de ponctuation.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_3.3</code>
+    <description>
+<text>Je sais modifier la mise en forme des caractères et des paragraphes.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_3.4</code>
+    <description>
+<text>Je sais utiliser les fonctions copier, couper, coller, insérer, glisser, déposer.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_3.5</code>
+    <description>
+<text>Je sais regrouper dans un même document du texte ou des images ou du son.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_3.6</code>
+    <description>
+<text>Je sais imprimer un document.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Eco_4</code>
+   <description>
+<text>S'informer, se documenter</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>Eco_4.1</code>
+    <description>
+<text>4.1) Je sais utiliser les fenêtres, ascenseurs, boutons de défilement, liens, listes déroulantes, icônes et onglets.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_4.2</code>
+    <description>
+<text>4.2) Je sais repérer les informations affichées à l'écran.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_4.3</code>
+    <description>
+<text>4.3) Je sais saisir une adresse internet et naviguer dans un site.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_4.4</code>
+    <description>
+<text>4.4) Je sais utiliser un mot-clé ou un menu pour faire une recherche.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Eco_5</code>
+   <description>
+<text>Communiquer, échanger</text>
+</description>
+   <sortorder>5</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>Eco_5.1</code>
+    <description>
+<text>5.1) Je sais envoyer et recevoir un message.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_5.2</code>
+    <description>
+<text>5.2) Je sais dire de qui provient un message et à qui il est adressé.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_5.3</code>
+    <description>
+<text>5.3) Je sais trouver le sujet d’un message.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Eco_5.4</code>
+    <description>
+<text>5.4) Je sais trouver la date d'envoi d'un message.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

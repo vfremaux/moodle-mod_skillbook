@@ -1,0 +1,36 @@
+<style type="text/css">
+	.fiche /* Le tableau en lui-même */
+	{
+	   width:90%;
+	   margin-top: 10px ;
+	   border: 0px
+	   border-collapse: collapse; /* Colle les bordures entre elles */
+	   margin-bottom: 20px;
+	}
+	
+	.fiche td /* Les cellules normales */
+	{
+	   border: 1px solid gray;
+	   text-align: left;
+	   padding-left: 20px;
+	   padding-right: 20px;
+	   padding-bottom: 10px;
+	}
+</style>	
+
+<h3>Informations</h3>
+<p align="center"><table class="fiche">
+	<tr>
+		<td>
+			<h4>Description</h4>
+			<p><?php echo $domain->description; ?></p>
+		</td>
+	</tr>
+</table></p>
+<h3>Liste des compétences liées</h3>
+<!-- table cellspacing=\"2\" cellpadding=\"2\" border=\"0\" width=\"95%\" class=\"boxaligncenter\">
+    <tr>
+        <td>
+        </td>
+    </tr>
+</table -->

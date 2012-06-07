@@ -1,0 +1,188 @@
+<?php
+/* ******************CHARGER UN FICHIER **********************/
+
+/// Upload records section.
+if (isset($referentiel_referentiel) && $referentiel_referentiel){ // referentiel
+	// MISE A JOUR
+	if (!isset($form->referentiel_id)) {
+    	$form->referentiel_id = $referentiel_referentiel->id;
+	}
+	if (!isset($form->instance) || ($form->instance=="")) {
+    	$form->instance = $referentiel_referentiel->id;
+	}
+	if (!isset($form->referentiel_id)) {
+		$form->instance = $referentiel_referentiel->id;		
+	}
+	if (!isset($form->name)) {
+    	$form->name = $referentiel_referentiel->name;
+	}
+	if (!isset($form->code)) {
+    	$form->code = $referentiel_referentiel->code;
+	}
+	if (!isset($form->description)) {
+    	$form->description = $referentiel_referentiel->description;
+	}
+	if (!isset($form->url)) {
+    	$form->url = $referentiel_referentiel->url;
+	}
+	if (!isset($form->certificatethreshold)) {
+    	$form->certificatethreshold = $referentiel_referentiel->certificatethreshold;
+	}
+	if (!isset($form->nb_domaines)) {
+    	$form->nb_domaines = $referentiel_referentiel->nb_domaines;
+	}
+	if (!isset($form->liste_codes_competence)) {
+    	$form->liste_codes_competence = $referentiel_referentiel->liste_codes_competence;
+	}
+	if (!isset($form->defaultsort)) {
+    	$form->defaultsort = '';
+	}
+	if (!isset($form->defaultsortdir)) {
+    	$form->defaultsortdir = '';
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}
+	if (!isset($form->local)) {
+    	$form->local = $referentiel_referentiel->local;
+	}
+	if (!isset($form->liste_empreintes_competence)) {
+    	$form->liste_empreintes_competence = $referentiel_referentiel->liste_empreintes_competence;
+	}
+	if (!isset($form->logo)) {
+    	$form->logo = $referentiel_referentiel->logo;
+	}
+	if (!isset($form->sesskey)) {
+    	$form->sesskey = sesskey();
+	}
+	if (!isset($form->mode)) {
+    	$form->mode = "update";
+	}
+
+?>
+<center>
+<form id="form" enctype="multipart/form-data" method="post" action="<?php echo("upload_logo.php?d=$referentiel->id"); ?>">
+<table width="700" cellpadding="5" bgcolor="#eeeeee">
+<tr valign="top">
+    <td align="center" colspan="2"><b><?php  print_string('logo','referentiel') ?></b></tr>
+</tr>
+<tr valign="top">	
+    <td align="right">
+	<b><?php  print_string('url','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="logo" size="80" maxlength="255" value="<?php  p($form->logo) ?>" />
+    </td>
+</tr>
+<tr valign="top">	
+<td colspan="2" align="center">
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+</td>
+</tr>
+<tr valign="top">	
+<td colspan="2" align="center">
+    <fieldset class="invisiblefieldset" style="display: block;">
+<?php
+
+	print_box_start('generalbox boxwidthlarge boxaligncenter');
+?>
+<b>
+<?php 
+p($txt->importfileupload); 
+?> 
+</b>
+<?php	
+	helpbutton('logo', 'depot_logo', 'referentiel');
+?>
+<table cellpadding="5">
+<tr>
+<td align="right">
+<?php 
+p($txt->upload); 
+?>
+:
+</td>
+<td align="left">
+<?php 
+upload_print_form_fragment(1,array('newfile'),null,false,null,$course->maxbytes,0,false); 
+?>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" name="save" value="<?php p($txt->uploadthisfile); ?>" /></td>
+</tr>
+</table>
+<?php		
+	print_box_end(); 
+	if (has_capability('moodle/course:managefiles', get_context_instance(CONTEXT_COURSE, $course->id))
+		&& has_capability('mod/referentiel:import',get_context_instance(CONTEXT_MODULE, $cm->id))) {	
+		// teacher 		
+?>	
+
+<?php
+		print_box_start('generalbox boxwidthlarge boxaligncenter');
+?>
+<b>
+<?php 		
+		p($txt->importfilearea); 
+?>
+</b>
+<?php 
+		helpbutton('logo', 'depot_logo', 'referentiel');
+?>
+<table cellpadding="5">
+<tr>
+<td align="right">
+<?php 
+p($txt->file); 
+?>
+:
+</td>
+<td align="left">
+<input type="text" name="choosefile" size="50" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<?php  
+button_to_popup_window ("/files/index.php?id={$course->id}&amp;choose=form.choosefile", 
+                        "coursefiles", $txt->choosefile, 500, 750, $txt->choosefile); 
+?>
+<input type="submit" name="save" value="<?php p($txt->importfromthisfile); ?>" /></td>
+</tr>
+</table>
+
+<?php 
+		print_box_end(); 
+	}
+?>
+</td>
+</tr>
+</table>
+	</fieldset>
+	<input type="hidden" name="referentiel_id" value="<?php  echo $form->referentiel_id; ?>" />
+	<input type="hidden" name="instance" value="<?php  echo $form->instance; ?>" />
+	<input type="hidden" name="name" value="<?php  echo $form->name; ?>" />
+	<input type="hidden" name="code" value="<?php  echo $form->code; ?>" />
+	<input type="hidden" name="description" value="<?php  echo $form->description; ?>" />
+	<input type="hidden" name="url" value="<?php  echo $form->url; ?>" />
+	<input type="hidden" name="certificatethreshold" value="<?php  echo $form->certificatethreshold; ?>" />
+	<input type="hidden" name="nb_domaines" value="<?php  echo $form->nb_domaines; ?>" />
+	<input type="hidden" name="liste_codes_competence" value="<?php  echo $form->liste_codes_competence; ?>" />	
+	<input type="hidden" name="liste_empreintes_competence" value="<?php  echo $form->liste_empreintes_competence; ?>" />	
+	<input type="hidden" name="local" value="<?php  echo $form->local; ?>" />	
+	
+	<input type="hidden" name="newlogo" value="1" />
+    <input type="hidden" name="sesskey" value="<?php p(sesskey()); ?>" />
+	<input type="hidden" name="courseid" value="<?php p($course->id) ?>" />
+	<input type="hidden" name="action" value="modifierreferentiel" />
+	<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+	<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+	<input type="hidden" name="mode" value="<?php  p($mode) ?>" />	
+	</form>
+	</center>
+	
+<?php
+}
+?>

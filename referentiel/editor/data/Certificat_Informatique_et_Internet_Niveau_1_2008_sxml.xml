@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<referentiel>
+<idcode>C2iN1</idcode>
+<name>Certificat Informatique et Internet Niveau 1</name>
+<definition><text>Le référentiel national de 2008 comprend 44 items de compétences répartis en 9 compétences et 2 domaines.</text></definition>
+<domaine>
+<idcode>A</idcode>
+<definition><text>Aptitudes générales et transversales</text></definition>
+<competence>
+<idcode>A1</idcode>
+<definition><text>- Tenir compte du caractère évolutif des TIC</text></definition>
+<item>
+<idcode>A1-1</idcode>
+<definition><text> Être conscient de l’évolution constante des TIC et de la déontologie qui doit leur être associée et capable d’en tenir compte dans le cadre des apprentissages.</text></definition>
+</item>
+<item>
+    <idcode>A1-2</idcode>
+    <definition><text> Prendre conscience des nécessaires actualisations du référentiel du C2i® niveau 1.</text></definition>
+</item>
+<item>
+    <idcode>A1-3</idcode>
+    <definition><text> Travailler dans un esprit d’ouverture et d’adaptabilité (adaptabilité aux différents environnements de travail, échanges).</text></definition>
+</item>
+<item>
+    <idcode>A1-4</idcode>
+    <definition><text> Tenir compte des problèmes de compatibilité, de format de fichier, de norme et procédure de compression et d’échange.</text></definition>
+</item>
+</competence>
+<competence>
+    <idcode>A2</idcode>
+    <definition><text>- Intégrer la dimension éthique et le respect de la déontologie</text></definition>
+<item>
+    <idcode>A2-1</idcode>
+    <definition><text> Respecter les droits fondamentaux de l’homme, les normes internationales et les lois qui en découlent.</text></definition>
+</item>
+<item>
+    <idcode>A2-2</idcode>
+    <definition><text> Maîtriser son identité numérique.</text></definition>
+</item>
+<item>
+    <idcode>A2-3</idcode>
+    <definition><text> Sécuriser les informations sensibles - personnelles et professionnelles - contre les intrusions frauduleuses, les disparitions, les destructions volontaires ou involontaires.</text></definition>
+</item>
+<item>
+    <idcode>A2-4</idcode>
+    <definition><text> Assurer la protection de la confidentialité.</text></definition>
+</item>
+<item>
+    <idcode>A2-5</idcode>
+    <definition><text> Faire preuve d’esprit critique et être capable d’argumenter sur la validité des sources d’information.</text></definition>
+</item>
+<item>
+    <idcode>A2-6</idcode>
+    <definition><text> Mettre en œuvre des règles de bons comportements, de politesse et de civilité.</text></definition>
+</item>
+<item>
+    <idcode>A2-7</idcode>
+    <definition><text> Comprendre et s’approprier des chartes de comportement.</text></definition>
+</item>
+</competence>
+</domaine>
+<domaine>
+<idcode>B</idcode> <definition><text>Savoir-faire pratiques</text></definition>
+<competence>
+    <idcode>B1</idcode>
+    <definition><text>- S’approprier son environnement de travail</text></definition>
+<item>
+    <idcode>B1-1</idcode>
+    <definition><text> Organiser et personnaliser son bureau de travail.</text></definition>
+</item>
+<item>
+    <idcode>B1-2</idcode>
+    <definition><text> Être capable, constamment, de retrouver ses données.</text></definition>
+</item>
+<item>
+    <idcode>B1-3</idcode>
+    <definition><text> Structurer et gérer une arborescence de fichiers.</text></definition>
+</item>
+<item>
+    <idcode>B1-4</idcode>
+    <definition><text> Utiliser les outils adaptés (savoir choisir le logiciel qui convient aux objectifs poursuivis).</text></definition>
+</item>
+<item>
+    <idcode>B1-5</idcode>
+    <definition><text> Maintenir (mise à jour, nettoyage, défragmentation…).</text></definition>
+</item>
+<item>
+    <idcode>B1-6</idcode>
+    <definition><text> Organiser les liens (favoris - signets) dans des dossiers.</text></definition>
+</item>
+<item>
+    <idcode>B1-7</idcode>
+    <definition><text> Se connecter aux différents types de réseaux (filaires et sans fil).</text></definition>
+</item>
+</competence>
+<competence>
+    <idcode>B2</idcode>         <definition><text>- Rechercher l’information</text></definition>
+<item>         <idcode>B2-1</idcode>         <definition><text> Distinguer les différents types d’outils de recherche.</text></definition>
+</item>
+<item>         <idcode>B2-2</idcode>         <definition><text> Formaliser les requêtes de recherche.</text></definition>
+</item>
+<item>         <idcode>B2-3</idcode>         <definition><text> Récupérer et savoir utiliser les informations (texte, image, son, fichiers, pilote, applications, site…).</text></definition>
+</item>
+</competence>
+<competence>         <idcode>B3</idcode>         <definition><text>- Sauvegarder, sécuriser, archiver ses données en local et en réseau filaire ou sans fil</text></definition>
+<item>         <idcode>B3-1</idcode>         <definition><text> Rechercher un fichier (par nom, par date, par texte…).</text></definition>
+</item>
+<item>         <idcode>B3-2</idcode>         <definition><text> Assurer la protection contre les virus.</text></definition>
+</item>
+<item>         <idcode>B3-3</idcode>         <definition><text> Protéger ses fichiers et ses dossiers (en lecture/écriture).</text></definition>
+</item>
+<item>         <idcode>B3-4</idcode>         <definition><text> Assurer une sauvegarde (sur le réseau, support externe…).</text></definition>
+</item>
+<item>         <idcode>B3-5</idcode>         <definition><text> Compresser, décompresser un fichier ou un ensemble de fichiers/dossiers.</text></definition>
+</item>
+<item>         <idcode>B3-6</idcode>         <definition><text> Récupérer et transférer des données sur et à partir de terminaux mobiles.</text></definition>
+</item>
+</competence>
+<competence>         <idcode>B4</idcode>         <definition><text>Réaliser des documents destinés à être imprimés</text></definition>
+<item>         <idcode>B4-1</idcode>         <definition><text> Réaliser des documents courts (CV, lettre…).</text></definition>
+</item>
+<item>         <idcode>B4-2</idcode>         <definition><text> Élaborer un document complexe et structuré (compte rendu, rapport, mémoire, bibliographie...).</text></definition>
+</item>
+<item>         <idcode>B4-3</idcode>         <definition><text> Maîtriser les fonctionnalités nécessaires à la structuration de documents complexes (notes de bas de pages, sommaire, index, styles…).</text></definition>
+</item>
+<item>         <idcode>B4-4</idcode>         <definition><text> Intégrer les informations (images, fichiers, graphiques…).</text></definition>
+</item>
+<item>         <idcode>B4-5</idcode>         <definition><text> Traiter des données chiffrées dans un tableur (formules arithmétiques et fonctions simples comme la somme et la moyenne, notion et usage de la référence absolue), les présenter sous forme de tableau (mises en forme dont format de nombre et bordures) et sous forme graphique (graphique simple intégrant une ou plusieurs séries).</text></definition>
+</item>
+<item>         <idcode>B4-6</idcode>         <definition><text> Créer des schémas (formes géométriques avec texte, traits, flèches et connecteurs, disposition en profondeur, groupes d’objets, export sous forme d’image).</text></definition>
+</item>
+</competence>
+<competence>         <idcode>B5</idcode>         <definition><text>Réaliser la présentation de ses travaux en présentiel et en ligne</text></definition>
+<item>         <idcode>B5-1</idcode>         <definition><text> Communiquer le résultat de ses travaux en s’appuyant sur un outil de présentation assistée par ordinateur.</text></definition>
+</item>       <item>         <idcode>B5-2</idcode>         <definition><text> Adapter des documents initialement destinés à être imprimés pour une présentation sur écran.</text></definition>
+</item>
+<item>         <idcode>B5-3</idcode>         <definition><text> Réaliser des documents hypermédias intégrant textes, sons, images fixes et animées et liens internes et externes.</text></definition>
+</item>
+</competence>
+<competence>         <idcode>B6</idcode>         <definition><text>Échanger et communiquer à distance Utiliser à bon escient et selon les règles d’usage :</text></definition>
+<item>         <idcode>B6-1</idcode>         <definition><text> Utiliser à bon escient et selon les règles d’usage le courrier électronique (en-têtes, taille et format des fichiers, organisation des dossiers, filtrage) ;</text></definition>
+</item>
+<item>         <idcode>B6-2</idcode>         <definition><text>Utiliser à bon escient et selon les règles d’usage les listes de diffusion (s’inscrire, se désabonner) ;</text></definition>
+</item>
+<item>         <idcode>B6-3</idcode>         <definition><text>Utiliser à bon escient et selon les règles d’usage les forums de discussion (modéré, non modéré) ;</text></definition>
+</item>
+<item>         <idcode>B6-4</idcode>         <definition><text>Utiliser à bon escient et selon les règles d’usage le dialogue en temps réel ;</text></definition>
+</item>
+<item>         <idcode>B6-5</idcode>         <definition><text>Utiliser à bon escient et selon les règles d’usage les terminaux mobiles.</text></definition>
+</item>
+</competence>
+<competence>         <idcode>B7</idcode>         <definition><text>Mener des projets en travail collaboratif à distance</text></definition>
+<item>         <idcode>B7-1</idcode>         <definition><text> Travailler dans un environnement de travail collaboratif : utiliser les outils d’un espace de travail collaboratif (environnement numérique de travail) ;</text></definition>
+</item>
+<item>         <idcode>B7-2</idcode>         <definition><text> Travailler dans un environnement de travail collaboratif : élaborer en commun un document de travail (assurer le suivi des corrections, ajouts et suppressions) ;</text></definition>
+</item>
+<item>         <idcode>B7-3</idcode>         <definition><text> Travailler dans un environnement de travail collaboratif : gérer différentes versions de documents partagés.</text></definition>
+</item>
+</competence>
+</domaine>
+</referentiel>
+

@@ -1,0 +1,157 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+// DEBUG
+// echo "<br />MODE : $mode\n";
+if (!empty($record) && !empty($course)){
+if (isset($mode) && ($mode=="addcertif")){
+	// ajouter une certificat
+	if (!isset($form->referentielid)) {
+    	$form->referentielid = $referentiel_referentiel->id;
+	}
+	if (!isset($form->instance)) {
+    	$form->instance = $referentiel->id;
+	}	
+	if (!isset($form->comment)) {
+    	$form->comment = '';
+	}
+	if (!isset($form->synthese_certificat)) {
+    	$form->synthese_certificat = '';
+	}
+	if (!isset($form->competences_certificat)) {
+    	$form->competences_certificat = $record->competences_certificat;
+	}
+	if (!isset($form->decision_jury)) {
+    	$form->decision_jury = '';
+	}
+	if (!isset($form->date_decision)) {
+    	$form->date_decision = '';
+	}
+	if (!isset($form->userid)) {
+    	$form->userid=$record->userid;
+	}
+
+	$form->teacherid=$USER->id;
+	
+	if (!isset($form->verrou)) {
+    	$form->verrou=$record->verrou;
+	}
+	if (!isset($form->verrou)) {
+    	$form->valide=$record->valide;
+	}
+	if (!isset($form->evaluation)) {
+    	$form->evaluation=$record->evaluation;
+	}
+	
+	if (!isset($form->certificat_id)) {
+		$form->certificat_id=$record->id;
+	}
+	if (!isset($form->course_id)) {
+    	$form->course = $course->id;
+	}		
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	if (!isset($form->modulename)) {
+    	$form->modulename='referentiel';
+	}
+
+	echo '<link rel="stylesheet" type="text/css" href="certificat.css"></link>'."\n";
+
+?>
+
+<h3><?php  print_string('creer_certificat','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("certificat.php?d=$referentiel->id") ?>">
+<center>
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('decision_jury','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="decision_jury" size="80" maxlength="80" value="<?php  p($form->decision_jury) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('comment','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<textarea cols="60" rows="5" name="comment"><?php  p($form->comment) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('synthese_certificat','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<textarea cols="60" rows="5" name="synthese_certificat"><?php  p($form->comment) ?></textarea>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('competences_validees','referentiel') ?>:</b></td>
+    <td align="left">	
+<?php  
+echo referentiel_affiche_competences_certificat('/', ':', $form->competences_certificat)
+ ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('certificat_verrou','referentiel') ?>:</b></td>
+    <td align="left">
+<?php
+	if (!isset($form->verrou) or ($form->verrou=="") or ($form->verrou==0)){
+		echo '<input type="radio" name="verrou" value="1" />'.get_string("yes").' &nbsp; <input type="radio" name="verrou" value="0" checked="CHECKED" /> '.get_string("no")."\n";
+	}
+	else {
+		echo '<input type="radio" name="verrou" value="1" checked="checked" />'.get_string("yes").' &nbsp; <input type="radio" name="verrou" value="0" />'.get_string("no")."\n";
+	}
+?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+     <b><?php   print_string('notification_certificat','referentiel') ?> : </b>
+    </td>
+	<td align="left">
+
+<?php
+		echo '<input type="radio" name="mailnow" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="mailnow" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+?>	
+    </td>
+</tr>
+
+</table>
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+
+<input type="hidden" name="referentielid" value="<?php  p($form->referentielid) ?>" />
+<input type="hidden" name="competences_certificat" value="<?php  p($form->competences_certificat) ?>" />
+
+<input type="hidden" name="userid" value="<?php  p($form->userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($form->teacherid) ?>" />
+<input type="hidden" name="evaluation" value="<?php  p($evaluation) ?>" />
+<input type="hidden" name="valide" value="<?php  p($valide) ?>" />
+
+<input type="hidden" name="mode" value="addcertif" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="certificat_id"        value="<?php  p($form->certificat_id) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+</center>
+</form>
+<?php
+}
+} 
+?>

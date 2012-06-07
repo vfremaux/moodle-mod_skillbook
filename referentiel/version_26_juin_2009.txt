@@ -1,0 +1,23 @@
+Module Referentiel - 
+Version 3.2.1 - 2009062600 
+du 26 Juin 2009
+
+Cette version implémente les groupes, 
+les empreintes de compétence, les tâches et le paramétrage du module par l'administrateur au niveau du site.
+Le module certificat affiche les résultats consolidés par domaine et compétence
+Le module d'import / export des données de scolarité en fichier CSV a été modifié pour faciliter l'insertion des données par lot.
+
+Nouveauté  :
+L'interface de saisie des compétences affiche le descriptif des items dans une bulle lors du survol par le curseur de souris.
+
+Bug corrigé le 26/06/2009 :
+L'ajout / suppression de fichiers attachés à une activité fonctionne ENFIN !
+Il est possible d'attcher plusieurs fichiers à une activité.
+
+Bug corrigé le 24/06/2009 :
+L'affichage des activités est corrigé : si un référentiel est utilisés dans plusieurs cours, vous ne voyez dans un cours donné 
+que vos déclarations de celui-ci.
+
+
+  
+

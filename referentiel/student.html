@@ -1,0 +1,249 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+ /*
+ CREATE TABLE mdl_referentiel_etudiant (
+  id bigint(10) unsigned NOT NULL auto_increment,
+  num_etudiant varchar(20) NOT NULL default '',
+  ddn_etudiant varchar(14) NOT NULL default '',
+  lieu_naissance varchar(255) NOT NULL default '',
+  departement_naissance varchar(255) NOT NULL default '',
+  adresse_etudiant varchar(255) NOT NULL default '',
+  userid bigint(10) unsigned NOT NULL,
+  ref_etablissement bigint(10) unsigned NOT NULL,
+  PRIMARY KEY  (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Fiche Etudiant';
+			$form->num_etudiant = "INCONNU";
+	      	$form->ddn_etudiant = "INCONNU";
+	      	$form->lieu_naissance = "INCONNU";
+	      	$form->departement_naissance = "INCONNU";
+	      	$form->adresse_etudiant = "INCONNU";
+	      	$form->ref_etablissement = "INCONNU";
+
+ */
+// DEBUG
+// echo "<br />MODE : $mode\n";
+if (isset($mode) && ($mode=="addetudiant")){
+	// ajouter un etudiant
+	if (!isset($form->num_etudiant)){
+		$form->num_etudiant = "";
+	}
+	if (!isset($form->ddn_etudiant)){
+		$form->ddn_etudiant = "";
+	}
+	if (!isset($form->lieu_naissance)){
+		$form->lieu_naissance = "";
+	}
+	if (!isset($form->departement_naissance)){
+		$form->departement_naissance = "";
+	}
+	if (!isset($form->adresse_etudiant)){
+		$form->adresse_etudiant = "";
+	}
+	if (!isset($form->ref_etablissement)){
+		$form->ref_etablissement = 0;
+	} 
+	if (!isset($form->userid)) {
+    	$form->userid=$USER->id;
+	}
+?>
+<h3><?php  print_string('creer_etudiant','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("etudiant.php?d=$referentiel->id") ?>">
+
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('num_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="num_etudiant" size="20" maxlength="20" value="<?php  p($form->num_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('ddn_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="ddn_etudiant" size="14" maxlength="14" value="<?php  p($form->ddn_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('lieu_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="lieu_naissance" size="40" maxlength="255" value="<?php  p($form->lieu_naissance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('departement_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="departement_naissance" size="40" maxlength="255" value="<?php  p($form->departement_naissancee) ?>" />
+    </td>
+</tr>
+</table>
+
+<input type="hidden" name="ref_etablissement" value="<?php  p($form->ref_etablissement) ?>" />
+<input type="hidden" name="userid" value="<?php  p($form->userid) ?>" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="etudiant_id"        value="<?php  p($form->etudiant_id) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+
+
+
+</form>
+
+
+<?php
+
+}
+else if (isset($mode) && ($mode=="updateetudiant")){
+
+	if (!isset($form->userid)) {
+    	$form->userid=$USER->id;
+	}
+
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	
+
+	// Charger les etudiants
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	
+	$isteacher = has_capability('mod/referentiel:approve', $context);
+	$isauthor = has_capability('mod/referentiel:write', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+	
+	if ((!$isteacher) && (!$iseditor)){
+			$userid=$USER->id; 
+			$records_etudiant=referentiel_get_etudiant($userid);
+	}
+	else{
+		$record_id_users=referentiel_get_students_course($course->id,0,0);  // seulement les stagiaires
+		if ($record_id_users){
+			foreach ($record_id_users as $un_user_id){
+				// l'enregistrement existe-t-il ?
+				// echo "<br />".$un_user_id->userid."\n";
+				$re = get_record('referentiel_etudiant', 'userid', $un_user_id->userid);
+				if (!$re) {
+            		if (referentiel_add_etudiant_user($un_user_id->userid)){
+						$re = get_record('referentiel_etudiant', 'userid', $un_user_id->userid);
+					}
+        		}
+				if ($re){
+					$records_etudiant[]=$re;
+				}
+			}
+		}
+	}
+
+	if (!$records_etudiant){
+		error(get_string('noetudiant','referentiel'), "etudiant.php?d=$referentiel->id&amp;mode=add");
+	}
+	else if ($records_etudiant){
+		// DEBUG
+		// echo "<br/>DEBUG ::<br />\n";
+		// print_object($records_etudiant);
+	
+		foreach ($records_etudiant as $record){
+			$etudiant_id=$record->id;
+			$num_etudiant=$record->num_etudiant;
+			$ddn_etudiant=$record->ddn_etudiant;
+			$lieu_naissance=$record->lieu_naissance;
+			$departement_naissance=$record->departement_naissance;
+			$adresse_etudiant=$record->adresse_etudiant;
+			$ref_etablissement=$record->ref_etablissement;
+			$userid=$record->userid;
+		
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record);
+			$user_info=referentiel_get_user_info($userid);
+
+			// AFFICHER etudiant
+?>
+
+<h3><?php  print_string('modifier_etudiant','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("etudiant.php?d=$referentiel->id") ?>">
+<table cellpadding="5" width="80%">
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('num_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="num_etudiant" size="20" maxlength="20" value="<?php  p($num_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('ddn_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="ddn_etudiant" size="14" maxlength="14" value="<?php  p($ddn_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('lieu_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="lieu_naissance" size="40" maxlength="255" value="<?php  p($lieu_naissance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('departement_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="departement_naissance" size="40" maxlength="255" value="<?php  p($departement_naissancee) ?>" />
+    </td>
+</tr>
+</table>
+
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="etudiant_id" value="<?php  p($etudiant_id) ?>" />
+<input type="hidden" name="ref_etablissement" value="<?php  p($ref_etablissement) ?>" />
+
+<input type="hidden" name="action" value="modifier_etudiant" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+
+
+
+</form>	
+<?php
+		}
+	}
+}
+else if (isset($mode) && ($mode=="deleteetudiant")){
+	/// Confirmer la suppression d'un enregistrement
+	if (isset($etudiant_id) && ($etudiant_id>0)){
+		notice_yesno(get_string('confirmdeleterecord','referentiel'),
+		'etudiant.php?d='.$referentiel->id.'&amp;delete='.$etudiant_id.'&amp;confirm=1&amp;sesskey='.sesskey(),
+        'etudiant.php?d='.$referentiel->id);
+	}
+	else{
+		error(get_string('noetudiant','referentiel'), "etudiant.php?d=$referentiel->id&amp;mode=listetudiant");	
+	}
+} 
+ 
+?>

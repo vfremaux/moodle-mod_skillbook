@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+<idcode>RefMoodle-A</idcode>
+<name>RefMoodle-A Connaître son environnement de travail</name>
+<definition><text> V6 - Domaine A - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 - Contacts : Nicolas.Postec@univ.lemans.fr, Michel.lopez@univ.lemans.fr, Maelle.Crosse@univ.lemans.fr, Frederic.Habert@uni-nantes.fr, Nathalie.Lusson@univ-angers.fr</text></definition>
+<url>http://scirn.univ.lemans.fr</url>
+<domaine>
+    <idcode>RMDA1</idcode>
+    <definition><text>Se connecter</text></definition>
+    <competence>
+        <idcode>RMDA1.1</idcode>
+        <definition><text>Connaître la procédure d'authentification et de connexion à la plateforme</text></definition>
+        <item>
+            <idcode>RMDA1.1.1</idcode>
+            <definition><text> Identifier les boutons de connexion</text></definition>
+        </item>
+        <item>
+            <idcode>RMDA1.1.2</idcode>
+            <definition><text> Localiser le lien et/ou le bouton « connexion » sur la page d'accueil de la plateforme</text></definition>
+        </item>
+    </competence>
+</domaine>
+<domaine>
+      <idcode>RMDA2</idcode>
+      <definition><text>S'inscrire à un cours</text></definition>
+      <competence>
+            <idcode>RMDA2.1</idcode>
+            <definition><text>Sélectionner un cours et y accéder</text></definition>
+            <item>
+                <idcode>RMDA2.1.1</idcode>
+                <definition><text> Identifier un cours</text></definition>
+            </item>
+            <item>
+                <idcode>RMDA2.1.2</idcode>
+                <definition><text> S'inscrire à un cours en accès libre ou conditionnel</text></definition>
+            </item>
+            </competence>
+        </domaine>
+        <domaine>
+            <idcode>RMDA3</idcode>
+            <definition><text>Se repérer dans la formation</text></definition>
+            <competence>
+                <idcode>RMDA3.1</idcode>
+                <definition><text>Se repérer dans l'espace cours</text></definition>
+                <item>
+                    <idcode>RMDA3.1.1</idcode>
+                    <definition><text>Identifier les blocs latéraux</text></definition>
+                </item>
+            </competence>
+            <competence>
+                <idcode>RMDA3.2</idcode>
+                <definition><text>Identifier et localiser les documents pédagogiques (ressources et activités)</text></definition>
+                <item>
+                    <idcode>RMDA3.2.1</idcode>
+                    <definition><text>Interpréter les icônes « Ressources »</text></definition>
+                </item>
+                <item>
+                    <idcode>RMDA3.2.2</idcode>
+                    <definition><text>Interpréter les icônes « Activités »</text></definition>
+                </item>
+            </competence>
+        </domaine>
+    </referentiel>

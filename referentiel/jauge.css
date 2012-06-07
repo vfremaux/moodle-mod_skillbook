@@ -1,0 +1,30 @@
+
+.vide {background-color: white; height : 8}
+.zero {background-color: lightblue; height : 8}
+.un {background-color: red; height : 8}
+.deux {background-color: #33aa77; height : 8}
+.trois {background-color: #ff9933; height : 8}
+
+.jauge
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-weight : normal;
+	font-style : bold;
+	background-color :  #efefef;
+	color : darkblue;
+	text-align : left;
+	vertical-align : middle;
+	height : 5%;
+}
+
+
+#jaugeDiv {
+position:relative; 
+left:0; 
+top:0; 
+z-index: 0; 
+font-size: 7pt; 
+background-color : #eeffff; 
+color: darkblue; 
+}

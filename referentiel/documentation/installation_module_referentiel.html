@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Module Référentiel -Installation</title>
+</head>
+
+<body>
+<h1>Module Référentiel - Installation</h1>
+<a href="mailto:jean.fruitet@univ-nantes.fr">jean.fruitet@univ-nantes.fr</a>
+<p>Documentation et mises à jours sur les sites du <b>MoodleMoot2008</b> (Nantes) et du <b>MoodleMoot2009</b> (Lyon)</p>
+<ul>
+<li>MoodMoot2008 : <a href="http://moodlemoot2008.vet-nantes.fr/moodle/course/view.php?id=36">http://moodlemoot2008.vet-nantes.fr/moodle/course/view.php?id=36</a></li>
+<li>MoodMoot2009 : <a href="http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24">http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24</a></li>
+</ul>
+
+
+<h3>Marche à suivre pour installer ET pour mettre à jour ce module</h3>
+<pre>
+
+La procédure suivante s'applique à toute installation Moodle
+VOTRE_DOSSIER_MOODLE = le nom du dossier où est placé vote moodle, en général "moodle"
+URL_SERVEUR_MOODLE = le nom de votre serveur moodle, en général "http://localhost/moodle/"
+
+1. Décomprimer l'archive "referentiel_xxx.zip" dans le dossier "VOTRE_DOSSIER_MOODLE/mod/"
+Les fichiers de langue peuvent être laissés dans le dossier
+"VOTRE_DOSSIER_MOODLE/mod/referentiel/lang/"
+
+2. se loger avec le role admin sur "URL_SERVEUR_MOODLE"
+
+3. Installer le module referentiel comme un nouveau module en passant par la rubrique
+Administration / Notification
+S'il y a des messages d'erreur m'avertir aussitôt par mail en m'envoyant une copie d'écran du message d'erreur.
+
+4. paramétrer le module au niveau du site en passant par la rubrique
+Administration / Plugins / Activités / Référentiel
+
+ERREUR FREQUENTE LORS DES MISE A JOUR
+------------------------------------------------
+L'erreur à éviter est de créer une copie de sauvegarde (sous un autre nom) dans le dossier
+VOTRE_DOSSIER_MOODLE/mod/
+
+-------------------------------------------------
+Marche à suivre pour désinstaller ce module
+-------------------------------------------------
+1. Logez-vous avec le role admin
+
+2. Supprimez le module
+Administration / Plugins / Activités / Gestion des activités
+Sélectionnner  Référentiel :: Supprimer
+
+3. Supprimez le dossier VOTRE_DOSSIER_MOODLE/mod/referentiel
+
+4. Supprimer les dossiers
+./moodledata/#course_id/moddata/referentiel
+de tous les cours où une instance a été déclarée
+
+
+
+ENGLISH
+---------------------------------------------------------
+
+The following steps should get you up and running with this module code.
+---------------------------------------------------------
+1. Unzip the archive in moodle/mod/ directory
+Languages files can be left in the moodle/mod/referentiel/lang/ directory.
+2. log on with admin role
+
+3. install new module as usual (admin Notification)
+
+4. Set module parameters
+Administration / Plugins / Activity / Repository
+</pre>
+
+
+</body></html>

@@ -1,0 +1,145 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+// DEBUG
+// echo "<br />MODE : $mode\n";
+if (isset($mode) && ($mode=="addactivity")){
+	// ajouter une activite
+	if (!isset($form->instance)) {
+    	$form->instance = $referentiel->id;
+	}
+	if (!isset($form->referentielid)) {
+    	$form->referentielid = $referentiel_referentiel->id;
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}	
+	if (!isset($form->type_activite)) {
+    	$form->type_activite = '';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->comptencies)) {
+    	$form->comptencies = referentiel_get_liste_codes_competence($referentiel_referentiel->id);
+	}
+	if (!isset($form->comment)) {
+    	$form->comment = '';
+	}
+	if (!isset($form->approved)) {
+    	$form->approved=0;
+	}	
+	if (!isset($form->userid)) {
+    	$form->userid=$USER->id;
+	}
+	if (!isset($form->teacherid)) {
+    	$form->teacherid=0;
+	}
+	
+	if (!isset($form->activite_id)) {
+		if (isset($activite_id))
+			$form->activite_id=$activite_id;
+		else
+			$form->activite_id='';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->type)) {
+    	$form->type = '';
+	}
+	if (!isset($form->url)) {
+    	$form->url = '';
+	}
+	if (!isset($form->course_id)) {
+    	$form->course = $course->id;
+	}		
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	if (!isset($form->modulename)) {
+    	$form->modulename='referentiel';
+	}
+	if (!isset($form->instance)) {
+    	$form->instance=$referentiel->id;
+	}
+ 	// preparer les variables globales pour Overlib
+	referentiel_initialise_data_referentiel($referentiel_referentiel->id);
+?>
+<h3><?php  print_string('creer_activite','referentiel') ?></h3> 
+<P><?php  print_string('creer_activite_teacher','referentiel') ?></p>
+<?php
+$jauge_activite_declarees=referentiel_print_jauge_activite($form->userid, $referentiel_referentiel->id);
+if ($jauge_activite_declarees){
+	print_string('competences_declarees','referentiel', referentiel_get_user_info($form->userid));
+	echo '<br />';
+	echo $jauge_activite_declarees."\n";
+	echo '<br />';
+}
+
+
+?>
+
+<form name="form" method="post" action="<?php p("activite.php?d=$referentiel->id&amp;select_acc=$select_acc") ?>">
+<center>
+<table align="left" cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('type_activite','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="type_activite" size="80" maxlength="80" value="<?php  p($form->type_activite) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<textarea cols="60" rows="8" name="description"><?php  p($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('aide_saisie_competences','referentiel') ?>:</b></td>
+    <td align="left">	
+<?php referentiel_selection_liste_codes_item_competence('/',$form->comptencies); ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('depot_document','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_document" value="<?php  p(get_string('yes')); ?>" /> <?php  p(get_string('yes')); ?>
+<input type="radio" name="depot_document" value="<?php  p(get_string('no')); ?>" checked="checked" /> <?php  p(get_string('no')); ?>
+    </td>
+</tr>
+</table>
+
+<input type="hidden" name="comment" value="<?php  p($form->comment) ?>" />
+<input type="hidden" name="approved" value="<?php  p($form->approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($form->userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($form->teacherid) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($form->referentielid) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="activite_id"        value="<?php  p($form->activite_id) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+</center>
+</form>
+<?php
+}
+
+?>

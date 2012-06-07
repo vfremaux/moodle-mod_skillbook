@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>COMPETENCE : CONNAISSANCES DE BASE A MOODLE</name>
+ <code>Formation modulaire</code>
+ <description>
+<text>Formation modulaire basée sur le référentiel de compétences Moodle mis au point par l'Université du Maine et qui permet l'acquisition solitaire et successive de modules capitalisables. L'apprenant doit réaliser les différentes activités (essentiellement lecture de pages web suivies de mise en pratique) et les proposer comme activités à valider pour obtenir le certificat final attestant du suivi et des modules acquis.</text>
+</description>
+ <url>http://www.e-learningfacile.com</url>
+ <certificatethreshold>0</certificatethreshold>
+ <timemodified>1277463186</timemodified>
+ <nb_domaines>5</nb_domaines>
+ <liste_codes_competence>A11/A12/A21/A22/A31/A32/A33/A34/B11/B12/B13/B14/B15/B21/B22/B23/B24/B25/B26/B31/B32/B33/B34/B35/B36/C11/C12/C13/C14/C15/C16/C21/C22/C23/C24/C25/C26/C27/C28/C31/C32/C33/C34/C35/C36/C37/C38/C39/D11/D12/D21/D22/D23/D24/E11/E12/E21/E31/E32/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>A</code>
+  <description>
+<text>S'IDENTIFIER ET NAVIGUER DANS DES ESPACES DE COURS</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>A1</code>
+   <description>
+<text>ACCÉDER A UNE PLATEFORME ET A UN COURS</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>A11</code>
+    <description>
+<text>Authentification et profil personnel.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A12</code>
+    <description>
+<text>Accès à un cours (clé d'accès)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A2</code>
+   <description>
+<text>NAVIGUER DANS UN COURS</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>A21</code>
+    <description>
+<text>Identifier la structure d'un cours.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A22</code>
+    <description>
+<text>Localiser tous les éléments (Séquences, activités, ressources, blocs...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A3</code>
+   <description>
+<text>GÉRER SON ESPACE PERSONNEL</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>A31</code>
+    <description>
+<text>Modifier son profil, son avatar, ses paramètres...</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A32</code>
+    <description>
+<text>Changer son mot de passe.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A33</code>
+    <description>
+<text>Consulter les paramètres étudiants (profils, tags, ...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A34</code>
+    <description>
+<text>Se désinscrire d'un cours.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>B</code>
+  <description>
+<text>ADMINISTRER UN ENVIRONNEMENT DE TRAVAIL</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>B1</code>
+   <description>
+<text>METTRE EN PLACE UN COURS</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B11</code>
+    <description>
+<text>Créer son cours</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B12</code>
+    <description>
+<text>Sauvegarder globalement un cours. (Procédure de base)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B13</code>
+    <description>
+<text>Effacer un cours (Procédure de base)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B14</code>
+    <description>
+<text>Restaurer un cours. (Procédure de base)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B15</code>
+    <description>
+<text>Intégrer un cours dans un autre cours. (En totalité ou partiellement)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B2</code>
+   <description>
+<text>GÉRER LES UTILISATEURS D'UN COURS</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>B21</code>
+    <description>
+<text>Inscrire des participants dans un cours.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B22</code>
+    <description>
+<text>Attribuer des rôles dans le cours. Créer un nouveau rôle(par exemple : Parent)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B23</code>
+    <description>
+<text>Créer des groupes, affecter des tuteurs, et placer le bloc &quot;mon tuteur&quot;.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B24</code>
+    <description>
+<text>Inscrire et désinscrire, envoyer des messages groupés, consulter les rapports d'activité.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B25</code>
+    <description>
+<text>Consulter un profil étudiant, se connecter sous son nom, lui envoyer un message...</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B26</code>
+    <description>
+<text>Utiliser la messagerie, gérer une liste de contacts, paramètres de la messagerie.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B3</code>
+   <description>
+<text>STRUCTURER UN COURS</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>B31</code>
+    <description>
+<text>Choisir un thème graphique de cours,un titre et un texte d'accueil(zone description du cours)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B32</code>
+    <description>
+<text>Gérer l'affichage des séquences,les déplacer,les masquer...</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B33</code>
+    <description>
+<text>Gérer la mise en place des activités.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B34</code>
+    <description>
+<text>Gérer la mise en place des ressources (fenêtres séparées, formats...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B35</code>
+    <description>
+<text>Gérer la mise en place des blocs standards.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B36</code>
+    <description>
+<text>Déplacer des éléments dans le cours. (ressources, activités, étiquettes, blocs...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>C</code>
+  <description>
+<text>INSÉRER DES RESSOURCES, DES ACTIVITÉS, DES BLOCS LATÉRAUX.</text>
+</description>
+  <sortorder>3</sortorder>
+  <nb_competences>3</nb_competences>
+
+  <competence>
+   <code>C1</code>
+   <description>
+<text>DÉCOUVERTE DES DIFFÉRENTS TYPES DE DOCUMENTS</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>C11</code>
+    <description>
+<text>Le format HTML, l'éditeur Wysiwig.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>C12</code>
+    <description>
+<text>Le format pdf</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>C13</code>
+    <description>
+<text>Les formats images (jpg, gif, png...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>C14</code>
+    <description>
+<text>Les formats flash (swf, flv)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>C15</code>
+    <description>
+<text>Les autres formats propriétaires et leur conversion.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>C16</code>
+    <description>
+<text>Les captures (outils et modes de visualisation)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>C2</code>
+   <description>
+<text>LES ACTIVITÉS D'APPRENTISSAGE</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>8</nb_item_competences>
+
+   <item>
+    <code>C21</code>
+    <description>
+<text>Forums et usages.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>C22</code>
+    <description>
+<text>Glossaires et usages.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>C23</code>
+    <description>
+<text>Le Wiki</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>C24</code>
+    <description>
+<text>L'activité Base de données.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>C25</code>
+    <description>
+<text>La leçon.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>C26</code>
+    <description>
+<text>Les différents types de devoirs</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>C27</code>
+    <description>
+<text>Le Chat</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+   <item>
+    <code>C28</code>
+    <description>
+<text>L'Atelier</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>8</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>C3</code>
+   <description>
+<text>LES BLOCS LATÉRAUX.</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>9</nb_item_competences>
+
+   <item>
+    <code>C31</code>
+    <description>
+<text>Le calendrier (évènements ...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>C32</code>
+    <description>
+<text>Le bloc Personnes (Participants)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>C33</code>
+    <description>
+<text>Utilisateurs en ligne.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>C34</code>
+    <description>
+<text>Sommaire du cours</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>C35</code>
+    <description>
+<text>Dernières nouvelles</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>C36</code>
+    <description>
+<text>Prochains évènements</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>C37</code>
+    <description>
+<text>Messages</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+   <item>
+    <code>C38</code>
+    <description>
+<text>Un autre bloc (Appel SKYPE)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>8</sortorder>
+   </item>
+
+   <item>
+    <code>C39</code>
+    <description>
+<text>Le bloc administration du cours.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>9</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>D</code>
+  <description>
+<text>ÉVALUER LES APPRENANTS</text>
+</description>
+  <sortorder>4</sortorder>
+  <nb_competences>4</nb_competences>
+
+  <competence>
+   <code>D1</code>
+   <description>
+<text>BARÈMES ET CARNET DE NOTES</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>D11</code>
+    <description>
+<text>Créer des barèmes, les associer à des activités</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>D12</code>
+    <description>
+<text>Comprendre le carnet de notes (Utilisation standard)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>D2</code>
+   <description>
+<text>TESTS, SONDAGES, QUESTIONNAIRES</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>D21</code>
+    <description>
+<text>Placer un sondage.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>D22</code>
+    <description>
+<text>Placer un questionnaire</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>D23</code>
+    <description>
+<text>Placer un test Moodle</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>D24</code>
+    <description>
+<text>Intégrer un test Hot Potatoes</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>E</code>
+  <description>
+<text>ACQUÉRIR L'AUTONOMIE DE CRÉATION</text>
+</description>
+  <sortorder>5</sortorder>
+  <nb_competences>4</nb_competences>
+
+  <competence>
+   <code>E1</code>
+   <description>
+<text>SAUVEGARDER</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>E11</code>
+    <description>
+<text>Sauvegarder le cours avec ses paramètres.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>E12</code>
+    <description>
+<text>Sauvegarder certaines activités (Glossaires, Bases de données, questionnaires...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>E2</code>
+   <description>
+<text>TRANSFÉRER</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>1</nb_item_competences>
+
+   <item>
+    <code>E21</code>
+    <description>
+<text>Déposer et restaurer son cours sur une autre plateforme (Bases de connaissances minimum )</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>E3</code>
+   <description>
+<text>GÉRER DES FORMATIONS</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>E31</code>
+    <description>
+<text>Créer et gérer un cours d'accueil de formations.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>E32</code>
+    <description>
+<text>Créer des méta-cours (cours enfants) avec héritage d'inscription d'un cours (parent)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

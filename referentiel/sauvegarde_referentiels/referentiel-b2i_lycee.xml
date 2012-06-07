@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>B2i Lycée</name>
+ <code>B2i_Lycée</code>
+ <description>
+<text>Le B2i atteste l`acquisition d`un ensemble de compétences développées par les élèves ou les apprentis, tout au long de leur cursus, à l`éLyce, au Lyclège, dans les lycées d`enseignement général`et technologique, les lycées professionnels, les centres de formation d`apprentis (CFA) et les sections d`apprentissage (SA) gérés par des établissements publics locaux d`enseignement (EPLE).</text>
+</description>
+ <url>http://www.education.gouv.fr/bo/2006/42/MENE0602673C.htm</url>
+ <certificatethreshold>15</certificatethreshold>
+ <timemodified>1251529458</timemodified>
+ <nb_domaines>1</nb_domaines>
+ <liste_codes_competence>Lyc1.1/Lyc1.2/Lyc1.3/Lyc1.4/Lyc1.5/Lyc1.6/Lyc2.1/Lyc2.2/Lyc2.3/Lyc2.4/Lyc2.5/Lyc2.6/Lyc2.7/Lyc3.1/Lyc3.2/Lyc3.3/Lyc3.4/Lyc3.5/Lyc3.6/Lyc3.7/Lyc3.8/Lyc4.1/Lyc4.2/Lyc4.3/Lyc4.4/Lyc4.5/Lyc5.1/Lyc5.2/Lyc5.3/Lyc5.4/Lyc5.5/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>Lycée</code>
+  <description>
+<text>Les contenus sont organisés en cinq domaines communs aux trois niveaux : 1. S'approprier un environnement informatique de travail. 2. Adopter une attitude responsable. 3. Créer, produire, traiter, exploiter des données. 4. S'informer, se documenter.  5. Communiquer, échanger.</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>Lyc1</code>
+   <description>
+<text>S'approprier un environnement informatique de travail</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>Lyc1.1</code>
+    <description>
+<text>1.1) Je sais choisir les services, matériels et logiciels adaptés à mes besoins.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc1.2</code>
+    <description>
+<text>1.2) Je sais structurer mon environnement de travail.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc1.3</code>
+    <description>
+<text>1.3) Je sais régler les principaux paramètres de fonctionnement d'un périphérique selon mes besoins.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc1.4</code>
+    <description>
+<text>1.4) Je sais personnaliser un logiciel selon mes besoins.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc1.5</code>
+    <description>
+<text>1.5) Je sais m'affranchir des fonctions automatiques des logiciels (saisie, mémorisation mot de passe, correction orthographique, incrémentation...).</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc1.6</code>
+    <description>
+<text>1. O 1) Je sais utiliser une plate-forme de travail de groupe.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Lyc2</code>
+   <description>
+<text>Adopter une attitude responsable</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>7</nb_item_competences>
+
+   <item>
+    <code>Lyc2.1</code>
+    <description>
+<text>2.1) Je connais la charte d'usage des TIC de mon établissement.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.2</code>
+    <description>
+<text>2.2) Je protège ma vie privée en réfléchissant aux informations personnelles que je communique.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.3</code>
+    <description>
+<text>2.3) J'utilise les documents ou des logiciels dans le respect des droits d'auteur et de propriété.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.4</code>
+    <description>
+<text>2.4) Je valide, à partir de critères définis, les résultats qu'un traitement automatique me fournit (calcul, représentation graphique, correcteur...).</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.5</code>
+    <description>
+<text>2.5) Je suis capable de me référer en cas de besoin à la réglementation en vigueur sur les usages numériques.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.6</code>
+    <description>
+<text>2.6) Je sais que l'on peut connaître mes opérations et accéder à mes données lors de l'utilisation d'un environnement informatique.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc2.7</code>
+    <description>
+<text>2.7) Je mets mes compétences informatiques à la disposition des autres.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Lyc3</code>
+   <description>
+<text>Créer, produire, traiter, exploiter des données</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>8</nb_item_competences>
+
+   <item>
+    <code>Lyc3.1</code>
+    <description>
+<text>3.1) Je sais créer et modifier un document numérique composite transportable et publiable.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.2</code>
+    <description>
+<text>3.2) Je sais insérer automatiquement des informations dans un document (notes de bas de page, sommaire...).</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.3</code>
+    <description>
+<text>3.3) Je sais utiliser des outils permettant de travailler à plusieurs sur un même document (outil de suivi de modifications...).</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.4</code>
+    <description>
+<text>3.4) Je sais utiliser ou créer des formules pour traiter les données.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.5</code>
+    <description>
+<text>3.5) Je sais produire une représentation graphique à partir d'un traitement de données numériques.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.6</code>
+    <description>
+<text>3.6) Dans le cadre de mes activités sLycaires, je sais repérer des exemples de modélisation ou simulation et je sais citer au moins un paramètre qui influence le résultat.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.7</code>
+    <description>
+<text>3.7) Je sais publier un document numérique sur un espace approprié.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc3.8</code>
+    <description>
+<text>3. O 1) Je sais utiliser un modèle de document.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>8</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Lyc4</code>
+   <description>
+<text>S'informer, se documenter</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>Lyc4.1</code>
+    <description>
+<text>4.1) Je sais interroger les bases documentaires à ma disposition.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc4.2</code>
+    <description>
+<text>4.2) Je sais utiliser les fonctions avancées des outils de recherche sur internet.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc4.3</code>
+    <description>
+<text>4.3) Je sais énoncer des critères de tri d'informations.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc4.4</code>
+    <description>
+<text>4.4) Je sais constituer une bibliographie incluant des documents d'origine numérique.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc4.5</code>
+    <description>
+<text>4. O 1) Je sais utiliser des outils de veille documentaire.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>Lyc5</code>
+   <description>
+<text>Communiquer, échanger</text>
+</description>
+   <sortorder>5</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>Lyc5.1</code>
+    <description>
+<text>5.1) Je sais choisir le service de communication selon mes besoins.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc5.2</code>
+    <description>
+<text>5.2) Je sais organiser mes espaces d'échange (messagerie, travail de groupe...)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc5.3</code>
+    <description>
+<text>5.3) Je sais adapter le contenu des informations transmises aux lecteurs potentiels : niveau de langage, forme, contenu, taille, copies.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc5.4</code>
+    <description>
+<text>5. O 1) Je sais paramétrer un logiciel de messagerie pour récupérer mon courrier électronique.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>Lyc5.5</code>
+    <description>
+<text>5. O 2) Je sais gérer des groupes de destinataires.</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

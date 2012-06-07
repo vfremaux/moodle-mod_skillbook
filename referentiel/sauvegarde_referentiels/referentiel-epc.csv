@@ -1,0 +1,44 @@
+#Moodle Referentiel CSV Export;latin1;Professeur LAMBDA;;;;;;;
+#code;nom_referentiel;description;url;timecreated;nb_domaines;certificatethreshold;liste_codes_competences;liste_empreintes;logo
+EPC2FRA;EPC 2nde Français;Référentiel d`évaluation par compétences en 2nde;http://www.lcdf.ac-orleans-tours.fr;Y:2009m:05d:01;1;16;S1/S2/SFA1/SFA2/SFA3/SFB1/SFB2/SFB3/SFB4/SFC1/SFC2/SFC3/SFC4/SFC5/SFC6/SFD1/SFD2/SFD3/SFD4/SE1/SE2/;1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/;
+#code;description;referentielid;sortorder;nb_competences;;;;;
+EPC2F;Référentiel 2nde ;1;1;;;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+S;Savoirs;1;2;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+S1;Savoir son cours pour les évaluations planifiées;Obligatoire;1;1;1;;;;
+S2;Savoir résumer la séance précédente;Obligatoire;1;2;1;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+SFA;Lire et comprendre;2;3;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+SFA1;Lire un énoncé;Obligatoire;1;1;1;;;;
+SFA2;Observer un dessin;Obligatoire;1;2;1;;;;
+SFA3;Donner un sens aux mots;Obligatoire;1;3;1;;;;
+#code;description;sortorder;nb_item_competences;;
+SFB;Rechercher : Conjecturer, élaborer et organiser une démarche;3;4;;
+#code;description;type;weight;sortorder;footprint
+SFB1;Prévoir une réponse;Obligatoire;1;1;1
+SFB2;Traduire;Obligatoire;1;2;1
+SFB3;Trier des informations;Obligatoire;1;3;1
+SFB4;Reconnaître une situation de référence;Obligatoire;1;4;1
+#code;description;sortorder;nb_item_competences;;
+SFC;Réaliser : Exécuter, critiquer;4;5;;
+#code;description;type;weight;sortorder;footprint
+SFC1;Mettre en oeuvre une stratégie;Obligatoire;1;1;1
+SFC2;Exécuter une t;Obligatoire;1;2;1
+SFC3;Appliquer directement une connaissance ou une technique de base;Obligatoire;1;3;1
+SFC4;Contrôler la vraisemblance d'une proposition;Obligatoire;1;4;1
+SFC5;Valider la cohérence d'une démarche;Obligatoire;1;5;1
+SFC6;Répondre à la question posée;Obligatoire;1;6;1
+#code;description;sortorder;nb_item_competences;;
+SFD;Réaliser : Exécuter;5;4;;
+#code;description;type;weight;sortorder;footprint
+SFD1;Respecter les consignes;Obligatoire;1;1;1
+SFD2;Utiliser un vocabulaire,  des notations ou un codage approprié;Obligatoire;1;2;1
+SFD3;Présenter avec soin un texte,  un graphique;Obligatoire;1;3;1
+SFD4;Rédiger une argumentation;Obligatoire;1;4;1
+#code;description;sortorder;nb_item_competences;;
+SE;Savoir être;6;2;;
+#code;description;type;weight;sortorder;footprint
+SE1;Savoir être 1;Obligatoire;1;1;1
+SE2;Savoir être 2;Obligatoire;1;2;1

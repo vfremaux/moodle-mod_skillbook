@@ -1,0 +1,85 @@
+body, html {
+	overflow: hidden;
+	background-color: #DFE8F6;
+}
+
+body, td, th {
+	font-family: "Trebuchet MS", "Bitstream Vera Sans", Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Trebuchet MS", "Bitstream Vera Sans", verdana, lucida, arial, helvetica, sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	width: 90%;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+h4 {
+	font-size: 13px;
+}
+
+a, a:visited, a:active, a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+pre {
+	background-color: #F2F2F2;
+	font-family: "Lucida Console","Courier New",Courier,monospace;
+	font-size: 12px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	overflow: auto;
+	padding: 5px 5px 5px 5px;
+}
+
+
+code.syntax {
+	background-color: #F2F2F2;
+}
+
+.deprecated {
+	font-weight: bold;
+}
+
+.static {
+	color: gray;
+}
+
+.version span, .author span {
+	font-weight: bold;
+}
+
+#yui-main #detailsView.loading {
+	background: #FFF url('./img/loader.gif') no-repeat center center;
+}
+
+.small {
+	background-color: #F2F2F2;
+	font-family: "Lucida Console","Courier New",Courier,monospace;
+	font-size: 8pt;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	overflow: auto;
+	padding: 5px 5px 5px 5px;
+}

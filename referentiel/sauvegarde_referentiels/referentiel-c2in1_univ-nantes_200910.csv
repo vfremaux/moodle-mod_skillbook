@@ -1,0 +1,84 @@
+#Moodle Referentiel CSV Export;latin1;Univ_Nantes;;;;;;;
+#code;nom_referentiel;description;url;timecreated;nb_domaines;certificatethreshold;liste_codes_competences;liste_empreintes;logo
+C2i1;Référentiel C2i niveau 1;Référentiel C2i niveau 1;;Y:2009m:10d:13;2;40;A1a/A1b/A1c/A1d/A1e/A2a/A2b/A2c/A2d/A2e/B1a/B1b/B1c/B1d/B1e/B2a/B2b/B2c/B2d/B2e/B3a/B3b/B3c/B3d/B3e/B4a/B4b/B4c/B4d/B4e/B4f/B4g/B4h/B4i/B4j/B5a/B5b/B5c/B5d/B5e/B6a/B6b/B6c/B6d/B6e/B7a/B7b/B7c/B7d/B7e/;1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/;
+#code;description;referentielid;sortorder;nb_competences;;;;;
+A;Aptitudes générales et transversales;1;1;;;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+A1;Tenir compte du caractère évolutif des TIC;1;5;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+A1a;Savoir évaluer les évolutions technologiques en maîtrisant les principaux ordres de grandeur (mémoire, calcul, débit);;1;1;1;;;;
+A1b;Savoir utiliser différents systèmes d exploitation;;1;2;1;;;;
+A1c;Savoir distinguer les formats ouverts et les formats propriétaires;;1;3;1;;;;
+A1d;Savoir comparer les quantités d information de différents types de documents (texte, image, son, vidéo);;1;4;1;;;;
+A1e;Savoir utiliser les formats les plus adaptés à l échange d informations;;1;5;1;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+A2;Intégrer la dimension éthique et le respect de la déontologie;2;5;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+A2a;Savoir distinguer les différents types de licences logicielles et les utiliser de manière conforme;;1;1;1
+A2b;Savoir sous quelles conditions, un document trouvé sur le web, peut être utilisé dans le respect du droit d auteur;;1;2;1
+A2c;Savoir protéger la confidentialité des données personnelles et maitriser son identité numérique;;1;3;1
+A2d;Savoir dans quels cas, un fichier informatique doit être déclaré auprès de la CNIL;;1;4;1
+A2e;Savoir reconnaître les nuisances d internet (rumeurs, hameconnage, pourriel);;1;5;1
+#code;description;referentielid;sortorder;nb_competences;
+B;Savoir-faire pratiques;2;2;;
+#code;description;sortorder;nb_item_competences;;
+B1;Sâ€™approprier son environnement de travail;1;5;;
+#code;description;type;weight;sortorder;footprint
+B1a;Savoir paramétrer un système de gestion de fichiers et afficher les informations souhaitées;;1;1;1
+B1b;Savoir structurer et gérer une arborescence de dossiers et de fichiers;;1;2;1
+B1c;Savoir utiliser le logiciel adapté pour consulter et/ou modifier un document;;1;3;1
+B1d;Savoir  retrouver un fichier dans une arborescence de dossiers;;1;4;1
+B1e;Savoir connecter un ordinateur à différents types de réseaux filaires et Wifi, et comprendre les paramétrages à effectuer;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B2;Rechercher l information;2;5;;
+#code;description;type;weight;sortorder;footprint
+B2a;Savoir distinguer les différents outils de recherche (moteur, annuaire, catalogue, base documentaire) et leurs spécificités;;1;1;1
+B2b;Savoir analyser la fiabilité de l information obtenue par une recherche sur le web;;1;2;1
+B2c;Savoir écrire une requête de recherche complexe avec mots clés et opérations logiques;;1;3;1
+B2d;Savoir choisir l application permettant d ouvrir un document obtenu sur le web;;1;4;1
+B2e;Savoir localiser et qualifier différents types de ressources par leur URL;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B3;Sauvegarder, sécuriser, archiver ses données en local et en réseau;3;5;;
+#code;description;type;weight;sortorder;footprint
+B3a;Savoir utiliser différents volumes mémoires personnels ou partagés, dans un environnement réseau;;1;1;1
+B3b;Savoir protéger fichiers et dossiers dans un environnement réseau, multi-utilisateur;;1;2;1
+B3c;Savoir sauvegarder ses données sur un serveur;;1;3;1
+B3d;Savoir créer et extraire une archive avec ou sans compression;;1;4;1
+B3e;Savoir connecter et utiliser des périphériques mémoire de type clé USB, appareil photo ou téléphone;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B4;Réaliser des documents destinés à être imprimés;4;10;;
+#code;description;type;weight;sortorder;footprint
+B4a;Savoir utiliser et distinguer les attributs typographiques de caractère, de paragraphe et de page, dans un traitement de texte;;1;1;1
+B4b;Savoir mettre en place des références internes dans un document texte et gérer une bibliographie;;1;2;1
+B4c;Savoir générer automatiquement la table des matières dans un document texte structuré;;1;3;1
+B4d;Savoir utiliser et modifier un style de texte dans un traitement de texte;;1;4;1
+B4e;Savoir intégrer et adapter des images à un document texte;;1;5;1
+B4f;Savoir présenter différents types de données dans un tableau et le mettre en forme avec un tableur;;1;6;1
+B4g;Savoir écrire et recopier des formules arithmétiques dans un tableur;;1;7;1
+B4h;Savoir écrire des formules impliquant des plages de cellule (somme, moyenne) dans un tableur;;1;8;1
+B4i;Savoir générer un graphique pertinent à partir d une ou plusieurs séries de données dans un tableur;;1;9;1
+B4j;Savoir créer des schémas contenant formes, textes et connecteurs, grouper et disposer les objets;;1;10;1
+#code;description;sortorder;nb_item_competences;;
+B5;Réaliser la présentation de ses travaux en présentiel et en ligne;5;5;;
+#code;description;type;weight;sortorder;footprint
+B5a;Savoir utiliser le masque pour définir l apparence globale d un diaporama;;1;1;1
+B5b;Savoir distinguer et utiliser animations et transitions dans un diaporama;;1;2;1
+B5c;Savoir utiliser les différents modes d un logiciel de présentation;;1;3;1
+B5d;Savoir insérer des liens hypertexte dans une page web;;1;4;1
+B5e;Savoir insérer des images dans une page web;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B6;Echanger et communiquer à distance;6;5;;
+#code;description;type;weight;sortorder;footprint
+B6a;Savoir utiliser un client de messagerie électronique et/ou un webmail;;1;1;1
+B6b;Savoir filtrer le courrier électronique selon sa provenance et gérer les courriers indésirables;;1;2;1
+B6c;Savoir gérer ses abonnements à des listes de diffusion;;1;3;1
+B6d;Savoir créer ou contribuer à une discussion dans un forum;;1;4;1
+B6e;Savoir utiliser un outil de messagerie instantanée;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B7;Mener des projets en travail collaboratif à distance;7;5;;
+#code;description;type;weight;sortorder;footprint
+B7a;Savoir participer à l élaboration collective d un document tel que wiki ou glossaire;;1;1;1
+B7b;Savoir déposer un document dans une plate-forme pédagogique;;1;2;1
+B7c;Savoir assurer le suivi des corrections d un document partagé;;1;3;1
+B7d;Savoir coopérer avec un groupe de travail en utilisant différents modes de communication;;1;4;1
+B7e;Savoir gérer différentes versions d un même document;;1;5;1

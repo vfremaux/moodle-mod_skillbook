@@ -1,0 +1,20 @@
+
+RefMoodle-A
+Connaître son environnement de travail
+V6 - Domaine A - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas.Postec@univ-lemans.fr, Michel.lopez@univ-lemans.fr, Maelle.Crosse@univ.lemans.fr, Frederic.Habert@uni-nantes.fr, Nathalie.Lusson@univ-angers.fr
+http://scirn.univ-lemans.fr
+RMDA1 Se connecter
+RMDA1.1 Connaître la procédure d'authentification et de connexion à la plateforme
+RMDA1.1.1 Identifier les boutons de connexion
+RMDA1.1.2 Localiser le lien et/ou le bouton « connexion » sur la page d'accueil de lan plateforme
+RMDA2 S'inscrire à un cours
+RMDA2.1 Sélectionner un cours et y accéder
+RMDA2.1.1 Identifier un cours
+RMDA2.1.2 S'inscrire à un cours en accès libre ou conditionnel
+RMDA3 Se repérer dans la formation
+RMDA3.1 Se repérer dans l'espace cours
+RMDA3.1.1 Identifier les blocs latéraux
+RMDA3.2 Identifier et localiser les documents pédagogiques (ressources et activités)
+RMDA3.2.1 Interpréter les icônes « Ressources »
+RMDA3.2.2 Interpréter les icônes « Activités »
+

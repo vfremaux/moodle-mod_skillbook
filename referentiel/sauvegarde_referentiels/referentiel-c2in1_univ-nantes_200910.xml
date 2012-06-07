@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>Référentiel C2i niveau 1</name>
+ <code>C2i1</code>
+ <description>
+<text>Référentiel C2i niveau 1</text>
+</description>
+ <url></url>
+ <certificatethreshold>40</certificatethreshold>
+ <timemodified>1255434820</timemodified>
+ <nb_domaines>2</nb_domaines>
+ <liste_codes_competence>A1a/A1b/A1c/A1d/A1e/A2a/A2b/A2c/A2d/A2e/B1a/B1b/B1c/B1d/B1e/B2a/B2b/B2c/B2d/B2e/B3a/B3b/B3c/B3d/B3e/B4a/B4b/B4c/B4d/B4e/B4f/B4g/B4h/B4i/B4j/B5a/B5b/B5c/B5d/B5e/B6a/B6b/B6c/B6d/B6e/B7a/B7b/B7c/B7d/B7e/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>A</code>
+  <description>
+<text>Aptitudes générales et transversales</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>A1</code>
+   <description>
+<text>Tenir compte du caractère évolutif des TIC</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>A1a</code>
+    <description>
+<text>Savoir évaluer les évolutions technologiques en maîtrisant les principaux ordres de grandeur (mémoire, calcul, débit)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A1b</code>
+    <description>
+<text>Savoir utiliser différents systèmes d'exploitation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A1c</code>
+    <description>
+<text>Savoir distinguer les formats ouverts et les formats propriétaires</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A1d</code>
+    <description>
+<text>Savoir comparer les quantités d'information de différents types de documents (texte, image, son, vidéo)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>A1e</code>
+    <description>
+<text>Savoir utiliser les formats les plus adaptés à l'échange d'informations</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A2</code>
+   <description>
+<text>Intégrer la dimension éthique et le respect de la déontologie</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>A2a</code>
+    <description>
+<text>Savoir distinguer les différents types de licences logicielles et les utiliser de manière conforme</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A2b</code>
+    <description>
+<text>Savoir sous quelles conditions, un document trouvé sur le web, peut être utilisé dans le respect du droit d'auteur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A2c</code>
+    <description>
+<text>Savoir protéger la confidentialité des données personnelles et maitriser son identité numérique</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A2d</code>
+    <description>
+<text>Savoir dans quels cas, un fichier informatique doit être déclaré auprès de la CNIL</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>A2e</code>
+    <description>
+<text>Savoir reconnaître les nuisances d'internet (rumeurs, hameconnage, pourriel)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>B</code>
+  <description>
+<text>Savoir-faire pratiques</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>B1</code>
+   <description>
+<text>S’approprier son environnement de travail</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B1a</code>
+    <description>
+<text>Savoir paramétrer un système de gestion de fichiers et afficher les informations souhaitées</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B1b</code>
+    <description>
+<text>Savoir structurer et gérer une arborescence de dossiers et de fichiers</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B1c</code>
+    <description>
+<text>Savoir utiliser le logiciel adapté pour consulter et/ou modifier un document</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B1d</code>
+    <description>
+<text>Savoir  retrouver un fichier dans une arborescence de dossiers</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B1e</code>
+    <description>
+<text>Savoir connecter un ordinateur à différents types de réseaux filaires et Wifi, et comprendre les paramétrages à effectuer</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B2</code>
+   <description>
+<text>Rechercher l'information</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B2a</code>
+    <description>
+<text>Savoir distinguer les différents outils de recherche (moteur, annuaire, catalogue, base documentaire) et leurs spécificités</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B2b</code>
+    <description>
+<text>Savoir analyser la fiabilité de l'information obtenue par une recherche sur le web</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B2c</code>
+    <description>
+<text>Savoir écrire une requête de recherche complexe avec mots clés et opérations logiques</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B2d</code>
+    <description>
+<text>Savoir choisir l'application permettant d'ouvrir un document obtenu sur le web</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B2e</code>
+    <description>
+<text>Savoir localiser et qualifier différents types de ressources par leur URL</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B3</code>
+   <description>
+<text>Sauvegarder, sécuriser, archiver ses données en local et en réseau</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B3a</code>
+    <description>
+<text>Savoir utiliser différents volumes mémoires personnels ou partagés, dans un environnement réseau</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B3b</code>
+    <description>
+<text>Savoir protéger fichiers et dossiers dans un environnement réseau, multi-utilisateur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B3c</code>
+    <description>
+<text>Savoir sauvegarder ses données sur un serveur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B3d</code>
+    <description>
+<text>Savoir créer et extraire une archive avec ou sans compression</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B3e</code>
+    <description>
+<text>Savoir connecter et utiliser des périphériques mémoire de type clé USB, appareil photo ou téléphone</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B4</code>
+   <description>
+<text>Réaliser des documents destinés à être imprimés</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>10</nb_item_competences>
+
+   <item>
+    <code>B4a</code>
+    <description>
+<text>Savoir utiliser et distinguer les attributs typographiques de caractère, de paragraphe et de page, dans un traitement de texte</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B4b</code>
+    <description>
+<text>Savoir mettre en place des références internes dans un document texte et gérer une bibliographie</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B4c</code>
+    <description>
+<text>Savoir générer automatiquement la table des matières dans un document texte structuré</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B4d</code>
+    <description>
+<text>Savoir utiliser et modifier un style de texte dans un traitement de texte</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B4e</code>
+    <description>
+<text>Savoir intégrer et adapter des images à un document texte</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B4f</code>
+    <description>
+<text>Savoir présenter différents types de données dans un tableau et le mettre en forme avec un tableur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>B4g</code>
+    <description>
+<text>Savoir écrire et recopier des formules arithmétiques dans un tableur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+   <item>
+    <code>B4h</code>
+    <description>
+<text>Savoir écrire des formules impliquant des plages de cellule (somme, moyenne) dans un tableur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>8</sortorder>
+   </item>
+
+   <item>
+    <code>B4i</code>
+    <description>
+<text>Savoir générer un graphique pertinent à partir d'une ou plusieurs séries de données dans un tableur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>9</sortorder>
+   </item>
+
+   <item>
+    <code>B4j</code>
+    <description>
+<text>Savoir créer des schémas contenant formes, textes et connecteurs, grouper et disposer les objets</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>10</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B5</code>
+   <description>
+<text>Réaliser la présentation de ses travaux en présentiel et en ligne</text>
+</description>
+   <sortorder>5</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B5a</code>
+    <description>
+<text>Savoir utiliser le masque pour définir l'apparence globale d'un diaporama</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B5b</code>
+    <description>
+<text>Savoir distinguer et utiliser animations et transitions dans un diaporama</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B5c</code>
+    <description>
+<text>Savoir utiliser les différents modes d'un logiciel de présentation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B5d</code>
+    <description>
+<text>Savoir insérer des liens hypertexte dans une page web</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B5e</code>
+    <description>
+<text>Savoir insérer des images dans une page web</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B6</code>
+   <description>
+<text>Echanger et communiquer à distance</text>
+</description>
+   <sortorder>6</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B6a</code>
+    <description>
+<text>Savoir utiliser un client de messagerie électronique et/ou un webmail</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B6b</code>
+    <description>
+<text>Savoir filtrer le courrier électronique selon sa provenance et gérer les courriers indésirables</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B6c</code>
+    <description>
+<text>Savoir gérer ses abonnements à des listes de diffusion</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B6d</code>
+    <description>
+<text>Savoir créer ou contribuer à une discussion dans un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B6e</code>
+    <description>
+<text>Savoir utiliser un outil de messagerie instantanée</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B7</code>
+   <description>
+<text>Mener des projets en travail collaboratif à distance</text>
+</description>
+   <sortorder>7</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B7a</code>
+    <description>
+<text>Savoir participer à l'élaboration collective d'un document tel que wiki ou glossaire</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B7b</code>
+    <description>
+<text>Savoir déposer un document dans une plate-forme pédagogique</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B7c</code>
+    <description>
+<text>Savoir assurer le suivi des corrections d'un document partagé</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B7d</code>
+    <description>
+<text>Savoir coopérer avec un groupe de travail en utilisant différents modes de communication</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B7e</code>
+    <description>
+<text>Savoir gérer différentes versions d'un même document</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

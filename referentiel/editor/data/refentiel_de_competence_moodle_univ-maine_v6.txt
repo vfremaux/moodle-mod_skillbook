@@ -1,0 +1,150 @@
+
+RefMoodle
+Référentiel de Compétence Moodle
+V6 - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas.Postec@univ-lemans.fr, Michel.lopez@univ-lemans.fr, Maelle.Crosse@univ.lemans.fr, Frederic.Habert@uni-nantes.fr, Nathalie.Lusson@univ-angers.fr
+http://scirnuniv-lemansfr
+ 
+RM_A Connaître son environnement de travail
+RM_A1 Se connecter
+RM_A1-1 Connaître la procédure d'authentification et de connexion à la plateforme
+
+RM_A2 S'inscrire à un cours
+RM_A2-1 Sélectionner un cours et y accéder
+
+RM_A3 Se repérer dans la formation
+RM_A3-1 Se repérer dans l'espace cours
+RM_A3-2 Identifier et localiser les documents pédagogiques (ressources et activités)
+
+RM_B Savoir communiquer
+RM_B1 Communiquer via l'outil « Forum »
+RM_B1-1 Ajouter un forum
+RM_B1-2 Utiliser un forum
+
+RM_B2 Communiquer via l'outil « Chat »
+RM_B2-1 Ajouter un chat
+RM_B2-2 Utiliser un chat
+
+RM_B3 Communiquer via l'outil « Sondage »
+RM_B3-1 Ajouter un sondage
+
+RM_B3-2 Utiliser un sondage
+
+RM_B4 Communiquer via l'outil « Consultation »
+RM_B4-1 Ajouter une consultation
+RM_B4-2 Utiliser une consultation
+
+RM_B5 Communiquer via la messagerie
+RM_B5-1 Ajouter un bloc « Messages »
+RM_B5-2 Utiliser la messagerie
+
+RM_B6 Communiquer via l'outil « Calendrier »
+RM_B6-1 Ajouter un bloc « Calendrier »
+RM_B6-2 Utiliser un calendrier
+
+RM_B7 Découvrir les participants
+RM_B7-1 Consulter le profil des participants
+
+RM_B8 Gétrer des contacts
+RM_B8-1 Gérer ses contacts
+ 
+RM_C Savoir produire
+RM_C1 Ajouter une ressource
+RM_C1-1 Organiser et structurer les fichiers et les répertoires de l'espace de cours
+RM_C1-2 Téléverser / télécharger un fichier
+RM_C1-3 Gérer les fichiers et les dossiers
+RM_C1-4 Publier une ressource
+
+RM_C2 Créer une ressource
+RM_C2-1 Basculer en mode édition
+RM_C2-2 Composer une page avec le format texte
+RM_C2-3 Composer une page avec l'éditeur wysiwyg
+
+RM_C3 Gérer des ressources
+RM_C3-1 Gérer les liens vers les resosurces dans l'espace cours
+
+RM_C4 Ajouter une activitée
+RM_C4-1 Choisir une activité d'apprentissage en fonction des objectifs pédagogiques visés
+RM_C4-2 Déployer une activité
+
+RM_C5 Produire via l'activité « Glossaire »
+RM_C5-1 Ajouter une activité « Glossaire »
+RM_C5-2 Utiliser un « Glossaire »
+ 
+RM_C6 Produire via l'activité « Wiki »
+RM_C6-1 Ajouter une activité « Wiki »
+RM_C6-2 Utiliser un « Wiki »
+
+RM_C7 Produire via l'activité « Base de données »
+RM_C7-1 Ajouter une activité « Base de données »
+RM_C7-2 Utiliser une activité « Base de données »
+
+RM_C8 Produire via l'activité « SCORM/AICC »
+RM_C8-1 Ajouter une activité « SCORM/AICC »
+RM_C8-2 Utiliser un parcours SCORM/AICC
+ 
+RM_C9 Produire via l'activité « Leçon »
+RM_C9-1 Ajouter une activité « Leçon »
+RM_C9-2 Utiliser une leçon
+
+RM_D Savoir évaluer
+RM_D1 Spécifier les « Notes »
+RM_D1-1 Paramétrer l'outil Notes
+RM_D1-2 Etablir un barème
+
+RM_D2 Noter une activité
+RM_D2-1 Attribuer une note à un travail
+RM_D2-2 Consulter les notes
+ 
+RM_D3 Evaluer via l'activité « Devoir »
+RM_D3-1 Ajouter un « Devoir »
+RM_D3-2 Utiliser un « Devoir »
+
+RM_D4 Evaluer via l'activité « Test »
+RM_D4-1 Ajouter un test
+RM_D4-2 Utiliser un test
+
+RM_D5 Evaluer via l'activité « Test Hotpotatoes »
+RM_D5-1 Ajouter un test Hotpotatoes
+RM_D5-2 Utiliser un test Hotpotatoes
+ 
+RM_D6 Evaluer via l'activité « Journal »
+RM_D6-1 Ajouter un journal
+RM_D6-2 Utiliser un journal
+
+RM_D7 Evaluer via l'activité « Atelier »
+RM_D7-1 Ajouter un atelier
+RM_D7-2 Utiliser un atelier
+ 
+RM_D8 Produire via l'activité « Base de données »
+RM_D8-1 Ajouter une activité « Base de données »
+RM_D8-2 Utiliser une activité « Base de données »
+
+RM_D9 Produire via l'activité « SCORM/AICC »
+RM_D9-1 Ajouter une activité « SCORM/AICC »
+RM_D9-2 Utiliser un parcours SCORM/AICC
+ 
+RM_D10 Produire via l'activité « Leçon »
+RM_D10-1 Ajouter une activité « Leçon »
+RM_D10-2 Utiliser une leçon
+
+RM_E Savoir administrer et gérer
+RM_E1 Modifier son compte
+RM_E1-1 Modifier son profil
+RM_E1-2 Modifier le mot de passe
+
+RM_E2 Créer un cours
+RM_E2-1 Choisir un format de cours
+RM_E2-2 Paramétrer un cours
+RM_E2-3 Sauvegarder un cours
+RM_E2-4 Restaurer un cours
+
+RM_E3 Structurer un espace de cours
+RM_E3-1 Structurer une séquence
+RM_E3-2 Gérer l'affichage des éléments composant un espace de cours
+ 
+RM_E4 Gérer les acteurs
+RM_E4-1 Gérer les rôles dans l'espace de cours
+RM_E4-2 Gérer les groupes d'utilisateurs
+
+RM_E5 Observer les activités à l'intérieur d'un espace de cours
+RM_E5-1 Consulter les rapports d'activité

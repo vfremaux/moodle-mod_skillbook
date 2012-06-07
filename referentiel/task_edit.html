@@ -1,0 +1,565 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+// DEBUG
+// echo "<br />MODE : $mode\n";
+
+if (!empty($record) && !empty($course)){ 
+	// une enregistrement tache est charge
+
+	/////////////////// MODIFIER ////////////////////////////////////////////
+else if (isset($mode) && ($mode=="updatetask")){
+
+	if (!isset($form->instance)) {
+    	$form->instance = $referentiel->id;
+	}
+	if (!isset($form->referentielid)) {
+    	$form->referentielid = $referentiel_referentiel->id;
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}	
+	if (!isset($form->type)) {
+    	$form->type = '';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->competences_task)) {
+    	$form->competences_task = referentiel_get_liste_codes_competence($referentiel_referentiel->id);
+	}
+	if (!isset($form->criteria)) {
+    	$form->criteria = '';
+	}
+	if (!isset($form->auteurid)) {
+    	$form->auteurid=$USER->id;
+	}
+	if (!isset($form->timestart)){
+		$form->debut_heure=date("H");
+		$form->debut_mois=date("m");
+		$form->debut_jour=date("d");
+		$form->debut_annee=date("Y");
+	}
+	else{
+		$form->debut_heure=date("H",$form->timestart);
+		$form->debut_mois=date("m",$form->timestart);
+		$form->debut_jour=date("d",$form->timestart);
+		$form->debut_annee=date("Y",$form->timestart);
+	}
+	if (!isset($form->timeend)){
+		$form->fin_heure=date("H");
+		$form->fin_mois=date("m");
+		if ($form->fin_mois<12) $form->fin_mois++;
+		else $form->fin_mois=1;
+		$form->fin_jour=date("d");
+		$form->fin_annee=date("Y");
+	}
+	else{
+		$fin_heure=date("H",$form->timeend);
+		$fin_mois=date("m",$form->timeend);
+		$fin_jour=date("d",$form->timeend);
+		$fin_annee=date("Y",$form->timeend);
+	}
+		
+	if (!isset($form->task_id)) {
+		if (isset($task_id))
+			$form->task_id=$task_id;
+		else
+			$form->task_id='';
+	}
+
+	// consignes
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->type)) {
+    	$form->type = '';
+	}
+	if (!isset($form->url)) {
+    	$form->url = '';
+	}
+
+
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	if (!isset($form->modulename)) {
+    	$form->modulename='referentiel';
+	}
+
+	// Charger les taches
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	$isauthor = has_capability('mod/referentiel:addtask', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+	$records_task=referentiel_get_all_tasks($course->id, $referentiel->id);
+	$liste_codes_competence=referentiel_get_liste_codes_competence($referentiel_referentiel->id);	
+	if (!$records_task){
+		error(get_string('notask','referentiel'), "task.php?d=$referentiel->id&amp;mode=add");
+	}
+	else if ($records_task){
+		// DEBUG
+		// echo "<br/>DEBUG ::<br />\n";
+		// print_object($records_task);
+	
+		foreach ($records_task as $record_t){
+    		$task_id = $record_t->id;
+			$type = stripslashes($record_t->type);
+			$description = stripslashes($record_t->description);
+			$competences_task = stripslashes($record_t->competences_task);
+			$criteria = stripslashes($record_t->criteria);
+			$instanceid = $record_t->instanceid;
+			$referentielid = $record_t->referentielid;
+			$course = $record_t->course;
+			$auteurid = $record_t->auteurid;
+			$timecreated = $record_t->timecreated;
+			$timemodified = $record_t->timemodified;
+			$timestart = $record_t->timestart;
+			$timeend = $record_t->timeend;
+
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record_t);
+			
+			$auteur_info=referentiel_get_user_info($auteurid);
+			// dates
+			$date_creation_info=userdate($timecreated);		
+			$date_modif_info=userdate($timemodified);
+			$date_debut_info=userdate($timestart);
+			$date_fin_info=userdate($timeend);		
+			
+	if (isset($timestart)){
+		$debut_heure=date("H",$timestart);
+		$debut_mois=date("m",$timestart);
+		$debut_jour=date("d",$timestart);
+		$debut_annee=date("Y",$timestart);
+	}
+	if (isset($timeend)){
+		$fin_heure=date("H",$timeend);
+		$fin_mois=date("m",$timeend);
+		$fin_jour=date("d",$timeend);
+		$fin_annee=date("Y",$timeend);
+	}
+				
+			// AFFICHER tache
+?>
+<center>
+<h3><?php  print_string('modifier_task','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("task.php?d=$referentiel->id") ?>">
+
+<table cellpadding="5" width="80%" align="center">
+
+<tr valign="top">
+    <td align="center">
+<b><?php  print_string('id','referentiel') ?></b> : <?php p($task_id) ?>
+    </td>
+    <td align="center">
+<b><?php print_string('auteur','referentiel') ?></b> : <?php p($auteur_info) ?>
+    </td>
+    <td align="center">
+<b><?php  print_string('timecreated','referentiel') ?></b> : <?php p($date_creation_info) ?>
+<input type="hidden" name="timecreated" value="<?php  p($timecreated) ?>" />
+    </td>		
+    <td align="center">
+<b><?php  print_string('timemodified','referentiel') ?></b> : <?php p($date_modif_info) ?>	
+<input type="hidden" name="timemodified" value="<?php  p($timemodified) ?>" />
+    </td>		
+</tr>
+</table>
+<table cellpadding="5" width="80%" align="center">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('timestart','referentiel') ?>:</b> <i><?php  p($date_debut_info) ?></i>
+	</td>
+    <td align="left">
+<input type="text" name="debut_jour" size="2" maxlength="2" value="<?php  p($debut_jour) ?>" />
+/
+<input type="text" name="debut_mois" size="2" maxlength="2" value="<?php  p($debut_mois) ?>" />
+/ 
+<input type="text" name="debut_annee" size="4" maxlength="4" value="<?php  p($debut_annee) ?>" />
+&nbsp;
+<input type="text" name="debut_heure" size="2" maxlength="2" value="<?php  p($debut_heure) ?>" /> H   
+	</td>
+    <td align="right">
+	<b><?php  print_string('timeend','referentiel') ?>:</b> <i><?php  p($date_fin_info) ?></i>
+	</td>
+    <td align="left">
+<input type="text" name="fin_jour" size="2" maxlength="2" value="<?php  p($fin_jour) ?>" />
+/
+<input type="text" name="fin_mois" size="2" maxlength="2" value="<?php  p($fin_mois) ?>" />
+/ 
+<input type="text" name="fin_annee" size="4" maxlength="4" value="<?php  p($fin_annee) ?>" />
+&nbsp;
+<input type="text" name="fin_heure" size="2" maxlength="2" value="<?php  p($fin_heure) ?>" /> H   
+	</td>
+	
+</tr>
+
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('type','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="3">
+<input type="text" name="type" size="80" maxlength="80" value="<?php  p($type) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="3">
+<textarea cols="60" rows="8" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('aide_saisie_competences','referentiel') ?>:</b></td>
+    <td align="left" colspan="3">	
+<?php  // referentiel_selection_liste_codes_item_competence('/', $form->competences_task);
+	echo "getting items";
+	$skillitemsopts = referentiel_get_full_item_list($referentiel);
+	print_object($skillitemsopts);
+	choose_from_menu($skilitemsopts, 'criteria'); 
+	?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('criteria','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="3">
+<textarea cols="60" rows="8" name="criteria"><?php  p($criteria) ?></textarea>
+    </td>
+</tr>
+
+</table>
+<input type="hidden" name="approved" value="<?php  p($approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="task_id" value="<?php  p($task_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+
+<input type="hidden" name="action" value="modifier_task" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+</center>
+
+</form>	
+
+<?php			
+			
+			// Recuperer les consignes associes à la tache
+			$records_consigne = referentiel_get_consignes($task_id);
+	    	if ($records_consigne){
+    			// afficher
+				// DEBUG
+				// echo "<br/>DEBUG ::<br />\n";
+				// print_r($records_consigne);
+				$compteur_consigne=0;
+				foreach ($records_consigne as $record_d){
+					$compteur_consigne++;
+        			$consigne_id=$record_d->id;
+					$type = stripslashes($record_d->type);
+					$description = stripslashes($record_d->description);
+					$url = stripslashes($record_d->url);
+					$taskid = $record_d->taskid;
+							
+?>
+<!-- consigne -->
+<form name="form" method="post" action="<?php p("task.php?d=$referentiel->id") ?>">
+<center>
+<table cellpadding="5" bgcolor="#ffffdd">
+<tr valign="top">
+    <td align="center" colspan="2"><b><?php  print_string('consigne_associe','referentiel') ?></b></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+<b><?php  print_string('consigne','referentiel') ?></b>
+    </td>
+    <td align="left">
+<i>
+<?php  p($consigne_id) ?>
+</i>
+<input type="hidden" name="taskid" value="<?php p($taskid) ?>" />
+<input type="hidden" name="consigne_id" value="<?php p($consigne_id) ?>" />
+    </td>
+</tr>	
+<tr valign="top">		
+    <td align="right">
+<b><?php  print_string('type','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="type" size="20" maxlength="20" value="<?php  p($type) ?>" />
+    </td>
+</tr>	
+<tr valign="top">	
+    <td align="right">
+	<b><?php  print_string('url','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="url" size="80" maxlength="255" value="<?php  p($url) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<textarea cols="60" rows="2" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('depot_consigne','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_consigne" value="<?php  p(get_string('yes')); ?>" /> <?php  p(get_string('yes')); ?>
+<input type="radio" name="depot_consigne" value="<?php  p(get_string('no')); ?>" checked="checked" /> <?php  p(get_string('no')); ?>
+    </td>
+</tr>
+</table>
+<input type="hidden" name="approved" value="<?php  p($approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="task_id" value="<?php  p($task_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+
+<input type="hidden" name="action" value="modifier_consigne" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+</center>
+</form>	
+<?php
+				}
+			}
+			
+			// AJOUTER un consigne
+			if (!isset($form->description)) {
+			   	$form->description = '';
+			}
+			if (!isset($form->type)) {
+			   	$form->type = '';
+			}
+			if (!isset($form->url)) {
+			   	$form->url = '';
+			}
+?>				
+<!-- NOUVEAU consigne -->
+<!--
+<form name="form" method="post" action="<?php p("task.php?d=$referentiel->id") ?>">
+-->
+<br />
+<form name="form" method="post" action="<?php p("upload_consigne.php?d=$referentiel->id") ?>">
+<center>
+
+<table cellpadding="5" bgcolor="#ffeeee">
+<tr valign="top">
+    <td align="center" colspan="2"><b><?php  print_string('consigne_ajout','referentiel') ?></b></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('depot_consigne','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_consigne" value="<?php  p(get_string('yes')); ?>" /> <?php  p(get_string('yes')); ?>
+<input type="radio" name="depot_consigne" value="<?php  p(get_string('no')); ?>" checked="checked" /> <?php  p(get_string('no')); ?>
+    </td>
+</tr>
+	
+</table>
+
+<input type="hidden" name="type"  value="<?php  p($form->type) ?>" />
+<input type="hidden" name="url" value="<?php  p($form->url) ?>" />
+<input type="hidden" name="description" value="<?php  p($form->description)" />
+
+<input type="hidden" name="taskid" value="<?php  p($task_id) ?>" />
+<input type="hidden" name="approved" value="<?php  p($approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="task_id" value="<?php  p($task_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+<input type="hidden" name="action" value="creer_consigne" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+
+</center>
+
+</form>	
+<?php
+			
+		}
+	}
+}
+else if (isset($mode) && ($mode=="deletetask")){
+	/// Confirmer la suppression d'un enregistrement
+	if (isset($task_id) && ($task_id>0)){
+		notice_yesno(get_string('confirmdeleterecord','referentiel'),
+		'task.php?d='.$referentiel->id.'&amp;delete='.$task_id.'&amp;confirm=1&amp;sesskey='.sesskey(),
+        'task.php?d='.$referentiel->id);
+	}
+	else{
+		error(get_string('notask','referentiel'), "task.php?d=$referentiel_instance->id&amp;mode=listtask");	
+	}
+} 
+else if (isset($mode) && ($mode=="selecttask")){
+	if (isset($task_id) && ($task_id>0)){
+        // commentaires
+        if ($record_t = get_record('referentiel_task', 'id', $task_id)) {
+    		$task_id=$record_t->id;
+			$type = stripslashes($record_t->type);
+			$description = stripslashes($record_t->description);
+			$competences_task = stripslashes($record_t->competences_task);
+			$criteria = stripslashes($record_t->criteria);
+			$instanceid = $record_t->instanceid;
+			$referentielid = $record_t->referentielid;
+			$course = $record_t->course;
+			$auteurid = $record_t->auteurid;
+			$timecreated = $record_t->timecreated;
+			$timemodified = $record_t->timemodified;
+			$timestart = $record_t->timestart;
+			$timeend = $record_t->timeend;
+
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record_t);
+			
+			$auteur_info=referentiel_get_user_info($auteurid);
+			// dates
+			$date_creation_info=userdate($timecreated);		
+			$date_modif_info=userdate($timemodified);
+			$date_debut_info=userdate($timestart);
+			$date_fin_info=userdate($timeend);		
+		
+?>
+<form name="form" method="post" action="<?php p("task.php?d=$referentiel->id") ?>">
+<center>
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right" width="20%">
+	<b><?php  print_string('id','referentiel'); ?> : </b>
+    </td>
+    <td align="left">
+	<?php  p($task_id) ?>
+    </td>
+    <td align="right" width="20%">
+     <b><?php print_string('auteur','referentiel')?> : </b>
+    </td>
+    <td align="left">
+		<?php p($user_info) ?>
+    </td>
+	<td align="right" width="20%">
+	<b><?php  print_string('timecreated','referentiel') ?> : </b>
+	</td>	
+    <td align="left">
+		<?php  p($date_creation_info);; ?>
+    </td>		
+</tr>
+
+<tr valign="top">
+    <td align="right" width="20%">
+	<b><?php  print_string('type','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="5">
+        <?php  p($type) ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right" width="20%">
+	<b><?php  print_string('description','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="5">
+        <?php  echo (nl2br($description)); ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right" width="20%">
+	<b><?php  print_string('liste_codes_competence','referentiel') ?> : </b></td>
+    <td align="left" colspan="5">
+		<?php  p(referentiel_affiche_liste_codes_competence('/',$competences_task)); ?>
+    </td>
+</tr>
+
+<tr valign="top" bgcolor="#ffeeee">
+    <td align="right">
+	<b><?php  print_string('commentaire','referentiel') ?>:</b>
+	</td>
+    <td align="left" colspan="5">
+<textarea cols="60" rows="3" name="commentaire_task"><?php  echo $commentaire_task; ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right" width="20%">
+     <b><?php   print_string('referent','referentiel') ?> : </b>
+    </td>
+	<td align="left">
+	<?php p($teacher_info); ?>
+    </td>
+    <td align="right" width="20%">
+     <b><?php   print_string('validation','referentiel') ?> : </b>
+    </td>
+	<td align="left">	
+<?php
+		if (isset($approved) && ($approved)){
+			print_string('approved','referentiel');
+		}
+		else{
+			print_string('not_approved','referentiel');	
+		}
+?>	
+    </td>
+    <td align="right" width="20%">
+     <b><?php   print_string('modification','referentiel') ?> : </b>
+    </td>	
+	<td align="left" colspan="2">
+		<?php  p($date_modif_info) ?>
+    </td>		
+</tr>					
+			
+</table>
+
+<input type="hidden" name="select" value="<?php echo $task_id; ?>" />
+<input type="hidden" name="task_id" value="<?php  echo $task_id; ?>" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="listtask" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+</form>	
+</center>
+<?php
+}
+	}
+	else{
+		error(get_string('notask','referentiel'), "task.php?d=$referentiel_instance->id&amp;mode=listtask");	
+	}
+} 
+?>

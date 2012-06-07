@@ -1,0 +1,88 @@
+This README file is based off the original README written
+by Martin Dougiamas 
+However it as well as some of the code has been re-written so that the 
+module will work with Moodle 1.8 and beyond (with luck)
+
+---------------------------------------------------------
+Jean F. - jean.fruitet@univ-nantes.fr 
+
+Moodle module "referentiel" 
+--------------------------------------------------------- 
+
+----------------
+Historique
+----------------
+v3.2.1 - 2009062600 publiée le 26 juin 2009
+Correction de bugs concernant la modification des activités par l'étudiant ou par l'enseignant et l'ajout de documents attachés
+à des activités et de consignes aux tâches.
+
+v3.2.0 - 2009062300 publiée le 23 juin 2009 au "MoodleMoot2009"
+Correction de bugs concernant l'affichage des activités dans un cours, l'ajout de documents attachés, l'ajout de consignes dans les tâces.
+Désormais le module et ses mise à jours seront disponibles sur le site du MoodleMoot2009 dans le cours "Référentiel"
+Inscrivez-vous sur le forum de ce cours pour recevoir les notifications de mise à jour.
+Il est formellement recommandé de mettre à jour vos versions antérieures qui ne sont plus du tout supportées.
+
+v3.1 11 mai 2009
+Cette version implémente les groupes, les empreintes de compétence, 
+les tâches et le paramétrage du module par l'administrateur au niveau du site.
+Ce module Référentiel remplace les versions antérieures.
+
+V2.0 janvier 2009 Cette version n'est pas distribuée.
+
+V1.0 29/11/2008
+ATTENTION le format des fichiers CSV a changé.
+Vous ne pouvez pas importer les fichiers CSV de la version Moodle Référentiel V.0xx 
+dans le module Référentiel V1.xxx
+
+Il est relativement facile de les corriger "à la main" 
+les fichiers de la version 0.xx en repérant les lignes commençant par # dans le fichier.
+Ce qui a été ajouté : 
+ - l'empreinte d'un item (1 par defaut pour chacun des items)
+Ce qui a été modifié : 
+ - les balise #code sont optimisées.Une seule balise avant la liste des item d'une compétence.
+ - le format de date d'export du fichier est modifié :  Y:2008m:10d:06 pour 06/10/2008
+
+V0.1 mai 2008
+Version initiale qui n'est plus du tout supportée.
+
+-----------------
+Marche à suivre pour installer ce module
+-----------------
+1. Unzip l'archive archive dans le dossier moodle/mod/ 
+
+2. logez-vous avec le role admin
+
+3. installer le module referentiel comme un nouveau module en passant par la rubrique 
+Administration / Notification
+
+4. paramétrer le module au niveau du site en passant par la rubrique 
+Administration / Plugins / Activités / Référentiel
+
+-----------------
+Marche à suivre pour désinstaller ce module
+-----------------
+1. logez-vous avec le role admin
+
+2. Supprimez le module 
+Administration / Plugins / Activités / Gestion des activités 
+Sélectionnner  Référentiel :: Supprimer
+
+3. Supprimez le dossier ./moodle/mod/referentiel
+
+4. Supprimer les dossiers
+./moodledata/#course_id/moddata/referentiel
+
+
+--------------------
+The following steps should get you up and running with
+this module code.
+---------------------
+1. Unzip the archive in moodle/mod/ directory
+
+2. log on with admin role 
+
+3. install new module as usual 
+
+4. Set module parameters 
+Administration / Plugins / Activity / Pository
+

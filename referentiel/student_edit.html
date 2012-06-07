@@ -1,0 +1,131 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+ if (isset($mode) && ($mode=="updateetudiant")){
+
+	// Charger les etudiants
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	
+	$isteacher = has_capability('mod/referentiel:approve', $context);
+	$isauthor = has_capability('mod/referentiel:write', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+	if ((!$isteacher) && (!$iseditor)){
+		$userid=$USER->id; 
+	}
+
+	if ($record){
+		// DEBUG
+		// echo "<br/>DEBUG ::<br />\n";
+		// print_object($record);
+
+			$etudiant_id=$record->id;
+			$num_etudiant=$record->num_etudiant;
+			$ddn_etudiant=$record->ddn_etudiant;
+			$lieu_naissance=$record->lieu_naissance;
+			$departement_naissance=$record->departement_naissance;
+			$adresse_etudiant=$record->adresse_etudiant;
+			$ref_etablissement=$record->ref_etablissement;
+			$userid=$record->userid;
+		
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record);
+			$user_info=referentiel_get_user_info($userid);
+
+			// AFFICHER etudiant
+?>
+<center>
+<h3><?php  print_string('modifier_etudiant','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("etudiant.php?d=$referentiel->id") ?>">
+<table cellpadding="5" width="80%">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('nom_prenom','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<?php  p($user_info); ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('num_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="num_etudiant" size="20" maxlength="20" value="<?php  p($num_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('ddn_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="ddn_etudiant" size="14" maxlength="14" value="<?php  p($ddn_etudiant) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('lieu_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="lieu_naissance" size="40" maxlength="255" value="<?php  p($lieu_naissance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('departement_naissance','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="departement_naissance" size="40" maxlength="255" value="<?php  p($departement_naissance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('adresse_etudiant','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="adresse_etudiant" size="60" maxlength="255" value="<?php  p($adresse_etudiant) ?>" />
+    </td>
+</tr>
+</table>
+
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="etudiant_id" value="<?php  p($etudiant_id) ?>" />
+<input type="hidden" name="ref_etablissement" value="<?php  p($ref_etablissement) ?>" />
+
+<input type="hidden" name="action" value="modifier_etudiant" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+
+</center>
+
+</form>	
+<?php
+		
+	}
+}
+else if (isset($mode) && ($mode=="deleteetudiant")){
+	/// Confirmer la suppression d'un enregistrement
+	if (isset($userid) && ($userid>0)){
+		notice_yesno(get_string('confirmdeleterecord','referentiel'),
+		'etudiant.php?d='.$referentiel->id.'&amp;delete='.$userid.'&amp;confirm=1&amp;sesskey='.sesskey(),
+        'etudiant.php?d='.$referentiel->id);
+	}
+	else{
+		error(get_string('noetudiant','referentiel'), "etudiant.php?d=$referentiel->id&amp;mode=listetudiant");	
+	}
+} 
+ 
+?>

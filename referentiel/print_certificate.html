@@ -1,0 +1,319 @@
+<?php // $Id: print_certificat.html,v 1.0 2009/12/21 06:00:00 jfruitet Exp $
+/**
+ * This page defines the form to  print an instance of referentiel_certificate
+ * It is used from print_certificat.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: certificat_edit.html,v 1.0 2009/12/21 06:00:00 jfruitet Exp $
+ * @package referentiel
+ **/
+
+?>
+
+    <form enctype="multipart/form-data" method="post" action="print_certificat.php?id=<?php echo $cm->id; ?>&amp;userid=<?php echo $userid; ?>">
+        <fieldset class="invisiblefieldset" style="display: block;">
+            <input type="hidden" name="sesskey" value="<?php echo sesskey(); ?>"/>
+
+<table class="certificat" cellpadding="2" width="80%">
+<tr valign="top">
+	<th align="center" colspan="3">
+		<?php  print_string('certificat_sel_print_format','referentiel') ?>
+	</th>
+</tr>
+<tr valign="top">
+<th align="right">
+		<?php echo $txt->fileprint; ?>:</th>
+<td align="left" colspan="2">
+                        <?php choose_from_menu($fileprintnames, 'print', 'xhtml', '');
+                        helpbutton('print', $txt->referentiel, 'referentiel'); ?>
+</td>
+</tr>
+<tr valign="top">
+	<th align="right"><?php echo $txt->exportname; ?>:</th>
+<td align="left" colspan="2">
+                        <input type="text" size="60" name="exportfilename" value="<?php echo $exportfilename; ?>"/>
+	</td>
+</tr>
+
+<tr valign="top">
+	<th align="center" colspan="3">
+		<?php  print_string('selection_champs_certificat','referentiel') ?>
+	</td>
+</tr>
+<tr valign="top">
+    <th align="right"> <?php  print_string('certificat_sel_referentiel','referentiel') ?></th>
+	<td align="left">
+	<?php
+	if (!empty($param->certificat_sel_referentiel) && ($param->certificat_sel_referentiel)){
+		echo '<input type="radio" name="certificat_sel_referentiel" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_referentiel" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_referentiel" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_referentiel" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+</td>
+<td><?php  print_string('config_certificat_sel_referentiel','referentiel') ?></td>
+</tr>
+<tr valign="top">
+    <th align="right"> <?php  print_string('certificat_sel_referentiel_instance','referentiel') ?></th>
+	<td align="left">
+	<?php
+	if (!empty($param->certificat_sel_referentiel_instance) && ($param->certificat_sel_referentiel_instance)){
+		echo '<input type="radio" name="certificat_sel_referentiel_instance" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_referentiel_instance" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_referentiel_instance" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_referentiel_instance" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+</td>
+<td><?php  print_string('config_certificat_sel_referentiel_instance','referentiel') ?></td>
+</tr>
+
+<tr valign="top">
+	<th align="center" colspan="3"><?php  print_string('certificat_sel_etudiant','referentiel') ?></th>
+</tr>
+<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_numero','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_etudiant_numero) && ($param->certificat_sel_etudiant_numero)){
+		echo '<input type="radio" name="certificat_sel_etudiant_numero" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_numero" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_numero" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_numero" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_numero','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_nom_prenom','referentiel') ?></th>	
+    	<td align="left" width="20%">
+	<?php
+	if (!empty($param->certificat_sel_etudiant_nom_prenom) && ($param->certificat_sel_etudiant_nom_prenom)){
+		echo '<input type="radio" name="certificat_sel_etudiant_nom_prenom" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_nom_prenom" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_nom_prenom" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_nom_prenom" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_nom_prenom','referentiel') ?></td>				
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_etablissement','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_etudiant_etablissement) && ($param->certificat_sel_etudiant_etablissement)){
+		echo '<input type="radio" name="certificat_sel_etudiant_etablissement" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_etablissement" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_etablissement" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_etablissement" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_etablissement','referentiel') ?></td>				
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_ddn','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_etudiant_ddn) && ($param->certificat_sel_etudiant_ddn)){
+		echo '<input type="radio" name="certificat_sel_etudiant_ddn" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_ddn" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_ddn" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_ddn" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_ddn','referentiel') ?></td>						
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_lieu_naissance','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_etudiant_lieu_naissance) && ($param->certificat_sel_etudiant_lieu_naissance)){
+		echo '<input type="radio" name="certificat_sel_etudiant_lieu_naissance" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_lieu_naissance" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_lieu_naissance" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_lieu_naissance" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_lieu_naissance','referentiel') ?></td>
+</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_etudiant_adresse','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_etudiant_adresse) && ($param->certificat_sel_etudiant_adresse)){
+		echo '<input type="radio" name="certificat_sel_etudiant_adresse" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_adresse" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_etudiant_adresse" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_etudiant_adresse" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_etudiant_adresse','referentiel') ?></td>
+</tr>
+<tr valign="top">
+	<th align="center" colspan="3"><?php  print_string('certificat_sel_certificat','referentiel') ?></th>
+</tr>
+<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_certificat_detail','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_certificat_detail) && ($param->certificat_sel_certificat_detail)){
+		echo '<input type="radio" name="certificat_sel_certificat_detail" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_detail" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_certificat_detail" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_detail" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_certificat_detail','referentiel') ?></td>		
+	</tr>
+
+<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_certificat_pourcent','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_certificat_pourcent) && ($param->certificat_sel_certificat_pourcent)){
+		echo '<input type="radio" name="certificat_sel_certificat_pourcent" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_pourcent" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_certificat_pourcent" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_pourcent" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_certificat_pourcent','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_activite_competences','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_activite_competences) && ($param->certificat_sel_activite_competences)){
+		echo '<input type="radio" name="certificat_sel_activite_competences" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_activite_competences" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_activite_competences" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_activite_competences" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_activite_competences','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_certificat_competences','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_certificat_competences) && ($param->certificat_sel_certificat_competences)){
+		echo '<input type="radio" name="certificat_sel_certificat_competences" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_competences" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_certificat_competences" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_competences" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_certificat_competences','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_certificat_referents','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_certificat_referents) && ($param->certificat_sel_certificat_referents)){
+		echo '<input type="radio" name="certificat_sel_certificat_referents" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_referents" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_certificat_referents" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_certificat_referents" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+<td><?php  print_string('config_certificat_sel_certificat_referents','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_decision_jury','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_decision_jury) && ($param->certificat_sel_decision_jury)){
+		echo '<input type="radio" name="certificat_sel_decision_jury" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_decision_jury" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_decision_jury" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_decision_jury" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+		<td><?php  print_string('config_certificat_sel_decision_jury','referentiel') ?></td>		
+	</tr>
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sel_commentaire','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	if (!empty($param->certificat_sel_commentaire) && ($param->certificat_sel_commentaire)){
+		echo '<input type="radio" name="certificat_sel_commentaire" value="1" checked="checked" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_commentaire" value="0"/>'.get_string('no');
+	}
+	else{
+		echo '<input type="radio" name="certificat_sel_commentaire" value="1" />'.get_string('yes').' 	
+	<input type="radio" name="certificat_sel_commentaire" value="0" checked="checked" />'.get_string('no');
+	}
+	?>
+		</td>
+		<td><?php  print_string('config_certificat_sel_commentaire','referentiel') ?></td>		
+	</tr>
+
+	<tr valign="top">
+		<th align="right"> <?php  print_string('certificat_sauver_parametre','referentiel') ?></th>	
+    	<td align="left" width="20%">	
+	<?php
+	echo '<input type="checkbox" name="sauver_parametre"  id="sauver_parametre" value="1" />'.get_string('yes');
+	?>
+		</td>
+		<td><?php  print_string('config_sauver_parametre','referentiel') ?></td>		
+	</tr>
+
+<tr valign="top">
+    <th align="center" colspan="3">
+        <input type="submit" name="save" value="<?php echo $txt->printcertificat; ?>"/>
+	</th>
+</tr>
+
+</table>
+
+
+        </fieldset>
+<!-- tous les certificats -->
+<input type="hidden" name="select_all" value="<?php echo $select_all; ?>" />				
+<!-- coaching -->
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<!-- user -->
+<input type="hidden" name="userid" value="<?php echo $userid; ?>" />
+        
+    </form>

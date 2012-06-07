@@ -1,0 +1,138 @@
+<?php // $Id: edit.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author jfruitet
+ * @version $Id: mod.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+ * @package referentiel
+ **/
+ 
+	// demande de mot de passe
+	if (!isset($form->referentiel_id)) {
+    	$form->referentiel_id = $referentiel_referentiel->id;
+	}
+	if (empty($form->instance)) {
+    	$form->instance = $referentiel_referentiel->id;
+	}
+	
+	if (!isset($form->referentiel_id)) {
+		$form->instance = $referentiel_referentiel->id;		
+	}
+	if (!isset($form->name)) {
+    	$form->name = $referentiel_referentiel->name;
+	}
+	if (!isset($form->code)) {
+    	$form->code = $referentiel_referentiel->code;
+	}
+	if (!isset($form->password)) {
+    	$form->password = $referentiel_referentiel->password;
+	}
+	if (!isset($form->old_pass_referentiel)) {
+    	$form->old_pass_referentiel = $referentiel_referentiel->password;
+	}
+	if (!isset($form->refkey)) {
+    	$form->refkey = $referentiel_referentiel->refkey;
+	}
+	if (!isset($form->referentielauthormail)) {
+    	$form->referentielauthormail = $referentiel_referentiel->referentielauthormail;
+	}
+	
+	if (!isset($form->description)) {
+    	$form->description = $referentiel_referentiel->description;
+	}
+	if (!isset($form->url)) {
+    	$form->url = $referentiel_referentiel->url;
+	}
+	if (!isset($form->certificatethreshold)) {
+    	$form->certificatethreshold = $referentiel_referentiel->certificatethreshold;
+	}
+	if (!isset($form->defaultsort)) {
+    	$form->defaultsort = '';
+	}
+	if (!isset($form->defaultsortdir)) {
+    	$form->defaultsortdir = '';
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}
+	
+	if (!isset($form->local)) {
+    	$form->local = $referentiel_referentiel->local;
+	}
+	
+	if (!isset($form->logo)) {
+    	$form->logo = $referentiel_referentiel->logo;
+	}
+
+	if (!isset($form->sesskey)) {
+    	$form->sesskey = sesskey();
+	}
+	if (!isset($form->mode)) {
+    	$form->mode = "update";
+	}
+	
+
+?>
+
+<form name="form" method="post" action="<?php p($appli_appelante."?d=".$referentiel->id."&checkpass=checkpass"); ?>">
+
+<table cellpadding="5" align="center">
+<tr valign="top">
+    <td align="right"><b><?php  print_string('name','referentiel') ?>:</b></td>
+    <td align="left">
+        <?php  echo stripslashes($form->name) ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td align="left">
+        <?php  echo stripslashes($form->code) ?>
+    </td>
+</tr>
+<?php
+    // Administrateur ou auteur ?
+    if (!empty($isadmin) || !empty($isreferentielauteur)) {
+        echo '<tr valign="top">
+    <td align="right"><b>'.get_string('pass_referentiel_admin','referentiel').' :</b></td>
+    <td align="left">
+        <input type="password" name="password" size="20" maxlength="20" value="" />
+     <br><i>'.get_string('existe_pass_referentiel','referentiel').'</i>
+    </td>
+</tr>
+';
+        echo '<input type="hidden" name="force_pass" value="'.$USER->id.'" />'."\n";
+    }
+    else{
+echo '<tr valign="top">
+    <td align="right"><b>'.get_string('password','referentiel').' :</b></td>
+    <td align="left">
+        <input type="password" name="password" size="20" maxlength="20" value="" />
+'.get_string('check_pass_referentiel','referentiel').'
+    </td>
+</tr>
+';
+    }
+?>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="referentielauthormail" value="<?php  p($form->referentielauthormail); ?>" />
+<input type="hidden" name="old_pass_referentiel" value="<?php  p($form->old_pass_referentiel); ?>" />
+<input type="hidden" name="cle_referentiel" value="<?php  p($form->cle_referentiel); ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<!-- input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" / -->
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+</td>
+</tr>
+</table>
+
+</form>
+
+
+

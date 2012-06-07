@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>Connaître son environnement de travail</name>
+ <code>RefMoodle-A</code>
+ <description>
+<text>V6 - Domaine A - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas Postec  - Nicolas.Postec@univ.lemans.fr Michel Lopez - Michel.lopez@univ.lemans.fr Maelle Crosse - Maelle.Crosse@univ.lemans.frFrédéric Habert - Frederic.Habert@uni-nantes.frNathalie Lusson - Nathalie.Lusson@univ-angers.fr</text>
+</description>
+ <url>http://scirn.univ-lemans.fr</url>
+ <certificatethreshold>0</certificatethreshold>
+ <timemodified>1277540313</timemodified>
+ <nb_domaines>3</nb_domaines>
+ <liste_codes_competence>RMDA1.1.1/RMDA1.1.2/RMDA2.1.1/RMDA2.1.2/RMDA3.1.1/RMDA3.2.1/RMDA3.2.2/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>RMDA1</code>
+  <description>
+<text>Se connecter</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>RMDA1.1</code>
+   <description>
+<text>Connaître la procédure d'authentification et de connexion à la plateforme</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDA1.1.1</code>
+    <description>
+<text>Identifier les boutons de connexion</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDA1.1.2</code>
+    <description>
+<text>Localiser le lien et/ou le bouton « connexion » sur la page d'accueil de la plateforme</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDA2</code>
+  <description>
+<text>S'inscrire à un cours</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>RMDA2.1</code>
+   <description>
+<text>Sélectionner un cours et y accéder</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDA2.1.1</code>
+    <description>
+<text>Identifier un cours</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDA2.1.2</code>
+    <description>
+<text>S'inscrire à un cours en accès libre ou conditionnel</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDA3</code>
+  <description>
+<text>Se repérer dans la formation</text>
+</description>
+  <sortorder>3</sortorder>
+  <nb_competences>3</nb_competences>
+
+  <competence>
+   <code>RMDA3.1</code>
+   <description>
+<text>Se repérer dans l'espace cours</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>1</nb_item_competences>
+
+   <item>
+    <code>RMDA3.1.1</code>
+    <description>
+<text>Identifier les blocs latéraux</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDA3.2</code>
+   <description>
+<text>Identifier et localiser les documents pédagogiques (ressources et activités)</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDA3.2.1</code>
+    <description>
+<text>Interpréter les icônes « Ressources »</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDA3.2.2</code>
+    <description>
+<text>Interpréter les icônes « Activités »</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

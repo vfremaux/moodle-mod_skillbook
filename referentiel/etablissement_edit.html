@@ -1,0 +1,101 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+ if (isset($mode) && ($mode=="updateetablissement")){
+
+	// Charger les etablissements
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	
+	$isteacher = has_capability('mod/referentiel:approve', $context);
+	$isauthor = has_capability('mod/referentiel:write', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+
+	if ($record){
+		// DEBUG
+		// echo "<br/>DEBUG ::<br />\n";
+		// print_object($record);
+	$record->idnumber = "INCONNU";
+	$record->name = "INCONNU";
+	$record->address = "INCONNU";
+
+			$etablissement_id=$record->id;
+			$idnumber=$record->idnumber;
+			$name=$record->name;
+			$address=$record->address;
+		
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record);
+
+
+			// AFFICHER etablissement
+?>
+<center>
+<h3><?php  print_string('modifier_etablissement','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("etablissement.php?d=$referentiel->id") ?>">
+<table cellpadding="5" width="80%">
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('idnumber','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="idnumber" size="20" maxlength="20" value="<?php  p($idnumber) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('name','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="name" size="40" maxlength="255" value="<?php  p($name) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('address','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="address" size="60" maxlength="255" value="<?php  p($address) ?>" />
+    </td>
+</tr>
+</table>
+
+<input type="hidden" name="etablissement_id" value="<?php  p($etablissement_id) ?>" />
+
+<input type="hidden" name="action" value="modifier_etablissement" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+
+</center>
+
+</form>	
+<?php
+		
+	}
+}
+else if (isset($mode) && ($mode=="deleteetablissement")){
+	/// Confirmer la suppression d'un enregistrement
+	if (isset($etablissement_id) && ($etablissement_id>0)){
+		notice_yesno(get_string('confirmdeleterecord','referentiel'),
+		'etablissement.php?d='.$referentiel->id.'&amp;delete='.$etablissement_id.'&amp;confirm=1&amp;sesskey='.sesskey(),
+        'etablissement.php?d='.$referentiel->id);
+	}
+	else{
+		error(get_string('noetablissement','referentiel'), "etablissement.php?d=$referentiel->id&amp;mode=listetablissement");	
+	}
+} 
+ 
+?>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv='content-type' content='text/html; charset=utf8'>
+<meta name='generator' content='Referentiel editor'>
+<title>Documentation de l'Editeur de référentiel de compétences</title>
+<link type='text/css' href='content.css' rel='stylesheet'>
+<body>
+<h1>Editeur de référentiel de compétence pour le module Référentiel de Moodle</h1>
+<img src="img/palette.png" border="0"></p>
+<p>
+Programmé par <a href="mailto:jean.fruitet@univ-nantes.fr">JF</a> - Basé sur <a href="http://tinymce.moxiecode.com/">TinyMCE</a>.
+</p>
+<h2>Utilisation</h2>
+Cet éditeur g&eacute;n&egrave;re un format de fichier XML pour int&eacute;gration dans le module R&eacute;f&eacute;rentiel de Moodle
+<h3>Saisie</h3>
+<img src="img/copier.png" border="0"></p>
+<ol>
+<li> Copier-coller le texte du r&eacute;f&eacute;rentiel dans l'&eacute;diteur
+
+<h4>Recommandations</h4>
+<p>Pour que la conversion opère correctement il est indispensable de respecter quelques règles syntaxiques</p>
+<ul>
+<li>Chaque domaine, compétence, item doit commencer par un code unique, si possible hiérarchique
+</li><li>Le code du référentiel doit venir en premier mot du texte
+</li><li>Le nom du référentiel en seconde mot du texte ; il est utilisé comme nom de fichier.
+</li><li>La description du référentiel en troisième ligne
+</li><li>Puis enchainer domaine / compétence / item selon une structure hiérarchique.
+</ul>
+<p>Exemple</p>
+<div class="exemple">
+<pre>
+RefJardinier
+Certificat_de_Jardinage par Hubert La Main Verte. Contact : h.lmv@ici.la
+A Pr&eacute;parer le sol
+A1 Bêcher
+A1-1 Je sais retourner une parcelle de 40 m&egrave;tre-carr&eacute; &agrave; la b&egrave;che
+A1-2 Je sais entretenir et utiliser un motoculteur
+A2 Apports
+A2-1 J'utilise du compost pour amender le sol
+A2-2 J'arrose &agrave; bon escient
+
+etc.
+</pre>
+</div>
+</li>
+</ol>
+<h3>Réécriture</h3>
+<img src="img/edition.png" border="0"></p>
+<p>Procéder en remontant de la fin du texte vers le début</p>
+<ol>
+<li> Pour chaque Item, s&eacute;lectionner une d&eacute;finition et cliquer sur le bouton "<b>I</b>" (item)</li>
+<li> Pour chaque comp&eacute;tence, s&eacute;lectionner la d&eacute;finition et la liste d'items et cliquer sur le bouton "<b>C</b>" (competence)</li>
+<li> Pour chaque domaine, s&eacute;lectionner la d&eacute;finition et la liste de comp&eacute;tences et cliquer sur le bouton "<b>D</b>" (domaine)</li>
+<li> S&eacute;lectionner enfin l'ensemble du texte et cliquer sur le bouton "<b>R</b>" (referentiel)</li>
+</ol>
+<p><img src="img/capture_item.png" border="0"></p>
+<p>Au final on obtient une structure sur ce mod&egrave;le
+<div class="exemple">
+<pre>
+[referentiel]
+[idcode]RefJardinier[/idcode]
+[name]NOM_A_VALIDER: Certificat_de_Jardinage[/name]
+[definition][text]par Hubert La Main Verte. Contact : h.lmv@ici.la[/text][/definition]
+  [domaine]
+        [idcode]A[/idcode]
+        [definition][text]Préparer le sol[/text][/definition]
+    [competence]
+        [idcode]A1[/idcode]
+        [definition][text]Bêcher[/text][/definition]
+      [item]
+        [idcode]A1-1[/idcode]
+        [definition][text] Je sais retourner une parcelle de 40 mètre-carré à la bèche[/text][/definition]
+      [/item]
+      [item]
+        [idcode]A1-2[/idcode]
+        [definition][text] Je sais entretenir et utiliser un motoculteur[/text][/definition]
+      [/item]
+    [/competence]
+    [competence]
+        [idcode]A2[/idcode]
+        [definition][text]Apports[/text][/definition]
+      [item]
+        [idcode]A2-1[/idcode]
+        [definition][text] J'utilise du compost pour amender le sol[/text][/definition]
+      [/item]
+      [item]
+        [idcode]A2-2[/idcode]
+        [definition][text] J'arrose à bon escient[/text][/definition]
+      [/item]
+    [/competence]
+  [/domaine]
+
+etc.
+[/referentiel]
+</pre>
+</div>
+<p>En cas de nécessité on peut retoucher le texte avec les outils <br>
+<img src="img/correction.png" border="0"></p>
+<ul>
+<li> "<b><i>c</i></b>" (code)</li>
+<li> "<b><i>n</i></b>" (nom)</li>
+<li> "<b><i>t</i></b>" (definition)</li>
+<li> "<b><i>u</i></b>" (url)</li>
+</ul>
+<h3>Enregistrement</h3>
+<p>Cliquer sur le bouton "Save" pour convertir le r&eacute;f&eacute;rentiel dans le format XML du module R&eacute;f&eacute;rentiel de Moodle.
+<br>
+<img src="img/save.png" border="0">
+<br>Lors de la conversion les valeurs ci-après sont utilisées :
+</p>
+<ul>
+<li>Poids par d&eacute;faut : 1</li>
+<li>Empreinte par d&eacute;faut : 1</li>
+<li>Nom du fichier par d&eacute;faut : nom du r&eacute;f&eacute;rentiel</li>
+</ul>
+<h4>Résultat de la conversion</h4>
+<div class="exemple">
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+
+&lt;referentiel&gt;
+&lt;idcode&gt;RefJardinier&lt;/idcode&gt;
+ &lt;name&gt;Certificat_de_Jardinage&lt;/name&gt;
+ &lt;definition&gt;&lt;text&gt;par Hubert La Main Verte. Contact : h.lmv@ici.la&lt;/text&gt;&lt;/definition&gt;
+  &lt;domaine&gt;
+      &lt;idcode&gt;A&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt;Préparer le sol&lt;/text&gt;&lt;/definition&gt;
+   &lt;competence&gt;
+      &lt;idcode&gt;A1&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt;Bêcher&lt;/text&gt;&lt;/definition&gt;
+    &lt;item&gt;
+      &lt;idcode&gt;A1-1&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt; Je sais retourner une parcelle de 40 mètre-carré à la bèche&lt;/text&gt;&lt;/definition&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;idcode&gt;A1-2&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt; Je sais entretenir et utiliser un motoculteur&lt;/text&gt;&lt;/definition&gt;
+    &lt;/item&gt;
+   &lt;/competence&gt;
+   &lt;competence&gt;
+      &lt;idcode&gt;A2&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt;Apports&lt;/text&gt;&lt;/definition&gt;
+    &lt;item&gt;
+      &lt;idcode&gt;A2-1&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt; J'utilise du compost pour amender le sol&lt;/text&gt;&lt;/definition&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;idcode&gt;A2-2&lt;/idcode&gt;
+     &lt;definition&gt;&lt;text&gt; J'arrose à bon escient&lt;/text&gt;&lt;/definition&gt;
+    &lt;/item&gt;
+   &lt;/competence&gt;
+  &lt;/domaine&gt;
+
+ &lt;/referentiel&gt;
+</pre>
+</div>
+<p>Le fichier a l'extension "<b>_sxml.xml</b>" qui permet de le distinguer des référentiels exportés depuis le module référentiel de Moodle.</p>
+</body>
+</html>

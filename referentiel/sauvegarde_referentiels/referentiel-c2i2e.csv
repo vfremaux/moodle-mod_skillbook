@@ -1,0 +1,55 @@
+#Moodle Referentiel CSV Export;latin1;Admin Utilisateur;;;;;;;
+#code;nom_referentiel;description;url;timecreated;nb_domaines;certificatethreshold;liste_codes_competences;liste_empreintes;logo
+C2i2e;Référentiel C2i2e;"Certificat Informatique et Internet niveau 2 ""Enseignant""";http://www.education.gouv.fr/bo/2006/1/MENT0502170C.htm;Y:2010m:06d:22;2;95;A.1.1/A.1.2/A.1.3/A.1.4/A.1.5/A.2.1/A.2.2/A.2.3/A.3.1/A.3.2/A.3.3/A.3.4/B.1.1/B.1.2/B.1.3/B.2.1/B.2.2/B.2.3/B.2.4/B.3.1/B.3.2/B.3.3/B.3.4/B.3.5/B.4.1/B.4.2/B.4.3/;1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/;
+#code;description;referentielid;sortorder;nb_competences;;;;;
+A;Compétences générales liées à l'exercice du métier.;1;1;;;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+A.1;Maîtrise de l'environnement numérique professionnel.;1;5;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+A.1.1;Identifier les personnes ressources TIC et leurs rôles respectifs dans l'école ou l'établissement, et en dehors (circonscription, bassin, Académie, niveau national...);Obligatoire;5;1;1;;;;
+A.1.2;S'approprier les différentes composantes informatiques (lieux, outils...) de son environnement professionnel;Obligatoire;5;2;1;;;;
+A.1.3;Choisir et utiliser les ressources et services d'un environnement numérique de travail (ENT);Optionnel;1;3;1;;;;
+A.1.4;Choisir et utiliser les outils les plus adaptés pour communiquer avec les acteurs et usagers du système éducatif;Optionnel;1;4;1;;;;
+A.1.5;Se constituer et organiser des ressources en utilisant des sources professionnelles;Obligatoire;5;5;1;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+A.2;Développement des compétences pour la formation tout au long de la vie;2;3;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+A.2.1;Utiliser les ressources en ligne et les dispositifs de Formation Ouverte et à Distance (FOAD) pour sa formation;Obligatoire;5;1;1
+A.2.2;Se référer à des travaux de recherche liant savoirs, apprentissages et TICE;Optionnel;1;2;1
+A.2.3;Pratiquer une veille pédagogique et institutionnelle, notamment par l'identification des réseaux d'échange concernant son domaine, sa discipline, son niveau d'enseignement;Optionnel;1;3;1
+#code;description;sortorder;nb_item_competences;;
+A.3;Responsabilité professionnelle dans le cadre du système éducatif;3;4;;
+#code;description;type;weight;sortorder;footprint
+A.3.1;S'exprimer et communiquer en s'adaptant aux différents destinataires et espaces de diffusion (institutionnel, public, privé, interne, externe...);Obligatoire;5;1;1
+A.3.2;Prendre en compte les enjeux et respecter les règles concernant notamment la recherche et les critères de contrôle de validité des informations, la sécurité informatique, le filtrage Internet;Obligatoire;5;2;1
+A.3.3;Prendre en compte les lois et les exigences d'une utilisation professionnelle et citoyenne des TICE concernant : la protection des libertés individuelles et publiques, la sécurité des personnes, la protection des mineurs, la confidentialité des données, la propriété intellectuelle, le droit à l'image;Obligatoire;5;3;1
+A.3.4;Respecter et faire respecter la charte d'usage de l'établissement, dans une perspective éducative d'apprentissage de la citoyenneté;Obligatoire;5;4;1
+#code;description;referentielid;sortorder;nb_competences;
+B;Compétences nécessaires à l'intégration des TICE dans sa pratique;2;2;;
+#code;description;sortorder;nb_item_competences;;
+B.1;Travail en réseau avec l'utilisation des outils de travail collaboratif;1;3;;
+#code;description;type;weight;sortorder;footprint
+B.1.1;Rechercher, produire, partager et mutualiser des documents, des informations, des ressources dans un environnement numérique;Obligatoire;5;1;1
+B.1.2;Contribuer à une production ou à un activite collectif au sein d'équipes disciplinaires, interdisciplinaires, transversales ou éducatives;Obligatoire;5;2;1
+B.1.3;Concevoir des situations de recherche d'information dans le cadre de activités transversales et interdisciplinaires;Optionnel;1;3;1
+#code;description;sortorder;nb_item_competences;;
+B.2;Conception et préparation de contenus d'enseignement et de situations d'apprentissage;2;4;;
+#code;description;type;weight;sortorder;footprint
+B.2.1;Identifier les situations d'apprentissage propices à l'utilisation des TICE;Obligatoire;5;1;1
+B.2.2;Concevoir des situations d'apprentissage et d'évaluation mettant en oeuvre des logiciels généraux ou spécifiques à la discipline, au domaine enseigné, au niveau de la classe;Obligatoire;5;2;1
+B.2.3;Intégrer des outils et des ressources dans une séquence d'enseignement, en opérant des choix entre les supports et médias utilisables et leurs modalités d'utilisation;Obligatoire;5;3;1
+B.2.4;Préparer des ressources adaptées à la diversité des publics et des situations pédagogiques en respectant les règles de la communication;Optionnel;1;4;1
+#code;description;sortorder;nb_item_competences;;
+B.3;Mise en oeuvre pédagogique en présentiel et à distance;3;5;;
+#code;description;type;weight;sortorder;footprint
+B.3.1;Conduire des situations d'apprentissage en tirant partie du potentiel des TIC : travail collectif, individualisé, en petits groupes;Obligatoire;5;1;1
+B.3.2;Gérer l'alternance, au cours d'une séance, entre les activités utilisant les TICE et celles qui n'y ont pas recours;Obligatoire;5;2;1
+B.3.3;Prendre en compte la diversité des élèves la difficulté scolaire en utilisant les TICE pour gérer des temps et des modalités de travail différenciés, en présentiel et/ou à distance;Obligatoire;5;3;1
+B.3.4;Utiliser les TICE pour accompagner des élèves, des groupes d'élèves dans leurs activites de production ou de recherche d'information;Optionnel;1;4;1
+B.3.5;Anticiper un incident technique ou y faire face;Optionnel;1;5;1
+#code;description;sortorder;nb_item_competences;;
+B.4;Compétences d'évaluation;4;3;;
+#code;description;type;weight;sortorder;footprint
+B.4.1;Identifier les compétences des référentiels TIC (B2i ® ou C2i ®) mises en oeuvre dans une situation de formation proposée aux élèves, aux étudiants;Obligatoire;5;1;1
+B.4.2;S'intégrer dans une démarche collective d'évaluation des compétences TIC (B2i ® ou C2i ®);Obligatoire;5;2;1
+B.4.3;Exploiter les résultats produits par des logiciels institutionnels d'évaluation des élèves (J'ADE).;Optionnel;1;3;1

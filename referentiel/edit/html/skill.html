@@ -1,0 +1,75 @@
+<style type="text/css">
+	.fiche /* Le tableau en lui-même */
+	{
+	   margin: auto;
+	   border: 0px;
+	   width:95%;
+	   border-collapse: collapse; /* Colle les bordures entre elles */
+	   margin-top: 10px;
+	   margin-bottom: 10px;
+	}
+	
+	.fiche td /* Les cellules normales */
+	{
+	   border: 1px solid gray;
+	   text-align: left;
+	   padding-left: 5px;
+	   padding-right: 5px;
+	   padding-top: 5px;
+	   padding-bottom: 5px;
+	}
+</style>	
+
+<h3>Description</h3>
+<p><table class="fiche">
+	<tr>
+		<td>
+			<h4>Discipline</h4>
+			<p><?php echo $disciplines ?></p>
+		</td>
+		<td>
+			<h4>Resumé</h4>
+			<p><?php echo $lp->summary ?></p>
+		</td>
+	</tr>
+	<tr>
+		<td></td>							
+		<td>
+			<h4>Objectif</h4>
+			<p><?php echo $lp->goal ?></p>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<h4>Public ciblé</h4>
+			<p><?php echo $lp->levels ?></p>
+		</td>
+		<td>
+			<h4>Source</h4>
+			<p><?php echo $lp->region ?></p>
+		</td>
+	</tr>
+	<tr>						
+		<td>
+			<h4>Etat PLF</h4>
+			<p><?php echo $plfstate ?></p>
+		</td>
+		<td>
+			<h4>Remarques PLF</h4>
+			<p><?php echo $lp->notes ?></p>
+		</td>
+	</tr>
+	<tr>						
+		<td>
+			<h4>Type de financement</h4>
+			<p><?php echo $founding ?></p>
+		</td>
+		<td>
+			<h4>Montant du financement</h4>
+			<p><?php echo $lp->amount ?> euros.</p>
+		</td>
+	</tr>
+</table></p>
+
+<h3>Liste des membres de l'équipe</h3><br/>

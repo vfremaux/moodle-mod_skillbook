@@ -1,0 +1,180 @@
+<?php
+/* ******************CHARGER UN FICHIER **********************/
+
+/// Upload records section.
+if (isset($record) && $record){ // record document 
+	if (isset($record_document) && ($record_document)){
+		$document_id=$record_document->id;
+		$type = stripslashes($record_document->type);
+		$description = stripslashes($record_document->description);
+		$url = stripslashes($record_document->url);
+		$activityid = $record_document->activityid;	
+		$activite_id = $record_document->activityid;
+		$target = $record_document->target; // fenêtre cible
+		$label = $record_document->label; // etiquette
+	}
+	else{
+		// AJOUTER un document
+		$document_id=0;
+		$type = '';
+		$description = '';
+		$url = '';
+		$activityid = $record->id;
+		$activite_id = $record->id;
+		$target = 1; // autre fenêtre 
+		$label = ''; // etiquette		
+	}
+?>
+
+<form id="form" enctype="multipart/form-data" method="post" action="<?php p("upload.php?d=$referentiel->id") ?>">
+
+<table align="center" bgcolor="#ffffdd">
+<tr valign="top">
+<td align="center" colspan="2">
+<b><?php  print_string('document_associe','referentiel') ?></b>
+</td>
+</tr>	
+<tr valign="top" bgcolor="#dddddd">
+    <td align="right">
+<b><?php  print_string('type','referentiel')?></b>
+<br />
+<i><span class="small"><?php print_string('extensions_document','referentiel'); ?></span></i>
+	</td>
+    <td align="left">
+<input type="text" name="type" size="20" maxlength="20" value="<?php  p($type) ?>" />
+    </td>
+</tr>	
+<tr valign="top" bgcolor="#dddddd">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?></b>
+	</td>
+    <td align="left">
+<textarea cols="50" rows="2" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+
+</td>
+</tr>
+
+<tr valign="top">
+<td align="center" colspan="2">
+	<b><?php  print_string('choix_web_link','referentiel') ?></b>
+</td>
+</tr>
+
+<?php	
+	echo '<tr valign="top"><td align="right">'.get_string('url','referentiel').'</td><td align="left">
+<input type="text" name="url" size="70" maxlength="255" value="'.$url.'" /></td></tr>'."\n";
+	echo '<tr valign="top"><td align="right">'. get_string('label','referentiel').'</td><td align="left">
+<input type="text" name="label" size="55" maxlength="255" value="'.$label.'" /></td></tr>'."\n";
+	echo '<tr valign="top"><td align="right">'. get_string('cible_link','referentiel').'</td><td align="left">'."\n";
+	if ($target){
+		echo ' <input type="radio" name="target" value="1" checked="checked" />'.get_string('yes').'
+<input type="radio" name="target" value="0" />'.get_string('no')."\n";
+	}
+	else{
+		echo ' <input type="radio" name="target" value="1" />'.get_string('yes').'
+<input type="radio" name="target" value="0" checked="checked" />'.get_string('no')."\n";
+	}
+	echo '</td></tr>'."\n";
+?>
+<tr valign="top">
+<td align="center" colspan="2">
+<input type="submit" name="url" value="<?php  print_string("savechanges") ?>" />
+    </td>
+</tr>
+
+<tr valign="top" bgcolor="#aaaaff">
+<td align="center" colspan="2">
+<b>
+<?php
+p($txt->importfileupload); 
+?> 
+</b>
+<?php	
+	helpbutton('document', 'depot_document', 'referentiel');
+?>
+</td>
+</tr>
+<tr valign="top" bgcolor="#aaaaff">
+<td align="center" colspan="2">
+<?php 
+upload_print_form_fragment(1,array('newfile'),null,false,null,$course->maxbytes,0,false); 
+?>
+</td>
+</tr>
+<tr valign="top" bgcolor="#aaaaff">
+<td align="center" colspan="2">
+<input type="submit" name="save" value="<?php p($txt->uploadthisfile); ?>" />
+</td>
+</tr>
+
+<?php		 
+	if (has_capability('moodle/course:managefiles', get_context_instance(CONTEXT_COURSE, $course->id))
+		&& has_capability('mod/referentiel:import',get_context_instance(CONTEXT_MODULE, $cm->id))) {	
+		// teacher 		
+?>	
+<tr valign="top" bgcolor="#aaaaff">
+<td align="right" width="50%">
+<b>
+<?php 		
+		p($txt->importfilearea); 
+?>
+</b>
+</td><td>
+<?php 
+		helpbutton('document', 'depot_document', 'referentiel');
+?>
+</td>
+<tr valign="top" bgcolor="#aaffaa">
+<td align="right">
+<?php 
+p($txt->file); 
+?>
+:
+</td>
+<td align="left">
+<input type="text" name="choosefile" size="50" />
+</td>
+</tr>
+
+<tr valign="top" bgcolor="#aaffaa">
+<td align="center" colspan="2">
+
+<?php  
+button_to_popup_window ("/files/index.php?id={$course->id}&amp;choose=form.choosefile", 
+                        "coursefiles", $txt->choosefile, 500, 750, $txt->choosefile); 
+?>
+<input type="submit" name="save" value="<?php p($txt->importfromthisfile); ?>" />
+</td>
+</tr>
+<?php
+}
+?>
+
+<tr valign="top" bgcolor="#ffaaaa">
+<td align="center" colspan="2">
+<input type="submit" name="cancel" value="Quitter" />
+</td>
+</tr>
+
+</table>
+<!--
+<input type="hidden" name="description" value="<?php  p($description) ?>" />
+	<input type="hidden" name="type" value="<?php  p($type) ?>" />
+
+	<input type="hidden" name="url" value="<?php  p($url) ?>" />
+-->
+	<input type="hidden" name="userid" value="<?php echo $userid; ?>" />
+	<input type="hidden" name="newdocument" value="1" />
+    <input type="hidden" name="sesskey" value="<?php p(sesskey()); ?>" />
+	<input type="hidden" name="courseid" value="<?php p($course->id) ?>" />
+    <input type="hidden" name="activite_id" value="<?php p($activite_id) ?>" />	
+	<input type="hidden" name="document_id" value="<?php p($document_id) ?>" />		
+	<input type="hidden" name="activityid" value="<?php  p($activite_id) ?>" />
+	<input type="hidden" name="action" value="modifier_document" />
+	<input type="hidden" name="mode" value="<?php  p($mode) ?>" />
+	</form>
+<?php
+}
+?>

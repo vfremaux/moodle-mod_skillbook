@@ -1,0 +1,17 @@
+Moodle Referentiel V1.0 de novembre 2008 et suivantes
+
+ATTENTION le format des fichiers CSV a changé.
+Vous ne pouvez pas importer les fichiers CSV de la version Moodle Référentiel V.0xx 
+dans le module Référentiel V1.xxx et suivantes
+
+Il est relativement facile de corriger "à la main" 
+les fichiers de la version 0.xx en repérant les lignes commençant par # dans le fichier.
+Ce qui a été ajouté : 
+ - l'empreinte d'un item (1 par defaut pour chacun des items)
+Ce qui a été modifié : 
+ - les balise #code sont optimisées. Une seule balise avant la liste des item d'une compétence.
+ - le format de date d'export du fichier est modifié :  Y:2008m:10d:06 pour 06/10/2008
+
+
+ATTENTION :
+Si son empreinte vaut 0 l'item n'est pas retenu pour l'évaluation de la compétence.

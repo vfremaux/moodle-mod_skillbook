@@ -1,0 +1,106 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to  edit configuration of a skill repository
+ * It is used from config_ref.php.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2010/10/19 08:11:00 jf Exp $
+ * @package referentiel
+ **/
+///////////////////////////////////////////////////////////////////////////
+//                                                                       //
+// NOTICE OF COPYRIGHT                                                   //
+//                                                                       //
+// Moodle - Modular Object-Oriented Dynamic Learning Environment         //
+//          http://moodle.org                                            //
+//                                                                       //
+// Copyright (C) 2005 Martin Dougiamas  http://dougiamas.com             //
+//                                                                       //
+// This program is free software; you can redistribute it and/or modify  //
+// it under the terms of the GNU General Public License as published by  //
+// the Free Software Foundation; either version 2 of the License, or     //
+// (at your option) any later version.                                   //
+//                                                                       //
+// This program is distributed in the hope that it will be useful,       //
+// but WITHOUT ANY WARRANTY; without even the implied warranty of        //
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         //
+// GNU General Public License for more details:                          //
+//                                                                       //
+//          http://www.gnu.org/copyleft/gpl.html                         //
+//                                                                       //
+///////////////////////////////////////////////////////////////////////////
+if ($referentiel && $referentiel_referentiel){
+
+    $form->course = $referentiel->course;
+	$form->instance = $referentiel->id;	// tres important
+
+    $referentiel_id = $referentiel_referentiel->id;
+	$name = $referentiel_referentiel->name;
+	$code = stripslashes($referentiel_referentiel->code);
+	$description = stripslashes($referentiel_referentiel->description);
+
+    // configuration
+    $form->config = $referentiel_referentiel->config;
+	$form->printconfig = $referentiel_referentiel->printconfig;
+
+    // Administrateur ?
+    $isadmin = referentiel_is_admin($USER->id, $form->course);
+
+?>
+<h3 align="center"><?php  print_string('configurer_referentiel', 'referentiel', $code); ?></h3>
+<form name="form" method="post" action="<?php echo 'config_ref.php?d='.$referentiel->id.'&amp;mode=configref&amp;pass=1&amp;sesskey='.sesskey(); ?>">
+
+<center>
+<table cellpadding="5" bgcolor="#eeeeee">
+<tr valign="top">
+    <td align="right"><b><?php  echo get_string('name','referentiel').' ('.get_string('code','referentiel').') '; ?>:</b></td>
+    <td align="left">
+       <?php  p($name); ?> ( <?php  p($code); ?>)
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description', 'referentiel') ?>:</b></td>
+    <td align="left">
+		<?php  p($description); ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('referentiel_config_global','referentiel') ?>:</b></td>
+    <td align="left">
+<?php 
+    echo '<i>';
+    print_string('aide_referentiel_config_global', 'referentiel');
+    echo '</i><br />'.referentiel_selection_configuration($form->config, 'config');
+?>
+
+    </td>
+</tr>	
+<?php
+			if (referentiel_global_can_print_referentiel($referentiel_id)){
+				echo ' <!-- impression certificat -->
+<tr valign="top">
+    <td align="right"><b>'.get_string('referentiel_config_global_impression','referentiel').':</b></td>
+    <td align="left">'.referentiel_selection_configuration($form->printconfig, 'printconfig').'
+    </td>
+</tr>
+';
+			}
+?>
+</table>
+<input type="hidden" name="action" value="modifierconfig" />
+<input type="hidden" name="referentielid" value="<?php  p($referentiel_id) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course" value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey" value="<?php  echo sesskey(); ?>" />
+<input type="hidden" name="instance" value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode" value="configref" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+
+</center>
+</form>
+<?php
+}
+
+?>

@@ -1,0 +1,222 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+
+require_once('../mod/referentiel/lib.php');
+
+if (isset($update) && ($update>0)){
+	if (isset($form->instance) && ($form->instance>0)){
+		// saisie de l'instance
+
+		$referentiel_instance = referentiel_get_referentiel($form->instance);
+		if ($referentiel_instance){
+			$form->name_instance=stripslashes($referentiel_instance->name);
+			$form->description=stripslashes($referentiel_instance->description);
+			$form->domainlabel=stripslashes($referentiel_instance->domainlabel);
+			$form->skilllabel=stripslashes($referentiel_instance->skilllabel);
+			$form->itemlabel=stripslashes($referentiel_instance->itemlabel);
+			
+		    $form->timecreated=$referentiel_instance->timecreated;
+			$form->course=$referentiel_instance->course;
+			$form->referentielid=$referentiel_instance->referentielid;		
+			
+			// configuration
+			$form->config=$referentiel_instance->config;
+			$form->printconfig=$referentiel_instance->printconfig;
+
+			$form->config_globale=referentiel_ref_get_vecteur_config($referentiel_instance->referentielid);
+			$form->config_impression_globale = referentiel_ref_get_vecteur_config_imp($referentiel_instance->referentielid);
+
+			if ($referentiel_instance->referentielid>0){
+				$nom_referentiel= referentiel_get_nom_referentiel($referentiel_instance->referentielid);
+			}
+			else {
+				$nom_referentiel= "";
+			}
+?>
+<h3 align="center"><?php  print_string('modifier_instance_referentiel','referentiel', $form->name_instance); ?></h3>
+<form name="form" method="post" action="<?php echo $CFG->wwwroot.'/course/mod.php'; ?>">
+
+<center>
+<table cellpadding="5" bgcolor="#eeeeee">
+<tr valign="top">
+    <td align="right"><b><?php  print_string('name_instance','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="name_instance" size="60" maxlength="80" value="<?php  p($form->name_instance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description"><?php  p($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_domaine_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="domainlabel" size="60" maxlength="80" value="<?php  p($form->domainlabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_competence_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="skilllabel" size="60" maxlength="80" value="<?php  p($form->skilllabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_item_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="itemlabel" size="60" maxlength="80" value="<?php  p($form->itemlabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('referentiel_config_local','referentiel'); ?>:</b></td>
+    <td align="left">
+<?php 
+    if (referentiel_site_can_write_or_import_referentiel($form->instance)){
+        echo get_string('aide_referentiel_config_local','referentiel');
+        echo '<br /><br />'.referentiel_selection_configuration($form->config, 'config');
+    }
+    else{
+        // niveau supérieur de configuration
+        echo '<i>'.get_string('referentiel_config_local_interdite','referentiel').'</i>'."\n";
+        echo '<br /><br />'.referentiel_affiche_config($form->config_globale, 'config');
+        echo '<input type="hidden" name="config" value="'.$form->config.'" />'."\n";
+    }
+?>
+    </td>
+</tr>
+<tr valign="top">   <!-- impression certificat -->
+    <td align="right"><b><?php  print_string('referentiel_config_local_impression','referentiel'); ?>:</b></td>
+    <td align="left">
+<?php
+    if (referentiel_site_can_print_referentiel($form->instance)){
+        echo get_string('aide_referentiel_config_local_impression','referentiel');
+        echo '<br /><br />'.referentiel_selection_configuration($form->printconfig, 'printconfig');
+	}
+    else{
+        // niveau supérieur de configuration
+        echo '<i>'.get_string('referentiel_config_impression_local_interdite','referentiel').'</i>'."\n";
+        echo '<br /><br />'.referentiel_affiche_config($form->config_impression_globale, 'printconfig');
+        echo '<input type="hidden" name="printconfig" value="'.$form->printconfig.'" />'."\n";
+    }
+?>
+    </td>
+</tr>
+</table>
+<input type="hidden" name="referentielid" value="<?php  p($form->referentielid) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="coursemodule"  value="<?php  p($form->coursemodule) ?>" />
+<input type="hidden" name="section"       value="<?php  p($form->section) ?>" />
+<input type="hidden" name="module"        value="<?php  p($form->module) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+</center>
+</form>
+<?php
+		}
+	}
+}	
+else{
+/// First we check that form variables have been initialised
+if (!isset($form->name_instance)) {
+    $form->name_instance = '';
+}
+if (!isset($form->description)) {
+    $form->description = '';
+}
+if (!isset($form->domainlabel)) {
+    $form->domainlabel = trim(get_string('domaine','referentiel'));
+}
+if (!isset($form->skilllabel)) {
+    $form->skilllabel = trim(get_string('competence','referentiel'));
+}
+if (!isset($form->itemlabel)) {
+    $form->itemlabel = trim(get_string('item','referentiel'));
+}
+if (!isset($form->referentielid)) {
+    $form->referentielid = '';
+}
+if (!isset($form->course)) {
+    $form->course = $course->id;
+}
+
+// configuration
+if (!isset($form->config)) {
+    $form->config=referentiel_make_config('config');
+    $form->printconfig=referentiel_make_config('impression');
+    $form->config_globale=$form->config;
+    $form->config_impression_globale=$form->printconfig;
+}
+
+
+?>
+<h3 align="center"><?php  print_string('creer_instance_referentiel','referentiel') ?></h3>
+<form name="form" method="post" action="<?php echo $CFG->wwwroot.'/course/mod.php'; ?>">
+
+<center>
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right"><b><?php  print_string('name_instance','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="name_instance" size="60" maxlength="80" value="<?php  p($form->name_instance) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description"><?php  p($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_domaine_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="domainlabel" size="60" maxlength="80" value="<?php  p($form->domainlabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_competence_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="skilllabel" size="60" maxlength="80" value="<?php  p($form->skilllabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_item_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="itemlabel" size="60" maxlength="80" value="<?php  p($form->itemlabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('referentiel_config_local','referentiel') ?>:</b></td>
+    <td align="left">
+        <?php echo referentiel_selection_configuration($form->config); ?>
+    </td>
+</tr>
+</table>
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="coursemodule"  value="<?php  p($form->coursemodule) ?>" />
+<input type="hidden" name="section"       value="<?php  p($form->section) ?>" />
+<input type="hidden" name="module"        value="<?php  p($form->module) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  echo "add"; ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+</center>
+</form>
+<?php
+}
+?>

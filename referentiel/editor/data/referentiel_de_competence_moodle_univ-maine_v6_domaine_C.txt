@@ -1,0 +1,93 @@
+RefMoodle.C
+Savoir Savoir produire
+V6 - Domaine C - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas.Postec@univ-lemans.fr, Michel.lopez@univ-lemans.fr, Maelle.Crosse@univ.lemans.fr, Frederic.Habert@uni-nantes.fr, Nathalie.Lusson@univ-angers.fr
+http://scirn.univ-lemans.fr
+
+
+RMDC1 Ajouter une ressource
+RMDC1.1 Organiser et structurer les fichiers et les répertoires de l'espace de cours
+RMDC1.1.1 Nommer des dossiers et des fichiers
+RMDC1.1.2 Créer un dossier avec une structure arborescente
+RMDC1.2 Téléverser / télécharger un fichier
+RMDC1.2.1 Déposer un fichier/dossier via le gestionnaire de fichiers du bloc « Administration »
+
+
+RMDC1.3 Gérer les fichiers et les dossiers
+RMDC1.3.1 Compresser/décompacter des dossiers
+RMDC1.3.2 Supprimer des dossiers et des fichiers
+RMDC1.3.3 Déplacer des dossiers et des fichiers
+RMDC1.3.4 Renommer des dossier  et des fichiers
+
+RMDC1.4 Publier une ressource
+RMDC1.4.1 Choisir un type de ressource
+RMDC1.4.2 Déposer une ressource dans l'espace cours à partir du menu « Ajouter une ressource »
+
+RMDC2 Créer une ressource
+RMDC2.1 Basculer en mode édition
+RMDC2.1.1 Activer le mode édition
+RMDC2.1.2 Identifier les icônes du mode édition    
+RMDC2.1.3 Identifier les icônes d'une séquence thème ou chronologique 
+ 
+RMDC2.2 Composer une page avec le format texte
+RMDC2.2.1 Ajouter une ressource "page texte"
+RMDC2.2.2 Saisir le texte
+
+
+RMDC2.3 Composer une page avec l'éditeur wysiwyg
+RMDC2.3.1 Rédiger un texte dans l'éditeur wysiwyg
+RMDC2.3.2 Mettre en forme un texte à partir des fonctionnalités proposées dans la barre d'outils de l'éditeur
+
+RMDC3 Gérer des ressources
+RMDC3.1 Gérer les liens vers les resosurces dans l'espace cours
+RMDC3.1.1 Nommer/renommer un lien vers une ressource
+RMDC3.1.2 Ajouter un lien vers un fichier/dossier
+RMDC3.1.3 Modifier un lien vers un fichier/dossier
+RMDC3.1.4 Supprimer un lien vers un fichier/dossier
+
+RMDC4 Ajouter une activitée
+RMDC4.1 Choisir une activité d'apprentissage en fonction des objectifs pédagogiques visés
+RMDC4.1.1 Définir les objectifs de son activité
+RMDC4.1.2 Sélectionner le type d'activité pertinent en fonction des objectifs visés
+
+RMDC4.2 Déployer une activité
+RMDC4.2.1 Dérouler le menu « Ajouter une activité »
+
+RMDC5 Produire via l'activité « Glossaire »
+RMDC5.1 Ajouter une activité « Glossaire »
+RMDC5.1.1 Déployer un glossaire
+RMDC5.1.2 Paramétrer un glossaire
+
+RMDC5.2 Utiliser un « Glossaire »
+RMDC5.2.1 Consulter un glossaire
+RMDC5.2.2 Ajouter un nouvel article
+RMDC5.2.3 Modifier un article
+RMDC5.2.4 Supprimer un article
+
+
+RMDC6 Produire via l'activité « Wiki »
+RMDC6.1 Ajouter une activité « Wiki »
+Déployer un wiki
+Paramétrer un wiki
+RMDC6.2 Utiliser un « Wiki »
+Consulter un wiki
+Modifier une page « Wiki »
+Créer des liens hypertextes dans une page « Wiki »
+Consulter l'historique d'un wiki
+
+RMDC7 Produire via l'activité « Base de données »
+RMDC7.1 Ajouter une activité « Base de données »
+Déployer une base de données
+Paramétrer une base de données
+Afficher une liste/une fiche
+Ajouter des fiches
+
+*RMDC7.2 Utiliser une activité « Base de données »
+Effectuer une recherche sur une base de données
+
+RMDC8 Produire via l'activité « SCORM/AICC »
+RMDC8.1 Ajouter une activité « SCORM/AICC »
+RMDC8.2 Utiliser un parcours SCORM/AICC
+ 
+RMDC9 Produire via l'activité « Leçon »
+RMDC9.1 Ajouter une activité « Leçon »
+RMDC9.2 Utiliser une leçon

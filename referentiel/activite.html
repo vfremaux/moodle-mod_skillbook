@@ -1,0 +1,838 @@
+<?php // $Id: activite.html, v2 2009/12/19 jf Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author jf
+ * @version $Id: activite.html, v2 2009/12/19 jf Exp $
+ * @package referentiel
+ **/
+// DEBUG
+// echo "<br />MODE : $mode\n";
+if (isset($mode) && ($mode=="addactivity")){
+	// ajouter une activite
+	if (!isset($form->instance)) {
+    	$form->instance = $referentiel->id;
+	}
+	if (!isset($form->referentielid)) {
+    	$form->referentielid = $referentiel_referentiel->id;
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}	
+	if (!isset($form->type_activite)) {
+    	$form->type_activite = '';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->comptencies)) {
+    	$form->comptencies = referentiel_get_liste_codes_competence($referentiel_referentiel->id);
+	}
+	if (!isset($form->comment)) {
+    	$form->comment = '';
+	}
+	if (!isset($form->approved)) {
+    	$form->approved=0;
+	}	
+	if (!isset($form->userid)) {
+    	$form->userid=$USER->id;
+	}
+	if (!isset($form->teacherid)) {
+    	$form->teacherid='';
+	}
+	
+	if (!isset($form->activite_id)) {
+		if (isset($activite_id))
+			$form->activite_id=$activite_id;
+		else
+			$form->activite_id='';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->type)) {
+    	$form->type = '';
+	}
+	if (!isset($form->url)) {
+    	$form->url = '';
+	}
+	if (!isset($form->course_id)) {
+    	$form->course = $course->id;
+	}		
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	if (!isset($form->modulename)) {
+    	$form->modulename='referentiel';
+	}
+	if (!isset($form->instance)) {
+    	$form->instance=$referentiel->id;
+	}
+ 	// preparer les variables globales pour Overlib
+	referentiel_initialise_data_referentiel($referentiel_referentiel->id);
+?>
+<h3><?php  print_string('creer_activite','referentiel') ?></h3>
+
+<?php  
+
+if (has_capability('mod/referentiel:managecertif', $context)) { // enseignant
+	echo '<p><i>'.get_string('creer_activite_teacher','referentiel').'</i></p>'."\n";
+}
+$jauge_activite_declarees=referentiel_print_jauge_activite($USER->id, $referentiel_referentiel->id);
+if ($jauge_activite_declarees){
+	print_string('competences_declarees','referentiel', referentiel_get_user_info($USER->id));
+	echo '<br />';
+	echo $jauge_activite_declarees."\n";
+	echo '<br />';
+}
+
+echo '<form name="form" method="post" action="activite.php?d='.$referentiel->id.'"> '."\n";
+?>
+
+<center>
+<table align="left" cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('type_activite','referentiel') ?></b>
+	</td>
+    <td align="left">
+<input type="text" name="type_activite" size="80" maxlength="80" value="<?php  p($form->type_activite) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?></b>
+	</td>
+    <td align="left">
+<textarea cols="80" rows="10" name="description"><?php  p($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('aide_saisie_competences','referentiel') ?></b></td>
+    <td align="left">	
+<?php referentiel_selection_liste_codes_item_competence('/',$form->comptencies); ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('depot_document','referentiel') ?></b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_document" value="<?php  p(get_string('yes')); ?>" /> <?php  p(get_string('yes')); ?>
+<input type="radio" name="depot_document" value="<?php  p(get_string('no')); ?>" checked="checked" /> <?php  p(get_string('no')); ?>
+ 
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+     <b><?php   print_string('notification_activite','referentiel') ?> </b>
+    </td>
+	<td align="left">
+
+<?php
+		echo '<input type="radio" name="mailnow" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="mailnow" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+?>	
+    </td>
+</tr>
+
+</table>
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<input type="hidden" name="comment" value="<?php  p($form->comment) ?>" />
+<input type="hidden" name="approved" value="<?php  p($form->approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($form->userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($form->teacherid) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($form->referentielid) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="activite_id"        value="<?php  p($form->activite_id) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit","referentiel") ?>" />
+</center>
+</form>
+<?php
+}
+else if (isset($mode) && ($mode=="updateactivity")){
+
+	if (!isset($form->approved)) {
+    	$form->approved=0;
+	}	
+	if (!isset($form->userid)) {
+    	$form->userid=$USER->id;
+	}
+	if (!isset($form->teacherid)) {
+    	$form->teacherid=0;
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}		
+	if (!isset($form->sesskey)) {
+    	$form->sesskey=sesskey();
+	}
+	if (!isset($form->modulename)) {
+    	$form->modulename='referentiel';
+	}
+	if (!isset($form->instance)) {
+    	$form->instance=$referentiel->id;
+	}
+	if (!isset($form->activite_id)) {
+		if (isset($activite_id))
+			$form->activite_id=$activite_id;
+		else
+			$form->activite_id='';
+	}	
+  if (!isset($form->mailnow)) {
+				$form->mailnow='';
+		}
+	
+	// Charger les activites
+	$records_users=array(); // les utilisateurs ayant cree une activite
+	
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	
+	$isteacher = has_capability('mod/referentiel:approve', $context);
+	$isauthor = has_capability('mod/referentiel:write', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+	if ($isteacher || $iseditor){ 
+		$records_users=referentiel_get_users_activites_instance($referentiel->id);
+	}
+	else{
+		$records_users=referentiel_get_users_activites_instance($referentiel->id, $USER->id);
+	}	
+	
+	$liste_codes_competence=referentiel_get_liste_codes_competence($referentiel_referentiel->id);	
+
+	// preparer les variables globales pour Overlib
+	if (isset($referentiel_referentiel->id) && ($referentiel_referentiel->id>0)){
+		referentiel_initialise_data_referentiel($referentiel_referentiel->id);
+	}
+	
+	if (!$records_users){
+		error(get_string('noactivite','referentiel'), "activite.php?d=$referentiel->id&amp;mode=add");
+	}
+	else if ($records_users){
+		foreach ($records_users as $record_user){
+			// 	
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_object($record_user);
+			
+			// LISTE DES COMPETENCES DECLAREES
+			$jauge_activite_declarees=referentiel_print_jauge_activite($record_user->userid, $referentiel_referentiel->id);
+			if ($jauge_activite_declarees){
+				print_string('competences_declarees','referentiel', referentiel_get_user_info($record_user->userid));
+				echo '<br />';
+				echo $jauge_activite_declarees."\n";
+				echo '<br />';
+			}
+
+			$records_activite=referentiel_instance_get_activites_user($referentiel->id, $record_user->userid);
+			
+			if ($records_activite){
+				// DEBUG
+				// echo "<br/>DEBUG ::<br />\n";
+				// print_object($records_activite);
+		
+				foreach ($records_activite as $record_a){
+    				$activite_id=$record_a->id;
+					$type_activite = stripslashes($record_a->type_activite);
+					$description = stripslashes($record_a->description);			
+					$comptencies = stripslashes($record_a->comptencies);
+					$comment = stripslashes($record_a->comment);
+					$instanceid = $record_a->instanceid;
+					$referentielid = $record_a->referentielid;
+					$course = $record_a->course;
+					$userid = $record_a->userid;
+					$teacherid = $record_a->teacherid;
+					if ($teacherid==0){
+						if ($isteacher || $iseditor){ 
+							$teacherid=$USER->id;
+						}
+					} 
+					$timecreated = $record_a->timecreated;
+					$timemodified = $record_a->timemodified;
+					$approved = $record_a->approved;
+					$taskid = $record_a->taskid;
+					// DEBUG
+					// echo "<br/>DEBUG ::<br />\n";
+					// print_object($record_a);
+		
+					$user_info=referentiel_get_user_info($userid);
+					$teacher_info=referentiel_get_user_info($teacherid);
+	
+					// dates
+					$date_creation_info=userdate($timecreated);		
+
+					if ($timemodified){
+            $date_modif_info=userdate($timemodified);
+		      }
+		      else {
+            $date_modif_info='';
+          }		
+
+					// MODIF JF 2009/10/27
+					$timemodifiedstudent = $record_a->timemodifiedstudent;
+					if ($timemodifiedstudent!=0){
+						$date_modif_student_info=userdate($timemodifiedstudent);
+					}
+					else{
+						$date_modif_student_info='';
+					}
+					// MODIF JF 2009/10/21						
+					$form->old_liste_competences=stripslashes($record_a->comptencies);
+					
+					
+
+					// AFFICHER ACTIVITE
+?>
+<center>
+<h3><?php  print_string('modifier_activite','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("activite.php?d=$referentiel->id") ?>">
+
+<table cellpadding="5" width="80%">
+<tr valign="top">
+    <td align="center">
+<b><?php  print_string('id','referentiel') ?></b> : <?php p($activite_id) ?>
+    </td>
+    <td align="center">
+<b><?php print_string('auteur','referentiel') ?></b> : <?php p($user_info) ?>
+    </td>
+    <td align="center">
+<b><?php print_string('evaluation_par','referentiel') ?></b> : <?php p($teacher_info) ?>
+    </td>
+    <td align="center">
+<b><?php  print_string('timecreated','referentiel') ?></b> : <?php p($date_creation_info) ?>
+<input type="hidden" name="timecreated" value="<?php  p($timecreated) ?>" />
+    </td>		
+    <td align="center">
+<b><?php  print_string('timemodified','referentiel') ?></b> : <?php p($date_modif_info) ?>	
+<input type="hidden" name="timemodified" value="<?php  p($timemodified) ?>" />
+    </td>		
+    <td align="center">
+<b><?php  print_string('timemodifiedstudent','referentiel') ?></b> : <?php p($date_modif_student_info) ?>	
+<input type="hidden" name="timemodifiedstudent" value="<?php  p($timemodifiedstudent) ?>" />
+    </td>			
+</tr>
+</table>
+<table cellpadding="5" width="80%">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('type','referentiel') ?></b>
+	</td>
+    <td align="left" colspan="3">
+<input type="text" name="type_activite" size="80" maxlength="80" value="<?php  p($type_activite) ?>" />	
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?></b>
+	</td>
+    <td align="left" colspan="3">
+<textarea cols="80" rows="10" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+
+<?php
+
+if ($taskid==0) {
+	echo '<tr valign="top">
+    <td align="right">
+	<b>
+';
+	print_string('aide_saisie_competences','referentiel');
+	echo ' </b></td>
+    <td align="left" colspan="3">
+';
+	referentiel_modifier_selection_liste_codes_item_competence('/', $liste_codes_competence, $comptencies, false);
+}
+else{
+	echo '
+<tr valign="top">
+    <td align="right">
+	<b>
+';
+	print_string('competences_bloquees','referentiel');
+	echo ' </b></td>
+    <td align="left" colspan="3">
+';
+	referentiel_modifier_selection_liste_codes_item_competence('/', $liste_codes_competence, $comptencies, true); 
+	echo '<input type="hidden" name="comptencies" value="'.$comptencies.'" />'."\n"; 
+}
+echo '    </td>
+</tr>
+';
+?>
+
+
+<?php
+if (has_capability('mod/referentiel:comment', $context)){
+?>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('commentaire','referentiel') ?></b>
+	</td>
+    <td align="left" colspan="3">
+<textarea cols="80" rows="12" name="comment"><?php  p($comment) ?></textarea>
+    </td>
+</tr>
+<?php
+}
+else {
+?>
+<input type="hidden" name="comment" value="<?php  p($comment) ?>" />
+<?php
+}
+?>
+
+<tr valign="top">
+    <td align="right">
+     <b><?php   print_string('validation','referentiel') ?> </b>
+    </td>
+    <td align="left" colspan="3">
+<?php
+	if (has_capability('mod/referentiel:approve', $context)){
+		if (isset($approved) && ($approved)){
+			// print_string('approved','referentiel');
+			echo '<input type="radio" name="approved" value="1" checked="checked" />'.get_string('yes').' &nbsp; <input type="radio" name="approved" value="0" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+		}
+		else{
+			// print_string('not_approved','referentiel');
+			echo '<input type="radio" name="approved" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="approved" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";				
+		}	
+	}
+	else{
+		if (isset($approved) && ($approved)){
+			print_string('approved','referentiel');
+		}
+		else{
+			print_string('not_approved','referentiel');
+		}	
+		echo '<input type="hidden" name="approved" value="'.$approved.'" />'."\n";				
+	}
+?>	
+    </td></tr>
+    
+<tr valign="top">
+    <td align="right">
+     <b><?php   print_string('notification_activite','referentiel') ?> </b>
+    </td>
+	<td align="left">
+
+<?php
+		echo '<input type="radio" name="mailnow" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="mailnow" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+?>	
+    </td></tr>
+    
+</table>		
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<input type="hidden" name="old_liste_competences" value="<?php p($form->old_liste_competences); ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="activite_id" value="<?php  p($activite_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+
+<input type="hidden" name="action" value="modifier_activite" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit","referentiel") ?>" />
+</center>
+
+</form>	
+<br />
+<?php			
+			
+		// Recuperer les documents associes à l'activite
+		$records_document = referentiel_get_documents($activite_id);
+	    if ($records_document){
+    		// afficher
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_r($records_document);
+			$compteur_document=0;
+			foreach ($records_document as $record_d){
+				$compteur_document++;
+        		$document_id=$record_d->id;
+				$type = stripslashes($record_d->type);
+				$description = stripslashes($record_d->description);
+				$url = stripslashes($record_d->url);
+				$activityid = $record_d->activityid;
+				$target = $record_d->target; // fenêtre cible
+				$label = $record_d->label; // etiquette
+							
+?>
+<!-- DOCUMENT -->
+<form name="form" method="post" action="<?php p("activite.php?d=$referentiel->id") ?>">
+<center>
+<table cellpadding="5" bgcolor="#ffffdd">
+<tr valign="top">
+    <td align="center" colspan="2"><b><?php  print_string('document_associe','referentiel') ?></b></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+<b><?php  print_string('document','referentiel') ?></b>
+    </td>
+    <td align="left">
+<i>
+<?php  p($document_id) ?>
+</i>
+<input type="hidden" name="activityid" value="<?php p($activityid) ?>" />
+<input type="hidden" name="document_id" value="<?php p($document_id) ?>" />
+    </td>
+</tr>	
+<tr valign="top">		
+    <td align="right">
+<b><?php  print_string('type','referentiel') ?></b>
+	</td>
+    <td align="left">
+<input type="text" name="type" size="20" maxlength="20" value="<?php  p($type) ?>" />
+    </td>
+</tr>	
+<?php	
+	echo '<tr valign="top"><td align="right"><b>'.get_string('url','referentiel').'</b></td><td align="left">
+<input type="text" name="url" size="70" maxlength="255" value="'.$url.'" /></td></tr>'."\n";
+	echo '<tr valign="top"><td align="right">'. get_string('label','referentiel').'</td><td align="left">
+<input type="text" name="label" size="55" maxlength="255" value="'.$label.'" /></td></tr>'."\n";
+	echo '<tr valign="top"><td align="right">'. get_string('cible_link','referentiel').'</td><td align="left">'."\n";
+	if ($target){
+		echo ' <input type="radio" name="target" value="1" checked="checked" />'.get_string('yes').'
+<input type="radio" name="target" value="0" />'.get_string('no')."\n";
+	}
+	else{
+		echo ' <input type="radio" name="target" value="1" />'.get_string('yes').'
+<input type="radio" name="target" value="0" checked="checked" />'.get_string('no')."\n";
+	}
+	echo '</td></tr>'."\n";
+?>
+
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('description','referentiel') ?></b>
+	</td>
+    <td align="left">
+<textarea cols="60" rows="2" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+<?php
+/*
+	echo '<tr valign="top">
+    <td align="right">
+	<b>.'get_string('modifier_depot_document','referentiel').'</b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_document" value="'.get_string('yes').'" />'.get_string('yes').'
+<input type="radio" name="depot_document" value="'.get_string('no').'" checked="checked" />'.get_string('no').'
+    </td>
+</tr>
+';
+*/
+?>
+
+</table>
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<input type="hidden" name="old_liste_competences" value="<?php p($form->old_liste_competences); ?>" />
+<input type="hidden" name="approved" value="<?php  p($approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="activite_id" value="<?php  p($activite_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+
+<input type="hidden" name="action" value="modifier_document" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit","referentiel") ?>" />
+</center>
+</form>	
+<br />
+<?php
+			}
+		}
+		// AJOUTER un document
+		if (!isset($form->description)) {
+		   	$form->description = 'A COMPLETER';
+		}
+		if (!isset($form->type)) {
+		   	$form->type = 'A COMPLETER';
+		}
+		if (!isset($form->url)) {
+		   	$form->url = 'A COMPLETER';
+		}
+?>	
+<br />			
+<!-- NOUVEAU DOCUMENT -->
+
+<form name="form" method="post" action="<?php p("upload.php?d=$referentiel->id") ?>">
+
+<center>
+
+<table cellpadding="5" bgcolor="#ffeeee">
+<tr valign="top">
+    <td align="center" colspan="2"><b><?php  print_string('document_ajout','referentiel') ?></b></td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('depot_document','referentiel') ?></b>
+	</td>
+    <td align="left">
+<input type="radio" name="depot_document" value="<?php  p(get_string('yes')); ?>" /> <?php  p(get_string('yes')); ?>
+<input type="radio" name="depot_document" value="<?php  p(get_string('no')); ?>" checked="checked" /> <?php  p(get_string('no')); ?>
+    </td>
+</tr>
+	
+</table>
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<input type="hidden" name="old_liste_competences" value="<?php p($form->old_liste_competences); ?>" />
+<input type="hidden" name="description" value="<?php  p($form->description) ?>" />
+<input type="hidden" name="type" value="<?php  p($form->type) ?>" />
+<input type="hidden" name="url" value="<?php  p($form->url) ?>" />
+
+<input type="hidden" name="activityid" value="<?php  p($activite_id) ?>" />
+<input type="hidden" name="approved" value="<?php  p($approved) ?>" />
+<input type="hidden" name="userid" value="<?php  p($userid) ?>" />
+<input type="hidden" name="teacherid" value="<?php  p($teacherid) ?>" />
+<input type="hidden" name="activite_id" value="<?php  p($activite_id) ?>" />
+<input type="hidden" name="referentielid" value="<?php  p($referentielid) ?>" />
+<input type="hidden" name="course" value="<?php  p($course) ?>" />
+<input type="hidden" name="instanceid" value="<?php  p($instanceid) ?>" />
+<input type="hidden" name="action" value="creer_document" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit","referentiel") ?>" />
+</center>
+
+</form>	
+<br />
+<?php
+				}
+			}		
+		}
+	}
+}
+else if (isset($mode) && ($mode=="deleteactivity")){
+	/// Confirmer la suppression d'un enregistrement
+	if (isset($activite_id) && ($activite_id>0)){
+		notice_yesno(get_string('confirmdeleterecord','referentiel'),
+		'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;delete='.$activite_id.'&amp;userid='.$userid.'&amp;confirm=1&amp;sesskey='.sesskey(),
+    'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;userid='.$userid.'&amp;sesskey='.sesskey());
+	}
+	else{
+		error(get_string('noactivite','referentiel'), "activite.php?d=$referentiel_instance->id&amp;mode=listactivity");	
+	}
+} 
+else if (isset($mode) && ($mode=="approveactivity")){
+	if (isset($activite_id) && ($activite_id>0)){
+		notice_yesno(get_string('confirmvalidateactivity','referentiel'),
+		'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;approve='.$activite_id.'&amp;userid='.$userid.'&amp;confirm=1&amp;sesskey='.sesskey(),
+		'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;approve='.$activite_id.'&amp;userid='.$userid.'&amp;confirm=0&amp;sesskey='.sesskey());
+	}
+	else{
+		error(get_string('noactivite','referentiel'), "activite.php?d=$referentiel_instance->id&amp;select_acc=$select_acc&amp;mode=listactivity");	
+	}
+} 
+else if (isset($mode) && ($mode=="desapproveactivity")){
+	if (isset($activite_id) && ($activite_id>0)){
+		notice_yesno(get_string('confirmdevalidateactivity','referentiel'),
+		'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;approve='.$activite_id.'&amp;userid='.$userid.'&amp;confirm=0&amp;sesskey='.sesskey(),
+		'activite.php?d='.$referentiel->id.'&amp;select_acc='.$select_acc.'&amp;approve='.$activite_id.'&amp;userid='.$userid.'&amp;confirm=1&amp;sesskey='.sesskey());
+	}
+	else{
+		error(get_string('noactivite','referentiel'), "activite.php?d=$referentiel_instance->id&amp;mode=listactivity");	
+	}
+} 
+else if (isset($mode) && ($mode=="commentactivity")){
+	if (isset($activite_id) && ($activite_id>0)){
+    // commentaires
+    if ($record_a = get_record('referentiel_activity', 'id', $activite_id)) {
+		$activite_id=$record_a->id;
+		$type_activite = stripslashes($record_a->type_activite);
+		$description = stripslashes($record_a->description);
+		$comptencies = stripslashes($record_a->comptencies);
+		$comment = stripslashes($record_a->comment);
+		$instanceid = $record_a->instanceid;
+		$referentielid = $record_a->referentielid;
+		$course = $record_a->course;
+		$userid = $record_a->userid;
+		$teacherid = $record_a->teacherid;
+		$timecreated = $record_a->timecreated;
+		$timemodified = $record_a->timemodified;
+		$approved = $record_a->approved;
+		
+		$user_info=referentiel_get_user_info($userid);
+		$teacher_info=referentiel_get_user_info($teacherid);
+		
+		// dates
+		$date_creation_info=userdate($timecreated);		
+		
+        if ($timemodified){
+            $date_modif_info=userdate($timemodified);
+		}
+		else {
+            $date_modif_info='';
+        }
+					
+        // MODIF JF 2009/10/27
+		$timemodifiedstudent = $record_a->timemodifiedstudent;
+		if ($timemodifiedstudent!=0){
+			$date_modif_student_info=userdate($timemodifiedstudent);
+		}
+		else{
+			$date_modif_student_info='';
+		}
+
+		// MODIF JF 2009/10/21						
+		$form->old_liste_competences=stripslashes($record_a->comptencies);		
+		
+?>
+<br />
+<form name="form" method="post" action="<?php p("activite.php?d=$referentiel->id") ?>">
+<center>
+<table cellpadding="5">
+<tr valign="top">
+    <td>
+	<b><?php  print_string('id','referentiel'); ?> </b>
+
+	<?php  p($activite_id) ?>
+    </td>
+    <td>
+	<b><?php  print_string('type_activite','referentiel') ?></b>
+
+            <?php  p($type_activite) ?>
+    </td>
+    <td>
+     <b><?php print_string('auteur','referentiel')?> </b>
+
+    		<?php p($user_info) ?>
+    </td>
+	<td>
+	<b><?php  print_string('timecreated','referentiel') ?> </b>
+
+		<?php  p($date_creation_info);; ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td colspan="4">
+	<b><?php  print_string('description','referentiel') ?></b>
+<br />
+        <?php  echo (nl2br($description)); ?>
+    </td>
+</tr>
+<tr valign="top">
+    <td  colspan="4">
+	<b><?php  print_string('liste_codes_competence','referentiel') ?> </b>
+		<?php  echo referentiel_affiche_liste_codes_competence('/',$comptencies); ?>
+    </td>
+</tr>
+
+<tr valign="top" bgcolor="#ffeeee">
+    <td  colspan="4">
+	<b><?php  print_string('commentaire','referentiel') ?></b>
+<br />
+<textarea cols="100" rows="10" name="comment"><?php  echo $comment; ?></textarea>
+    </td>
+</tr>
+
+<tr valign="top">
+
+    <td>
+     <b><?php   print_string('referent','referentiel') ?> </b>
+      <br />
+	<?php p($teacher_info); ?>
+    </td>
+    <td>
+     <b><?php   print_string('modification','referentiel') ?></b>
+<br />
+	<?php  print_string('date_modif_by','referentiel'); ?>
+<i>
+    <?php p($date_modif_info); ?>
+</i>
+<br />
+
+		<?php  print_string('date_modif_student_by','referentiel'); ?>
+<i>
+    <?php p($date_modif_student_info); ?>
+</i>
+    </td>
+    <td bgcolor="#ffeeee">
+     <b><?php   print_string('validation','referentiel') ?> </b>
+      <br />
+<?php
+		if (isset($approved) && ($approved)){
+			// print_string('approved','referentiel');
+			echo '<input type="radio" name="approved" value="1" checked="checked" />'.get_string('yes').' &nbsp; <input type="radio" name="approved" value="0" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+		}
+		else{
+			// print_string('not_approved','referentiel');
+			echo '<input type="radio" name="approved" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="approved" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+		}
+
+?>
+    </td>
+
+    <td bgcolor="#ffeeee">
+     <b><?php  print_string('notification_commentaire','referentiel') ?> </b>
+     <br />
+<?php
+		echo '<input type="radio" name="mailnow" value="1" />'.get_string('yes').' &nbsp; <input type="radio" name="mailnow" value="0" checked="checked" />'.get_string('no').' &nbsp; &nbsp; '."\n";
+?>
+    </td>
+</tr>
+
+
+</table>
+<input type="hidden" name="select_acc" value="<?php echo $select_acc; ?>" />
+<input type="hidden" name="old_liste_competences" value="<?php p($form->old_liste_competences); ?>" />
+<input type="hidden" name="userid" value="<?php echo $userid; ?>" />
+<input type="hidden" name="comment" value="<?php echo $activite_id; ?>" />
+<input type="hidden" name="activite_id" value="<?php  echo $activite_id; ?>" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<?php
+        if (!empty($old_mode)){
+            echo '<input type="hidden" name="mode" value="'.$old_mode.'" />'."\n";
+        }
+        else{
+            echo '<input type="hidden" name="mode" value="listactivityall" />'."\n";
+        }
+?>
+
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit","referentiel") ?>" />
+</form>	
+</center>
+<br />
+<?php
+}
+	}
+	else{
+		error(get_string('noactivite','referentiel'), "activite.php?d=$referentiel_instance->id&amp;mode=listactivity");	
+	}
+} 
+?>

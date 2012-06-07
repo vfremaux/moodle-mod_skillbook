@@ -1,0 +1,106 @@
+﻿<!-- Version: $Id$ -->
+
+<h1>Skills Repositories</h1>
+
+<p>A skills repository is a hierarchy of objects:<br />
+  <pre>
+Repository  
+   Domain 1 (Code, Description)
+      Skill 1.1 (Code, Description)
+         Item 1.1.1 (Code, Description, Weight)
+         Item 1.1.2 (Code, Description, Weight)
+      Skill 1.2 (Code, Description)
+         Item 1.2.1 (Code, Description, Weight)
+         Item 1.2.2 (Code, Description, Weight)
+         Item 1.2.3 (Code, Description, Weight)					 
+   Domain 2 (Code, Description)
+      Skill 2.1 (Code, Description)
+         Item 2.1.1 (Code, Description, Weight)
+         Item 2.1.2 (Code, Description, Weight)
+...				 
+</pre>
+</p>
+<p> To ensure that the repository is operational, it must include at least one domain, a skill and an item. </p>
+
+<h2>Skills Repository</h2>
+<ul>
+  <li><b>Name</b> [<em>mandatory</em>]: It is the identity of the repository.</li>
+  <li><b>Code</b> [<em>mandatory</em>]: It is a convenient label to identify the repository.</li>
+  <li><b>URL</b> [<em>optional</em>] : The reference on the Web of the repository source (eg No. an Official Bulletin of the French National Education
+ ...).</li>
+  <li><b>Certification threshold</b> [<em>Decimal value; optional</em>]: 
+    If a scale and notes are associated with the achievement of each skill, the threshold is the value beyond which the applicant is certified.</li>
+  <li><b>Global Repository</b> [<em>yes / no; yes by default</em>] : A global skills repository 
+    is accessible form other courses than the one where it has been created.</li>
+  <li><b>Number of domains to be saved for this repository</b> [<em>numerical 
+    value; mandatory</em>]: Number of domains to be created. <br />
+    <em> You can start with one domain and thereafter add more domains to define new areas.</em></li>
+</ul>
+
+<h2>Domain</h2>
+<ul>
+  <li><b>Code</b> [<em>mandatory</em>]: It is a convenient label to identify 
+    the domain.</li>
+  <li><b>Description</b> [<em>mandatory</em>]: The text that defines the domain,
+     in terms of knowledge, expertise, know-how, abilities, skills, role,
+     attitude, behaviour, etc ...</li>
+  <li><b>ID Number</b> [<em>Numerical value; mandatory</em>]: The domain serial number within the hierarchy of objects in the repository.<br />
+    Domains are displayed in ascending order following this serial number. </li>
+  <li><b>Number of skills to record for this domain</b> [<em>Numerical value; mandatory</em>]: Number of skills to be created for this domaine. <br />
+    <em> You can start with only one skill and thereafter add more to define new expertise</em>.</li>
+</ul>
+
+<h2>Skill</h2>
+<ul>
+  <li><b>Code</b> [<em>mandatory</em>] : It is a convenient label to identify 
+    The skill.</li>
+  <li><b>Description</b> [<em>obligatoire</em>] : The text that defines the skill, 
+    in terms of knowledge, expertise, know-how, abilities, skills, role,
+     attitude, behaviour, etc ...</li>
+  <li><b>Serial Number</b> [<em>numerical value; mandatory</em>] : The skill serial number 
+    within the skills list of this domain. <br />
+    Skills are displayed in ascending order following this serial number. </li>
+  <li><b>Number of items to record for this skill</b> [<em>numerical value; mandatory</em>] : Number of items involved in this skill. <br />
+    <em> You can start with only one item and thereafter add more to define new items </em>.</li>
+</ul>
+
+<h2>Item</h2>
+<ul>
+  <li><b>Code</b> [<em>mandatory</em>]: It is a convenient label to identify 
+    the item. <em> we must ensure the code of each item to be unique as the repository is based on this property, </em>in other words <em> two items belonging to different skills should not be referenced with the same code </em> (within the same repository:) ! </li>
+  <li><b>Description</b> [<em>mandatory</em>]: The text that defines the item, 
+    in terms of knowledge, expertise, know-how, abilities, skills, role,
+    attitude, behaviour, etc ...</li>
+  <li><b>Type of item [Mandatory, Optional]</b> [<em>optional </em>] : Categorization of the item extent in certification.<br />
+    If the item is not required to obtain the certificate, leave empty 
+    or use &quot;Optional&quot;.</li>
+  <li><b>Weight of the item (decimal value) </b>: Coefficient assigned to the item for the assessment scoring. The formula consists in adding the weight of different items.</li>
+  <li><b>Fingerprint of the item (integer value [0..999]) </b>: Number of times a skill has to be validated in activities before to be certified...</li>
+  <li><b>Serial Number</b> [<em>numerical value; mandatory</em>] : The item serial number in the list of items contained in the skill. <br />
+    Items are displayed in ascending order following this serial number. </li>
+</ul>
+<h2>Repository Instance</h2>
+<p>A repository instance is an activity within the Moodle meaning (as are
+   "Assignment", "Forum" or "Lesson") based on a repository, and allows
+   students:</p>
+<p><ul>- to declare the activities involving skills in the repository; <br>
+  - to check these skills; </ul></p>
+<p> and allows teachers to assess these skills...</p>
+<p> When creating a new instance (it can coexist more than one
+   in the same course, whether pointing to the same repository or to 
+   different ones) the following must be defined:</p>
+<ul>
+  <li><strong>Instance Title</strong> [<em>mandatory</em>]: This is the name
+     under which this instance appears to be an integrated activity in
+     a course ...
+  </li>
+  <li><strong>Instance Description</strong> [<em>optional</em>]: Short note to inform students about the objectives of this activity.
+  </li>
+  <li><strong> How should we call a domain?</strong> [<em>optional</em>]: For displays, which label identifies the concept of the &quot;domain&quot;.
+  </li>
+  <li><strong>How should we call a skill?</strong>: For displays, 
+    which label identifies the concept of the &quot;skill&quot;.
+  </li>
+  <li><strong> How should we call an item?</strong>: For displays, 
+    which label identifies the concept of the &quot;item&quot;.</li>
+</ul>

@@ -1,0 +1,24 @@
+<!-- Version: $Id$ -->
+
+<h1>Importer des tâches</h1>
+<p>Il est possible d'importer un fichier de tâches,
+soit dans le même cours  que le fichier d'origine
+(chaque tâche importée prend un nouveau numéro),
+soit dans un cours différent.</p>
+<p>Ne peuvent être importées que des données enregistrées au format XML.
+<br />Plusieurs contraintes doivent être respectées :
+<ul><li>Le référentiel associé à l'instance courante doit être identique au référentiel de la sauvegarde.
+<br />Autrement dit, si les clé sont non vides, elles doivent être identiques ; si elles sont vides les noms et codes 
+doivent être identiques. Faute de quoi l'importation est refusée.</li>
+<li>Les tâches importées sont associées à celui qui effectue l'importation</li>
+<li>Les dates de début et de fin ne sont pas mises à jour</li>
+<li>Les liens URL associés aux consignes doivent être enregistrés avec une adresse absolue,
+sinon ils ne sont pas correctement récupérés.</li>
+<li>Les fichiers associés aux consignes <i>ne sont pas chargés</i>,
+car ils n'appartiennent pas nécessairement au même cours.
+<br />Il est donc nécessaire <i>de les redéposer après importation des tâches</i>.</li>
+<li>Aucune vérification quant au doublonnage de tâches n'est effectuée, les tâches importées prenant un nouveau numéro
+dans la liste des tâches.</li>
+</ul>
+</p>
+<p>&nbsp;</p>

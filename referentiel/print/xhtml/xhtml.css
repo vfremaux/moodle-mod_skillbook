@@ -1,0 +1,58 @@
+<style>
+  body {
+    font-family: Verdana, Helvetica, Sans-Serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 11px;	
+  }
+  
+ 
+ 
+table.referentiel {
+BORDER-RIGHT: #6480b8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #6480b8 1px solid; PADDING-LEFT: 1px; FLOAT: left; PADDING-BOTTOM: 1px; MARGIN: 5px 0px 0px; BORDER-LEFT: #6480b8 1px solid; WIDTH: 100%; PADDING-TOP: 1px; BORDER-BOTTOM: #6480b8 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #6480b8; border-spacing: 0;
+}
+
+table.referentiel td {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; BACKGROUND-COLOR: white; COLOR: black;
+}
+table.referentiel th {
+	FONT-WEIGHT: bold; COLOR: white;
+}
+
+table.referentiel td.deverrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #99ffbb; COLOR: #000000;
+	text-align: center;		
+}  
+table.referentiel td.verrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ff99bb; COLOR: #000000;
+	text-align: center;		
+}  
+
+td.valide {
+	BACKGROUND-COLOR: #ccffaa; 
+	color: Navy;
+	text-align: left;		
+}  
+td.invalide {
+	BACKGROUND-COLOR: #ffccaa; 
+	color: Maroon
+	text-align: left;		
+}  
+
+span.small {
+	font-size : 80%;
+}
+
+span.valide {
+	color: Navy;
+}
+
+span.invalide {
+	color: Maroon;
+}
+
+  
+</style>
+

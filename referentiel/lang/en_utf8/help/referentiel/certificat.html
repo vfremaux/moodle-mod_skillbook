@@ -1,0 +1,39 @@
+<!-- Version: $Id$ -->
+
+<h1>Certificates</h1>
+<p>The certification is the process where skills are declared, assessed, validated.
+<br>
+Whether or not a formal certification takes place, 
+the approach is to assess knowledge and skills, job skills, 
+abilities using a multi criteria scale.<br> The certificate provides an instant view of 
+the students’ progress in the certification process. 
+<br>
+And finally the certificate can produce an &quot;official document&quot that the student is awarded
+at the end of his learning pathways.
+</p>
+<p>A certificate contains:
+<ul>
+<li>A skills list validated for the related repository; </li>
+<li>The reference of the teacher who validated the certificate; </li>
+<li>The date and the decision of the committee regarding the certification; </li>
+<li>Optionnaly the student may draft a synthesis and the teacher a commentary; </li>
+</ul>
+
+<p>When a certificate is locked (list of skills on pink background)
+no skills cannot be added, the student’s file is considered as closed. </p>
+
+<h3>Certificate validation</h3>
+<p>Fingerprint null does not count for certification.</p>
+<p>Only Items which are validated in activities more times than their fingerprint count for certification.</p>
+
+<h3>Grades</h3>
+<p>How much a student is far of gettig a certificate is displayed by percentages.</p>
+<ul>
+<li>At Item level :<br>100% * NUMBER_VALIDATED_ITEM / FINGERPRINT_ITEM</li>
+<li>At skill level  :<br>100 * SUM_ITEMS_SKILL(NUMBER_VALIDATED_ITEM / WEIGHT_ITEM) / SUM_ITEMS_SKILL(WEIGHT_ITEM * FINGERPRINT_ITEM)</li>
+<li>Au niveau du domaine :<br>100% * SUM_ITEMS_DOMAIN(NUMBER_VALIDATED_ITEM / WEIGHT_ITEM) / SUM_ITEMS_DOMAIN(WEIGHT_ITEM * FINGERPRINT_ITEM)</li>
+</ul>
+<p>The contribution of an Item to the skill or domain grade is proportionnal with WEIGHT * FINGERPRINT.</p>
+
+
+<p>&nbsp;</p>

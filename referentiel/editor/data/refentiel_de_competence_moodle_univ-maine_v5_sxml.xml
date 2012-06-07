@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <idcode>RefMoodle</idcode>
+ <name>Référentiel de Compétence Moodle</name>
+ <definition><text>V5 - Mai 2008 Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas Postec -Nicolas.Postec@univ-lemans.fr Michel Lopez - Michel.lopez@univ-lemans.fr</text></definition>
+ <url>http://scirn.univ-lemans.fr</url>
+ <domaine>
+    <idcode>A</idcode>
+    <definition><text>- Parcourir un espace de cours</text></definition>
+    <competence>
+        <idcode>A1</idcode>
+        <definition><text>- Accéder à un espace de formation</text></definition>
+        <item>
+            <idcode>A1-1</idcode>
+            <definition><text> -Connaître la procédure d'authentification et de connexion à la plateforme</text></definition>
+        </item>
+        <item>
+            <idcode>A1-2</idcode>
+            <definition><text> - Selectionner un cours et y accéder</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>A2</idcode>
+        <definition><text>- Naviguer dans l'espace de formation</text></definition>
+        <item>
+            <idcode>A2-1</idcode>
+            <definition><text> - Identifier la structure d'un cours</text></definition>
+        </item>
+        <item>
+            <idcode>A2-2</idcode>
+            <definition><text> - Identifier et localiser les documents pédagogiques et les outils disponibles</text></definition>
+        </item>
+    </competence>
+ </domaine>
+ <domaine>
+    <idcode>B</icode>
+    <definition><text>- Communiquer</text></definition>
+    <competence>
+        <idcode>B1</icode>
+        <definition><text>- Déployer un outil de communication parmi ceux disponibles</text></definition>
+        <item>
+            <idcode>B1-1</icode>
+            <definition><text> - Mettre en place un forum</text></definition>
+        </item>
+        <item>
+            <idcode>B1-2</icode>
+            <definition><text> - Mettre en place un chat</text></definition>
+        </item>
+        <item>
+            <idcode>B1-3</icode>
+            <definition><text> - Configurer un calendrier</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B2</icode>
+        <definition><text>- Lire un message</text></definition>
+        <item>
+            <idcode>B2-1</icode> <definition><text> - Accèder et Lire un message dans un forum</text></definition>
+            </item>
+        <item>
+            <idcode>B2-2</icode>
+            <definition><text> - Accèder et lire un message dans une messagerie</text></definition>
+        </item>
+        <item>
+            <idcode>B2-3</icode>
+            <definition><text> - Suivre un chat</text></definition>
+        </item>
+        <item>
+            <idcode>B2-4</icode>
+            <definition><text> - Accèder et lire un message dans un calendrier</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B3</icode>
+        <definition><text>- Ecrire un message</text></definition>
+        <item>
+            <idcode>B3-1</icode>
+            <definition><text> - Créer un fil de discussion dans un forum</text></definition>
+        </item>
+        <item>
+            <idcode>B3-2</icode>
+            <definition><text> - Ecrire dans un forum</text></definition>
+        </item>
+        <item>
+            <idcode>B3-3</icode>
+            <definition><text> - Ecrire dans une messagerie</text></definition>
+        </item>
+        <item>
+            <idcode>B3-4</icode>
+            <definition><text> - Ecrire dans un chat</text></definition> </item>
+        <item>
+            <idcode>B3-5</icode>
+            <definition><text> - Ecrire dans un calendrier</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B4</icode>
+        <definition><text>- Mettre en forme du texte</text></definition>
+        <item>
+            <idcode>B4-1</icode>
+            <definition><text> - Mettre en forme du texte via un éditeur WYSIWYG</text></definition>
+        </item>
+        <item>
+            <idcode>B4-2</icode>
+            <definition><text> - Mettre en forme du texte au format HTML</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B5</icode>
+        <definition><text>- Modifier un message</text></definition>
+        <item>
+            <idcode>B5-1</icode>
+            <definition><text> - Modifier un message posté dans un forum B5-2 - Modifier un message posté dans un calendrier</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B6</icode>
+        <definition><text>- Déplacer un message</text></definition>
+        <item>
+            <idcode>B6-1</icode>
+            <definition><text> - Déplacer un message posté dans le forum</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B7</icode>
+        <definition><text>- Supprimer un message</text></definition>
+        <item>
+            <idcode>B7-1</icode>
+            <definition><text> - Supprimer un message posté dans un forum</text></definition>
+        </item>
+        <item>
+            <idcode>B7-2</icode>
+            <definition><text> - Supprimer un message dans un calendrier</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B8</icode>
+        <definition><text>- Maîtriser les modes de visualisation des messages</text></definition>
+        <item>
+            <idcode>B8-1</icode>
+            <definition><text> - Identifier et alterner les modes de visualisation des messages postés dans un forum</text></definition>
+        </item>
+        <item>
+            <idcode>B8-2</icode>
+            <definition><text> - Identifier et alterner les modes de visualisation des messages postés dans une messagerie</text></definition> </item> </competence> <competence> <idcode>B9</icode> <definition><text>- Retrouver une information</text></definition> <item> <idcode>B9-1</icode> <definition><text> - Rechercher une information dans un forum</text></definition> </item> <item> <idcode>B9-2</icode> <definition><text> - Rechercher une informationdans une messagerie</text></definition>
+        </item>
+        <item>
+            <idcode>B9-3</icode>
+            <definition><text> - Rechercher une information dans un chat</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>B10</icode>
+        <definition><text>- Interagir avec les acteurs de la formation</text></definition>
+        <item>
+            <idcode>B10-1</icode>
+            <definition><text> - Consulter le profil d'un participant</text></definition>
+        </item>
+        <item>
+            <idcode>B10-2</icode>
+            <definition><text> - Consulter les messages d'un participant</text></definition>
+        </item>
+        <item>
+            <idcode>B10-3</icode>
+            <definition><text> - Gérer une liste de contacts</text></definition>
+        </item>
+        <item>
+            <idcode>B10-4</icode>
+            <definition><text> - Répérer les utilisateurs en ligne et entrer en contact avec eux.</text></definition>
+        </item>
+    </competence>
+ </domaine>
+ <domaine>
+    <idcode>C</icode>
+    <definition><text>- Intégrer des ressources dans un environnement de travail</text></definition>
+    <competence>
+        <idcode>C1</icode>
+        <definition><text>- Gérer des ressources</text></definition>
+        <item>
+            <idcode>C1-1</icode>
+            <definition><text> - Téléverser un fichier</text></definition> </item>
+        <item>
+            <idcode>C1-2</icode>
+            <definition><text> - Télécharger un fichier</text></definition> </item>
+        <item>
+            <idcode>C1-3</icode>
+            <definition><text> - Supprimer un fichier</text></definition> </item>
+        <item>
+            <idcode>C1-4</icode>
+            <definition><text> - Gérer les fichiers et des dossiers</text></definition> </item>
+        <item>
+            <idcode>C1-5</icode>
+            <definition><text> - Connaître les différents types de fichiers pouvant être utilisés comme ressource</text></definition> </item>
+        <item>
+            <idcode>C1-6</icode>
+            <definition><text> - Publier une ressource</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>C2</icode>
+        <definition><text>- Formater une ressource</text></definition>
+        <item>
+            <idcode>C2-1</icode>
+            <definition><text> - Utiliser le format Moodle</text></definition>
+        </item>
+        <item>
+            <idcode>C2-2</icode>
+            <definition><text> - Utiliser le format texte</text></definition>
+        </item>
+        <item>
+            <idcode>C2-3</icode>
+            <definition><text> - Utiliser l'éditeur WYSIWYG</text></definition>
+        </item>
+        <item>
+            <idcode>C2-4</icode>
+            <definition><text> - Utiliser le format MarkDown</text></definition>
+        </item>
+    </competence>
+</domaine>
+<domaine>
+    <idcode>D</icode>
+    <definition><text>- Produire et utiliser des activités d'apprentissage</text></definition>
+    <competence>
+        <idcode>D1</icode>
+        <definition><text>- Déployer les activités d'apprentissage disponibles</text></definition>
+        <item>
+            <idcode>D1-1</icode>
+            <definition><text> - Déployer un glossaire</text></definition>
+        </item>
+        <item>
+            <idcode>D1-2</icode>
+            <definition><text> - Déployer une leçon</text></definition>
+        </item>
+        <item>
+            <idcode>D1-3</icode>
+            <definition><text> - Déployer un WIKI</text></definition>
+        </item>
+        <item>
+            <idcode>D1-4</icode>
+            <definition><text> - Déployer un sondage</text></definition>
+        </item>
+        <item>
+            <idcode>D1-5</icode>
+            <definition><text> - Déployer un questionnaire</text></definition>
+        </item>
+        <item>
+            <idcode>D1-6</icode> <definition><text> - Déployer une consultation</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>D2</icode>
+        <definition><text>- Utiliser les activités d'apprentissage disponibles</text></definition>
+        <item> <idcode>D2-1</icode> <definition><text> - Utiliser un glossaire</text></definition>
+        </item>
+        <item> <idcode>D2-2</icode> <definition><text> - Utiliser une leçon</text></definition>
+        </item>
+        <item>
+            <idcode>D2-3</icode>
+            <definition><text> - Utiliser un WIKI</text></definition>
+        </item>
+        <item>
+            <idcode>D2-4</icode>
+            <definition><text> - Utiliser un sondage</text></definition>
+        </item>
+        <item>
+            <idcode>D2-5</icode>
+            <definition><text> - Utiliser un questionnaire</text></definition>
+        </item>
+        <item>
+            <idcode>D2-6</icode>
+            <definition><text> - Utiliser une consultation</text></definition>
+        </item>
+    </competence>
+ </domaine>
+ <domaine>
+    <idcode>E</icode>
+    <definition><text>- Produire et utiliser des activités d'évaluation</text></definition>
+    <competence>
+        <idcode>E1</icode>
+        <definition><text>- Paramétrer une activité d'évaluation</text></definition>
+        <item>
+            <idcode>E1-1</icode>
+            <definition><text> - Etablir un barème</text></definition>
+        </item>
+        <item>
+            <idcode>E1-2</icode> <definition><text> - Paramétrer l'outil notes</text></definition>
+        </item>
+        <item>
+            <idcode>E1-3</icode> <definition><text> - Atrribuer une note</text></definition>
+        </item>
+        <item>
+            <idcode>E1-4</icode>
+            <definition><text> - Consulter des notes</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>E2</icode>
+        <definition><text>- Déployer une activité d'évaluation</text></definition>
+        <item>
+            <idcode>E2-1</icode>
+            <definition><text> - Déployer un atelier</text></definition>
+        </item>
+        <item>
+            <idcode>E2-2</icode>
+            <definition><text> - Déployer un devoir</text></definition>
+        </item>
+        <item>
+            <idcode>E2-3</icode>
+            <definition><text> - Déployer un test</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>E3</icode>
+        <definition><text>- Utiliser une activité d'évaluation</text></definition>
+        <item>
+            <idcode>E3-1</icode>
+            <definition><text> - Utiliser un atelier</text></definition>
+        </item>
+        <item>
+            <idcode>E3-2</icode>
+            <definition><text> - Utiliser un devoir</text></definition>
+        </item>
+        <item>
+            <idcode>E3-3</icode>
+            <definition><text> - Utiliser un test</text></definition>
+        </item>
+    </competence>
+</domaine>
+<domaine>
+    <idcode>F</icode>
+    <definition><text>- Administrer un environnement de travail</text></definition>
+    <competence>
+        <idcode>F1</icode>
+        <definition><text>- Mettre en place un cours</text></definition>
+        <item>
+            <idcode>F1-1</icode>
+            <definition><text> - Identifier les différents types de cours possible</text></definition>
+        </item>
+        <item>
+            <idcode>F1-2</icode>
+            <definition><text> - Créer un cours</text></definition>
+        </item>
+        <item>
+            <idcode>F1-3</icode>
+            <definition><text> - Sauvegarder un cours</text></definition>
+        </item>
+        <item>
+            <idcode>F1-4</icode> <definition><text> - Restaurer un cours F1-5 - Importer les données d'un cours</text></definition> </item> <item> <idcode>F1-6</icode> <definition><text> - Déployer un parcours SCORM/AICC F1-7 - Créer des comptes de gestionnaires du cours</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>F2</icode>
+        <definition><text>- Structurer un espace cours</text></definition>
+        <item>
+            <idcode>F2-1</icode>
+            <definition><text> - Insérer un titre générique F2-2 - Gérer l'affichage des unités de cours</text></definition>
+        </item>
+        <item>
+            <idcode>F2-3</icode>
+            <definition><text> - Gérer l'affichage des ressources</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>F3</icode>
+        <definition><text>- Gérer les utilisateurs d'un cours</text></definition>
+        <item>
+            <idcode>F3-1</icode>
+            <definition><text> - Gérer les groupes d'utilisateurs</text></definition> </item>
+        <item>
+            <idcode>F3-2</icode>
+            <definition><text> - Consulter un profil étudiant</text></definition>
+        </item>
+        <item>
+            <idcode>F3-3</icode>
+            <definition><text> - Se connecter sous le login d'un apprenant</text></definition>
+        </item>
+        <item>
+            <idcode>F3-4</icode>
+            <definition><text> - Inscrire des étudiants à un cours</text></definition>
+        </item>
+        <item>
+            <idcode>F3-5</icode>
+            <definition><text> - Désinscrire un apprenant</text></definition>
+        </item>
+        <item>
+            <idcode>F3-6</icode>
+            <definition><text> - Consulter les rapports des apprenants</text></definition>
+        </item>
+    </competence>
+    <competence>
+            <idcode>F4</icode>
+            <definition><text>- Gérer son espace personnel</text></definition>
+        <item>
+            <idcode>F4-1</icode>
+            <definition><text> - Modifier son profil</text></definition>
+        </item>
+        <item>
+            <idcode>F4-2</icode>
+            <definition><text> - Changer son mot de passe</text></definition>
+        </item>
+        <item>
+            <idcode>F4-3</icode>
+            <definition><text> - Consulter ses notes</text></definition>
+        </item>
+        <item>
+            <idcode>F4-4</icode>
+            <definition><text> - Se désinscrire d'un cours</text></definition>
+        </item>
+    </competence>
+</domaine>
+</referentiel>

@@ -1,0 +1,13 @@
+TestRef
+Référentiel Test
+Un référentiel de test pour voir si ça marche...
+D1 Domaine 1
+C11 Compétence1
+I111 Item 1
+I112 Item 2
+C12 Compétence 2
+I121 Item2
+D2 Domaine 2
+C21 Compétence 3
+I211 Item 3
+

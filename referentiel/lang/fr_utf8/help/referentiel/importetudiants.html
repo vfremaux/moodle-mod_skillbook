@@ -1,0 +1,42 @@
+<!-- Version: $Id$ -->
+
+<h1>Exporter / Importer des données de scolarité</h1>
+<p>Les données de scolarité sont indispensables pour l'impression des certificats
+<br /> <b>N.B.</b> Seuls les enseignants avec droit d'édition peuvent réaliser ces opérations <i>à condition que l'administrateur 
+du site Moodle les y autorise</i> en paramétrant le module Référentiel de fa&ccedil;on ad hoc.
+<br />Afin d'importer des données de scolarité dans le module Référentiel de Moodle 
+suivez scrupuleusement la procédure ci-après faute de quoi l'opération échouera.
+</p>
+
+<p>La procédure d'exportation est l'étape préalable et obligée qui permet de préparer un fichier sous éditeur (par exemple un tableur) 
+afin de pouvoir ensuite importer ces données de scolarité dans Moodle.<br />
+En effet les données de scolarité que l'on importe dans Moodle (par l'onglet <strong>Importer</strong>) doivent contenir 
+l'identifiant attribué par Moodle à chaque utilisateur lors de la création des comptes dans Moodle.
+<ol>
+<li>Première étape<br />obtenir une sauvegarde contenant les identifiants Moodle des établissements et des étudiants.
+<br />Commencez par mettre à jour la liste des établissements du cours (onglet <strong>Etablissements</strong>)
+<br />Puis affichez la liste de tous les <strong>étudiants</strong> du cours (onglet <strong>Etudiants</strong>).
+<br /><b>N.B.</b> : Inutile de compléter les champs manquants, vous le ferez hors de Moodle sous éditeur.
+<br />Exportez ensuite (onglet <strong>Exporter</strong>) les données de scolarité de votre cours au format CSV.
+<br />Le fichier exporté se trouve dans le dossier <code>moddata/referentiel</code> de votre cours Moodle.
+</li>
+<li>Seconde étape<br />Modifier cette sauvegarde avec un éditeur (un tableur). Tous les champs marqués 'INCONNU'
+peuvent être modifiés sous éditeur
+<br /><b>Attention</b> : Champs à ne modifier sous aucun prétexte :
+<ul>
+<li><code>#id_etablissement</code>
+</li><li><code>#id_etudiant</code>
+</li><li><code>user_id</code></li>
+</li><li><code>login</code></li>
+</ul>
+<img src="./mod/referentiel/pix/export_scolarite.png" title="Export CSV de la scolarite" border="0">
+<br />
+N.B : Il suffit qu'un des trois champs '#id_etudiant', 'user_id' ou 'login' soit correctement renseigné pour chaque étudiant.
+</li>
+<li>Troisème étape<br />
+Importer ce fichier de scolarité désormais à jour (onglet <strong>Importer</strong>, format CSV avec séparateur ';' )
+</li>
+<li>Dernière étape<br />Exporter les certificats (onglet <strong>Certificat</strong>), soit au format PDF pour impression, soit au format CSV pour injection dans un logiciel de scolarité type Apogée
+</li>
+</ol>
+<p>&nbsp;</p>

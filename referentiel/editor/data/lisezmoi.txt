@@ -1,0 +1,11 @@
+// Module Référentiel de Moodle
+
+Jean.fruitet@univ-nantes.fr
+Les fichiers .txt, .dat de ce dossier sont des modèles pour le module référentiel.
+
+Les fichier _sxml.xml sont au format XML simplifié. 
+Ils peuvent être importés dans le module lors de la création d'une nouvelle instance de référentiel
+en cliquant sur le bouton "Import XML simplifié".
+
+ATTENTION : N'essayez pas d'importer un référentile XML simplifié depuis la rubrique
+"Référentiel/Importer"

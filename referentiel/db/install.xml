@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/referentiel/db" VERSION="20090831" COMMENT="XMLDB file for Moodle mod/referentiel"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="referentiel" COMMENT="Instance de referentiel de competence" NEXT="referentiel_referentiel">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table referentiel_instance" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="nom de instance" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="name" NEXT="domainlabel"/>
+        <FIELD NAME="domainlabel" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="skilllabel"/>
+        <FIELD NAME="skilllabel" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="domainlabel" NEXT="itemlabel"/>
+        <FIELD NAME="itemlabel" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="skilllabel" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="itemlabel" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timecreated" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="visible"/>
+        <FIELD NAME="visible" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="config"/>
+        <FIELD NAME="config" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="scol:0;creref:0;selref:0;impcert:0;" SEQUENCE="false" ENUM="false" PREVIOUS="visible" NEXT="printconfig"/>
+        <FIELD NAME="printconfig" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="refcert:1;instcert:0;numetu:1;nometu:1;etabetu:0;ddnetu:0;lieuetu:0;adretu:0;detail:1;pourcent:0;compdec:0;compval:1;nomreferent:0;jurycert:1;comcert:0;" SEQUENCE="false" ENUM="false" PREVIOUS="config"/>      
+	  </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for referentiel_instance"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_referentiel" COMMENT="Referentiel de competence" PREVIOUS="referentiel" NEXT="referentiel_domain">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table referentiel" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="nom du referentiel" PREVIOUS="id" NEXT="code"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="code du referentiel" PREVIOUS="name" NEXT="referentielauthormail"/>
+        <FIELD NAME="referentielauthormail" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="mail auteur initial" PREVIOUS="code" NEXT="refkey"/>
+        <FIELD NAME="refkey" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="MD5 cle unique" PREVIOUS="referentielauthormail" NEXT="password"/>
+        <FIELD NAME="password" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="mot de passe" PREVIOUS="refkey" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="password" NEXT="url"/>
+        <FIELD NAME="url" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="certificatethreshold"/>
+        <FIELD NAME="certificatethreshold" TYPE="float" NOTNULL="true" UNSIGNED="false" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="url" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="certificatethreshold" NEXT="liste_codes_competence"/>
+        <FIELD NAME="liste_codes_competence" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="timemodified" NEXT="liste_empreintes_competence"/>
+        <FIELD NAME="liste_empreintes_competence" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="liste_codes_competence" NEXT="liste_poids_competence"/>
+        <FIELD NAME="liste_poids_competence" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="liste_empreintes_competence" NEXT="local"/>
+        <FIELD NAME="local" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="liste_poids_competence" NEXT="logo"/>
+        <FIELD NAME="logo" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="local" NEXT="config"/>
+        <FIELD NAME="config" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="scol:0;creref:0;selref:0;impcert:0;" SEQUENCE="false" ENUM="false" PREVIOUS="logo" NEXT="printconfig"/>
+        <FIELD NAME="printconfig" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="refcert:1;instcert:0;numetu:1;nometu:1;etabetu:0;ddnetu:0;lieuetu:0;adretu:0;detail:1;pourcent:0;compdec:0;compval:1;nomreferent:0;jurycert:1;comcert:0;" SEQUENCE="false" ENUM="false" PREVIOUS="config"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for referentiel"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_domain" COMMENT="Skill domain" PREVIOUS="referentiel_referentiel" NEXT="referentiel_skill">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table domaine" NEXT="code"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="code" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="sortorder"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="nb_competences"/>
+        <FIELD NAME="nb_competences" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="sortorder"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary Key for domaine"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_skill" COMMENT="Competence" PREVIOUS="referentiel_domain" NEXT="referentiel_skill_item">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table competence" NEXT="code"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="code de competence" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="code" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="domainid"/>
+        <FIELD NAME="domainid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="sortorder"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="domainid" NEXT="nb_item_competences"/>
+        <FIELD NAME="nb_item_competences" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="sortorder"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for competence"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_skill_item" COMMENT="Item de competence" PREVIOUS="referentiel_skill" NEXT="referentiel_activity">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table item_competence" NEXT="code"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="code de item" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="code" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="skillid"/>
+        <FIELD NAME="skillid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="skillid" NEXT="weight"/>
+        <FIELD NAME="weight" TYPE="float" NOTNULL="true" UNSIGNED="false" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="footprint"/>
+        <FIELD NAME="footprint" TYPE="int" LENGTH="3" NOTNULL="true" UNSIGNED="false" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="weight" NEXT="sortorder"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="footprint"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for item_competence"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_activity" COMMENT="Activite" PREVIOUS="referentiel_skill_item" NEXT="referentiel_document">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table activite" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="type activite" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="comptencies"/>
+        <FIELD NAME="comptencies" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="comment"/>
+        <FIELD NAME="comment" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="comptencies" NEXT="instanceid"/>
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="comment" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="instanceid" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="teacherid"/>
+        <FIELD NAME="teacherid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="teacherid" NEXT="timemodifiedstudent"/>
+        <FIELD NAME="timemodifiedstudent" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timecreated" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timemodifiedstudent" NEXT="approved"/>
+        <FIELD NAME="approved" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timemodified" NEXT="taskid"/>
+        <FIELD NAME="taskid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="approved" NEXT="mailed"/>
+        <FIELD NAME="mailed" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="taskid" NEXT="mailnow"/>
+        <FIELD NAME="mailnow" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="mailnow"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for activite"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_document" COMMENT="Document" PREVIOUS="referentiel_activity" NEXT="referentiel_task">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="type document" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="url"/>
+        <FIELD NAME="url" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="activityid"/>
+        <FIELD NAME="activityid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="url" NEXT="target"/>
+        <FIELD NAME="target" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="activityid" NEXT="label" />
+        <FIELD NAME="label" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="target" />
+	  </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for document"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_task" COMMENT="task" PREVIOUS="referentiel_document" NEXT="referentiel_consigne">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table task" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="type task" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="competences_task"/>
+        <FIELD NAME="competences_task" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="criteria"/>
+        <FIELD NAME="criteria" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="competences_task" NEXT="instanceid"/>
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="criteria" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="instanceid" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="auteurid"/>
+        <FIELD NAME="auteurid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="auteurid" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timecreated" NEXT="timestart"/>
+        <FIELD NAME="timestart" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timemodified" NEXT="timeend"/>
+        <FIELD NAME="timeend" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timestart"  NEXT="subscriptionkey"/>
+        <FIELD NAME="subscriptionkey" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="Subscription key" PREVIOUS="timeend" NEXT="freesubscription"/>
+        <FIELD NAME="freesubscription" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="subscriptionkey" NEXT="mailed"/>
+        <FIELD NAME="mailed" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="freesubscription" NEXT="mailnow"/>
+        <FIELD NAME="mailnow" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="mailed" NEXT="hidden"/>
+        <FIELD NAME="hidden" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="mailnow"/>
+    </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for task"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_consigne" COMMENT="consigne" PREVIOUS="referentiel_task" NEXT="referentiel_a_user_task">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="type consigne" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="url"/>
+        <FIELD NAME="url" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="description" NEXT="taskid"/>
+        <FIELD NAME="taskid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="url" NEXT="target"/>
+        <FIELD NAME="target" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="taskid" NEXT="label" />
+        <FIELD NAME="label" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="target" />
+
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for consigne"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_a_user_task" COMMENT="user_select_task" PREVIOUS="referentiel_consigne" NEXT="referentiel_certificate">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="taskid"/>
+        <FIELD NAME="taskid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid" NEXT="date_selection"/>
+        <FIELD NAME="date_selection" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="taskid" NEXT="activityid"/>
+        <FIELD NAME="activityid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="date_selection"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for association_user_task"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_certificate" COMMENT="Certificat" PREVIOUS="referentiel_a_user_task" NEXT="referentiel_etudiant">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table" NEXT="comment"/>
+        <FIELD NAME="comment" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="competences_certificat"/>
+        <FIELD NAME="competences_certificat" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="comment" NEXT="comptencies"/>
+        <FIELD NAME="comptencies" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="competences_certificat" NEXT="decision_jury"/>
+        <FIELD NAME="decision_jury" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="comptencies" NEXT="date_decision"/>
+        <FIELD NAME="date_decision" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="decision_jury" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="date_decision" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="teacherid"/>
+        <FIELD NAME="teacherid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid" NEXT="verrou"/>
+        <FIELD NAME="verrou" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="teacherid" NEXT="valide"/>
+        <FIELD NAME="valide" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="verrou" NEXT="evaluation"/>
+        <FIELD NAME="evaluation" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="valide" NEXT="mailed"/>
+        <FIELD NAME="mailed" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="evaluation" NEXT="mailnow"/>
+        <FIELD NAME="mailnow" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="mailed" NEXT="synthese_certificat"/>
+        <FIELD NAME="synthese_certificat" TYPE="text" LENGTH="small" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="mailnow"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for certificat"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_etudiant" COMMENT="Fiche Etudiant" PREVIOUS="referentiel_certificate" NEXT="referentiel_institution">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table" NEXT="num_etudiant"/>
+        <FIELD NAME="num_etudiant" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="ddn_etudiant"/>
+        <FIELD NAME="ddn_etudiant" TYPE="char" LENGTH="14" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="num_etudiant" NEXT="lieu_naissance"/>
+        <FIELD NAME="lieu_naissance" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="ddn_etudiant" NEXT="departement_naissance"/>
+        <FIELD NAME="departement_naissance" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="lieu_naissance" NEXT="adresse_etudiant"/>
+        <FIELD NAME="adresse_etudiant" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="departement_naissance" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="adresse_etudiant" NEXT="ref_etablissement"/>
+        <FIELD NAME="ref_etablissement" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for etudiant"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="referentiel_institution" COMMENT="Etablissement" PREVIOUS="referentiel_etudiant" NEXT="referentiel_notification">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table etablissement" NEXT="idnumber"/>
+        <FIELD NAME="idnumber" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="INCONNU" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="80" NOTNULL="true" DEFAULT="A COMPLETER" SEQUENCE="false" ENUM="false" PREVIOUS="idnumber" NEXT="address"/>
+        <FIELD NAME="address" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="A COMPLETER" SEQUENCE="false" ENUM="false" PREVIOUS="name" NEXT="logo"/>
+        <FIELD NAME="logo" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="address"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for etudiant"/>
+      </KEYS>
+    </TABLE>
+    
+    <TABLE NAME="referentiel_notification" COMMENT="For keeping track of posts that will be mailed in digest form" PREVIOUS="referentiel_institution" NEXT="referentiel_activity_modules">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="activityid"/>
+        <FIELD NAME="activityid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="userid" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="The modified time of the original post" NEXT="type" PREVIOUS="activityid"/>
+        <FIELD NAME="type" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" UNSIGNED="true" SEQUENCE="false" ENUM="false" COMMENT="Type of message (0: activity ; 1 : task ; 2 : certificate" PREVIOUS="timemodified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="activityid"/>
+        <KEY NAME="activityid" TYPE="foreign" FIELDS="activityid" REFTABLE="referentiel_activity" REFFIELDS="id" PREVIOUS="primary" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="user" UNIQUE="false" FIELDS="userid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="referentiel_activity_modules" COMMENT="Activite dans les modules" PREVIOUS="referentiel_notification" NEXT="referentiel_accompagnement" >
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table activite_modules" NEXT="type"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="80" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="modulename" PREVIOUS="id" NEXT="moduleid"/>
+        <FIELD NAME="moduleid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="type" NEXT="instanceid"/> 
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="moduleid" NEXT="referentielid"/>
+        <FIELD NAME="referentielid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="instanceid" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="referentielid" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="activityid"/>
+        <FIELD NAME="activityid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for activite"/>
+      </KEYS>
+    </TABLE>  
+
+    <TABLE NAME="referentiel_accompagnement" COMMENT="Teacher Student Association" PREVIOUS="referentiel_activity_modules">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table activite_modules" NEXT="coaching"/>
+        <FIELD NAME="coaching" TYPE="char" LENGTH="3" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="type coaching" PREVIOUS="id" NEXT="instanceid"/> 
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="coaching" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="instanceid" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="courseid" NEXT="teacherid"/>
+        <FIELD NAME="teacherid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" ENUM="false" PREVIOUS="userid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary refkey for referentiel_a_teacher_user"/>
+      </KEYS>
+    </TABLE>  
+    
+  </TABLES>
+  <STATEMENTS>
+    <STATEMENT NAME="insert log_display" TYPE="insert" TABLE="log_display" COMMENT="Initial insert of records on table log_display">
+      <SENTENCES>
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('referentiel', 'add', 'referentiel', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('referentiel', 'update', 'referentiel', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('referentiel', 'view', 'referentiel', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('referentiel', 'view all', 'referentiel', 'name')" />
+      </SENTENCES>
+    </STATEMENT>
+  </STATEMENTS>
+</XMLDB>

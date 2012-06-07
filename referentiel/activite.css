@@ -1,0 +1,265 @@
+  
+  .referentiel {
+    border: 1px solid #dddddd;
+    margin: 2px;
+    padding: 2px;
+  }  
+    
+  .referentiel h1 {
+    font-weight: normal;
+    font-size: 160%;
+  }    
+  
+  .referentiel h2 {
+    font-weight: normal;
+    font-size: 140%;
+  }    
+
+  .referentiel h3 {
+    font-weight: bold;
+    font-size: 120%;
+  }    
+
+  .referentiel ul {
+    list-style-type: none;
+  }  
+
+  .item {
+    margin: 2px;
+    padding: 2px;
+    background-color: #ffeefe;
+    color: #000000;
+    }  
+
+  .competence {
+    margin: 2px;
+    padding: 2px;
+    background-color: #ccffff;
+    color: #000000;
+    }  
+ 
+  .domaine {
+    margin: 2px;
+    padding: 2px;
+    background-color: #ffffcc;
+    color: #000000;
+    }  
+ 
+ 
+table.referentiel {
+BORDER-RIGHT: #6480b8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #6480b8 1px solid; PADDING-LEFT: 1px; FLOAT: left; PADDING-BOTTOM: 1px; MARGIN: 5px 0px 0px; BORDER-LEFT: #6480b8 1px solid; WIDTH: 100%; PADDING-TOP: 1px; BORDER-BOTTOM: #6480b8 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #6480b8; border-spacing: 0;
+}
+
+table.referentiel td {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; BACKGROUND-COLOR: white; COLOR: black;
+	font-size: 11px;	
+}
+table.referentiel th {
+	FONT-WEIGHT: bold; COLOR: white; font-size: 11px;
+}
+
+table.referentiel td.deverrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #99ffbb; COLOR: #000000;
+	text-align: center;	
+	font-size: 11px;	
+}  
+table.referentiel td.verrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ff99bb; COLOR: #000000;
+	text-align: center;		
+	font-size: 11px;	
+}  
+
+
+td.valide {
+	BACKGROUND-COLOR: #ccffaa; 
+	color: Navy;
+	text-align: left;
+	font-size: 11px;	
+}  
+td.invalide {
+	BACKGROUND-COLOR: #ffccaa; 
+	color: Maroon
+	text-align: left;
+	font-size: 11px;		
+}  
+td.nondefini {
+	BACKGROUND-COLOR: #555555; 
+	color: Grey;
+	text-align: left;
+	font-size: 11px;		
+}  
+
+
+span.small {
+	font-size : 80%;
+}
+
+span.valide {
+	color: Navy;
+}
+
+span.invalide {
+	color: Maroon;
+}
+
+span.nondefini {
+	color: Grey;
+}
+
+table.activite {
+	BORDER-RIGHT: #6480b8 1px solid;
+	BORDER-TOP: #6480b8 1px solid;
+	FLOAT: left;
+	MARGIN: 5px 0px 0px;
+	BORDER-LEFT: #6480b8 1px solid;
+	WIDTH: 100%;
+	BORDER-BOTTOM: #6480b8 1px solid;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #6480b8;
+	border-spacing: 0;
+	padding : 4;
+}
+
+table.activite td {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; BACKGROUND-COLOR: white; COLOR: black;
+	font-size: 11px;		
+}
+table.activite th {
+	FONT-WEIGHT: bold; COLOR: white;
+	font-size: 11px;		
+}
+
+table.activite td.zero {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #cccccc; 
+	COLOR: #000000;
+	text-align: center;
+	font-size: 11px;			
+}  
+
+table.activite td.yellow {
+	BACKGROUND-COLOR: #ffffaa; 
+	COLOR: navy;			
+}  
+
+
+table.activite td.valide {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ccffaa; 
+	COLOR: #000000;
+	text-align: left;
+	font-size: 11px;			
+}  
+table.activite td.invalide {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; BACKGROUND-COLOR: #ffccaa; COLOR: #000000;
+	text-align: left;
+	font-size: 11px;		
+}  
+
+table.activite td.nondefini {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #bbbbbb;  
+	color: #ffeeee;
+	text-align: center;
+	font-size: 11px;	
+}  
+
+table.activite td.vert {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #aaffaa;  
+	color: Navy;
+	text-align: center;		
+	font-size: 11px;	
+}  
+
+table.activite td.orange {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #dddd99;  
+	color: Maroon;
+	text-align: center;		
+	font-size: 11px;	
+}  
+
+table.activite td.rouge {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ffaaaa; 
+	COLOR: #000000;
+	text-align: center;		
+	font-size: 11px;		
+}  
+
+table.activite td.jaune {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ffffaa; 	
+	COLOR: #000000;  	
+	text-align: center;		
+	font-size: 11px;		
+}  
+
+table.activite td.ardoise {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ccccee; 	
+	COLOR: #000000;  	
+	text-align: left;		
+	font-size: 11px;		
+}  
+
+table.selection {
+	PADDING: 2px; MARGIN: 0px 0px 0px;  border-spacing: 1; border:0;
+}
+table.selection td {
+	COLOR: Navy;
+	font-size: 11px;		
+}
+table.selection tr {
+	COLOR: Navy;
+	font-size: 11px;		
+}
+
+table.selection th {
+	FONT-WEIGHT: bold; COLOR: white;
+	font-size: 11px;		
+}  
+
+
+table.certificat {
+BORDER-RIGHT: #6480b8 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #6480b8 1px solid; PADDING-LEFT: 1px; FLOAT: left; PADDING-BOTTOM: 1px; MARGIN: 5px 0px 0px; BORDER-LEFT: #6480b8 1px solid; WIDTH: 100%; PADDING-TOP: 1px; BORDER-BOTTOM: #6480b8 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #6480b8; border-spacing: 0;
+}
+
+table.certificat td {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; BACKGROUND-COLOR: white; COLOR: black;
+font-size: 11px;		
+}
+table.certificat th {
+	FONT-WEIGHT: bold; COLOR: white;
+font-size: 11px;		
+}
+
+table.certificat td.deverrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #99ffbb; COLOR: #000000;
+	text-align: center;		
+font-size: 11px;	
+}  
+table.certificat td.verrouille {
+	BORDER-RIGHT: #6480b8 1px solid; BORDER-TOP: #6480b8 1px solid; BORDER-LEFT: #6480b8 1px solid; BORDER-BOTTOM: #6480b8 1px solid; 
+	BACKGROUND-COLOR: #ff99bb; COLOR: #000000;
+	text-align: center;		
+font-size: 11px;	
+}  
+
+td.valide {
+	BACKGROUND-COLOR: #ccffaa; 
+	color: Navy;
+	text-align: left;		
+font-size: 11px;	
+}  
+td.invalide {
+	BACKGROUND-COLOR: #ffccaa; 
+	color: Maroon
+	text-align: left;		
+font-size: 11px;	
+}  
+

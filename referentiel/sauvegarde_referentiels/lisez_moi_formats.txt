@@ -1,0 +1,36 @@
+Moodle Referentiel v 5.3.5 de juin 2010 et suivantes
+---------------------------------------------------
+Un nouveau format XML est proposé en importation : XML simplifié
+Il est généré par l'éditeur de référentiel wysiwyg intégré à Moodle depuis la version 5.3.5
+On le reconnaît à la présence dans le nom de fichier du suffixe _sxml.xml
+Vous pouvez trouver des modèles pour ce format dans le dossier
+./mod/referentiel/editor/data de votre serveur.
+
+Les fichiers .txt, .dat de ce dossier sont des modèles pour le module référentiel.
+
+Les fichier _sxml.xml sont au format XML simplifié.
+Ils peuvent être importés dans le module lors de la création d'une nouvelle instance de référentiel
+en cliquant sur le bouton "Import XML simplifié".
+
+N'essayez pas d'importer un référentile XML simplifié
+(dont le nom est de la forme xxx_sxml.xml)
+depuis la rubrique
+"Référentiel/Importer"
+
+
+Moodle Referentiel V1.0 de novembre 2008 et suivantes
+-----------------------------------------------------
+Vous ne pouvez pas importer les fichiers CSV de la version Moodle Référentiel V.0xx 
+dans le module Référentiel V1.xxx et suivantes
+
+Il est relativement facile de corriger "à la main" 
+les fichiers de la version 0.xx en repérant les lignes commençant par # dans le fichier.
+Ce qui a été ajouté : 
+ - l'empreinte d'un item (1 par defaut pour chacun des items)
+Ce qui a été modifié : 
+ - les balise #code sont optimisées. Une seule balise avant la liste des item d'une compétence.
+ - le format de date d'export du fichier est modifié :  Y:2008m:10d:06 pour 06/10/2008
+
+
+ATTENTION :
+Si son empreinte vaut 0 l'item n'est pas retenu pour l'évaluation de la compétence.

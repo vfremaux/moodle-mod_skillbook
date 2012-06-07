@@ -1,0 +1,108 @@
+RefMoodle.B
+Savoir communiquer
+V6 - Domaine B - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 Contacts : Nicolas.Postec@univ-lemans.fr, Michel.lopez@univ-lemans.fr, Maelle.Crosse@univ.lemans.fr, Frederic.Habert@uni-nantes.fr, Nathalie.Lusson@univ-angers.fr
+http://scirn.univ-lemans.fr
+
+RMDB1 Communiquer via l'outil « Forum »
+
+RMDB1.1 Ajouter un forum
+RMDB1.1.1 Choisir un type de forum
+RMDB1.1.2 Déployer un forum
+RMDB1.1.3 Paramétrer un forum
+
+RMDB1.2 Utiliser un forum
+RMDB1.2.1 Lire un message dans un forum
+RMDB1.2.2 Ecrire et publier un message dans un forum
+RMDB1.2.3 Modifier un message
+RMDB1.2.4 Déplacer un message
+RMDB1.2.5 Supprimer un message
+RMDB1.2.6 Créer un fil de discussion
+RMDB1.2.7 Utiliser tous les modes de visualisation des messages dans un forum
+RMDB1.2.8 Retrouver une information dans un forum
+
+
+RMDB2 Communiquer via l'outil « Chat »
+
+RMDB2.1 Ajouter un chat
+RMDB2.1.1 Définir l'objectif pédagogique relatif à l'utilisation du chat
+RMDB2.1.2 Déployer un chat
+RMDB2.1.3 Paramétrer un chat
+
+RMDB2.2 Utiliser un chat
+RMDB2.2.1 Lire un message dans un chat
+RMDB2.2.2 Écrire et publier un message dans un chat
+RMDB2.2.3 Retrouver une session dans un chat
+
+
+RMDB3 Communiquer via l'outil « Sondage »
+
+RMDB3.1 Ajouter un sondage
+RMDB3.1.1 Déployer un sondage
+RMDB3.1.2 Paramétrer un sondage
+
+RMDB3.2 Utiliser un sondage
+RMDB3.2.1 Consulter un sondage
+RMDB3.2.2 Répondre à un sondage
+RMDB3.2.3 Modifier un sondage
+RMDB3.2.4 Consulter les réponses d'un sondage
+RMDB3.2.5 Télécharger les réponses d'un sondage
+
+
+RMDB4 Communiquer via l'outil « Consultation »
+
+RMDB4.1 Ajouter une consultation
+RMDB4.1.1 Déployer une consultation
+RMDB4.1.2 Paramétrer une consultation
+
+RMDB4.2 Utiliser une consultation
+RMDB4.2.1 Consulter une consultation
+RMDB4.2.2 Répondre à une consultation
+RMDB4.2.3 Consulter les réponses d'une consultation
+RMDB4.2.4 Télécharger les réponses d'une consultation
+
+
+RMDB5 Communiquer via la messagerie
+
+RMDB5.1 Ajouter un bloc « Messages »
+RMDB5.1.1 Déployer le bloc « Messages »
+RMDB5.1.2 Paramétrer la messagerie
+
+RMDB5.2 Utiliser la messagerie
+RMDB5.2.1 Lire un message dans une messagerie
+RMDB5.2.2 Écrire un message dans une messagerie
+RMDB5.2.3 Entrer en contact avec un interlocuteur en ligne
+RMDB5.2.4 Envoyer un message à un interlocuteur hors ligne
+
+
+RMDB6 Communiquer  via l'outil « Calendrier »
+
+RMDB6.1 Ajouter un bloc « Calendrier »
+RMDB6.1.1 Déployer le bloc « Calendrier »
+RMDB6.1.2 Paramétrer le calendrier
+
+RMDB6.2 Utiliser un calendrier
+RMDB6.2.1 Identifier la codification des couleurs dans le calendrier
+RMDB6.2.2 Lire un message dans le calendrier
+RMDB6.2.3 Écrire et publier un message dans le calendrier
+RMDB6.2.4 Modifier un message dans un calendrier
+RMDB6.2.5 Supprimer un message dans un calendrier
+RMDB6.2.6 Importer / exporter un calendrier en format ICAL
+
+
+RMDB7 Découvrir les participants
+
+RMDB7.1 Consulter le profil des participants
+RMDB7.1.1 Consulter les informations personnelles d'un participant
+RMDB7.1.2 Consulter les messages d'un participant
+RMDB7.1.3 Consulter les informations relatives au blog d'un participant
+RMDB7.1.4 Consulter les annotations d'un participant
+RMDB7.1.5 Consulter les rapports d'activité d'un participant
+
+
+RMDB8 Gérer des contacts
+
+RMDB8.1 Gérer ses contacts
+RMDB8.1.1 Ajouter des contacts
+RMDB8.1.2 Supprimer des contacts
+RMDB8.1.3 Bloquer des contacts
+

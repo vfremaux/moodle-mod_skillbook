@@ -1,0 +1,49 @@
+#Moodle Referentiel CSV Export;latin1;Admin Utilisateur;;;;;;;
+#code;nom_referentiel;description;url;timecreated;nb_domaines;certificatethreshold;liste_codes_competences;liste_empreintes;logo
+B2i_Collège;B2i Collège;Le B2i atteste l`acquisition d`un ensemble de compétences développées par les élèves ou les apprentis, tout au long de leur cursus, à l`école, au collège, dans les lycées d`enseignement général et technologique, les lycées professionnels, les centres de formation d`apprentis (CFA) et les sections d`apprentissage (SA) gérés par des établissements publics locaux d`enseignement (EPLE).;http://www.education.gouv.fr/bo/2006/42/MENE0602673C.htm;Y:2009m:10d:31;1;15;Col1.1/Col1.2/Col1.3/Col1.4/Col1.5/Col1.6/Col2.1/Col2.2/Col2.3/Col2.4/Col2.5/Col2.6/Col2.7/Col3.1/Col3.2/Col3.3/Col3.4/Col3.5/Col3.6/Col3.7/Col4.1/Col4.2/Col4.3/Col4.4/Col4.5/Col5.1/Col5.2/Col5.3/Col5.4/;1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/;
+#code;description;referentielid;sortorder;nb_competences;;;;;
+Collège;Les contenus sont organisés en cinq domaines communs aux trois niveaux : 1. S approprier un environnement informatique de travail. 2. Adopter une attitude responsable. 3. Créer, produire, traiter, exploiter des données. 4. S informer, se documenter.  5. Communiquer, échanger.;1;1;;;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+Col1;S approprier un environnement informatique de travail;1;6;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+Col1.1;1.1) Je sais m identifier sur un réseau ou un site et mettre fin à cette identification.;;1;1;1;;;;
+Col1.2;1.2) Je sais accéder aux logiciels et aux documents disponibles à partir de mon espace de travail.;;1;2;1;;;;
+Col1.3;1.3) Je sais organiser mes espaces de stockage.;;1;3;1;;;;
+Col1.4;1.4) Je sais lire les propriétés d un fichier : nom, format, taille, dates de création et de dernière modification.;;1;4;1;;;;
+Col1.5;1.5) Je sais paramétrer l impression (prévisualisation, quantité, partie de documents...).;;1;5;1;;;;
+Col1.6;1.6) Je sais faire un autre choix que celui proposé par défaut (lieu d enregistrement, format, imprimante).;;1;6;1;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+Col2;Adopter une attitude responsable;2;7;;;;;;
+#code;description;type;weight;sortorder;footprint
+Col2.1;2.1) Je connais les droits et devoirs indiqués dans la charte d usage des TIC et la procédure d alerte de mon établissement.;;1;1;1
+Col2.2;2.2) Je protège ma vie privée en ne donnant sur internet des renseignements me concernant qu avec l accord de mon responsable légal.;;1;2;1
+Col2.3;2.3) Lorsque j utilise ou transmets des documents, je vérifie que j en ai le droit.;;1;3;1
+Col2.4;2.4) Je m interroge sur les résultats des traitements informatiques (calcul, représentation graphique, correcteur...).;;1;4;1
+Col2.5;2.5) J applique des règles de prudence contre les risques de malveillance (virus, spam...).;;1;5;1
+Col2.6;2.6) Je sécurise mes données (gestion des mots de passe, fermeture de session, sauvegarde).;;1;6;1
+Col2.7;2.7) Je mets mes compétences informatiques au service d une production collective;;1;7;1
+#code;description;sortorder;nb_item_competences;;
+Col3;Créer, produire, traiter, exploiter des données;3;7;;
+#code;description;type;weight;sortorder;footprint
+Col3.1;3.1) Je sais modifier la mise en forme des caractères et des paragraphes, paginer automatiquement.;;1;1;1
+Col3.2;3.2) Je sais utiliser l outil de recherche et de remplacement dans un document.;;1;2;1
+Col3.3;3.3) Je sais regrouper dans un même document plusieurs éléments (texte, image, tableau, son, graphique, vidéo...).;;1;3;1
+Col3.4;3.4) Je sais créer, modifier une feuille de calcul, insérer une formule.;;1;4;1
+Col3.5;3.5) Je sais réaliser un graphique de type donné.;;1;5;1
+Col3.6;3.6) Je sais utiliser un outil de simulation (ou de modélisation) en étant conscient de ses limites.;;1;6;1
+Col3.7;3.7) Je sais traiter un fichier image ou son à l aide d un logiciel dédié notamment pour modifier ses propriétés élémentaires.;;1;7;1
+#code;description;sortorder;nb_item_competences;;
+Col4;S informer, se documenter;4;5;;
+#code;description;type;weight;sortorder;footprint
+Col4.1;4.1) Je sais rechercher des références de documents à l aide du logiciel documentaire présent au CDI.;;1;1;1
+Col4.2;4.2) Je sais utiliser les fonctions principales d un logiciel de navigation sur le web (paramétrage, gestion des favoris, gestion des affichages et de l impression).;;1;2;1
+Col4.3;4.3) je sais utiliser les fonctions principales d un outil de recherche sur le web (moteur de recherche, annuaire...).;;1;3;1
+Col4.4;4.4) Je sais relever des éléments me permettant de connaître l origine de l information (auteur, date, source...).;;1;4;1
+Col4.5;4.5) Je sais sélectionner des résultats lors d une recherche (et donner des arguments permettant de justifier mon choix).;;1;5;1
+#code;description;sortorder;nb_item_competences;;
+Col5;Communiquer, échanger;5;5;;
+#code;description;type;weight;sortorder;footprint
+Col5.1;5.1) Lorsque j envoie ou je publie des informations, je réfléchis aux lecteurs possibles en fonction de l outil utilisé.;;1;1;1
+Col5.2;5.2) Je sais ouvrir et enregistrer un fichier joint à un message ou à une publication.;;1;2;1
+Col5.3;5.3) : Je sais envoyer ou publier un message avec un fichier joint.;;1;3;1
+Col5.4;5.4) Je sais utiliser un carnet d adresses ou un annuaire pour choisir un destinataire.;;1;4;1

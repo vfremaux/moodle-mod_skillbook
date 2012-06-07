@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Module Référentiel</title>
+</head>
+<body>
+<h1>Module Référentiel</h1>
+<p>Un module Moodle pour la déclaration et le suivi de compétences. Logiciel libre soumis à la licence GPL.</p>
+<p>Ce module est supporté par Jean Fruitet - <a href="mailto:jean.fruitet@univ-nantes.fr">jean.fruitet@univ-nantes.fr</a>. Pour signaler un bug envoyez moi un message.</p>
+<p>Langues disponibles au 1/1/2010 : Français, English.
+<p>Demande d'aide ou d'amélioration : 
+<a href="http://moodle.org/mod/forum/discuss.php?d=127647" title="Module Référentiel" target="_blank">http://moodle.org/mod/forum/discuss.php?d=127647</a>
+(en Fran&ccedil;ais).
+</p>
+<p>Télécharger / upload le module Référentiel :  <b>Moodle.org</b>
+<a href="http://moodle.org/mod/data/view.php?d=25&rid=850">http://moodle.org/mod/data/view.php?d=25&rid=850</a>
+</p>
+
+<h2>Documentation</h2>
+<p>Français : <a href="http://docs.moodle.org/fr/mod/referentiel/view">http://docs.moodle.org/fr/mod/referentiel/view</a>
+<br>
+English : <a href="http://docs.moodle.org/en/mod/referentiel/view">http://docs.moodle.org/en/mod/referentiel/view</a>
+
+<h2>Ressources disponibles</h2>
+<p>A consulter sur les sites du <a href="http://moodlemoot2008.vet-nantes.fr/moodle/course/view.php?id=36"><b>MoodleMoot2008</b></a> (Nantes),  <a href="http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24"><b>MoodleMoot2009</b></a> (Lyon) et <a href="http://moodlemoot2010.utt.fr/"><b>MoodleMoot2010</b></a> (Troyes) </p>
+
+<ul><li>Présentation du module</li>
+<li>Documentation utilisateur</li>
+<li>Documentation développeur</li>
+<li>Exemples de mise en oeuvre</li>
+<li>Atelier de prise en main du module sur le site du MoodleMoot2010</li>
+</ul>
+<h2>Référentiels disponibles pour importation</h2>
+<p>Des référentiels prêts à l'importation sont distribués avec les sources du module dans le dossier "sauvegarde_referentiel".</p>
+<table border="1">
+<tr><th>Référentiel</th><th>Format d'import CSV</th><th>Format d'import XML</th></tr>
+<tr><td>B2i Ecole</td><td>referentiel-b2i_ecole.csv</td><td>referentiel-b2i_ecole.xml</td></tr>
+<tr><td>B2i Collège</td><td>referentiel-b2i_college.csv</td><td>referentiel-b2i_college.xml</td></tr>
+<tr><td>B2i Lycée</td><td>referentiel-b2i_lycee.csv</td><td>referentiel-b2i_lycee.xml</td></tr>
+<tr><td>C2IN1 2008</td><td>&nbsp;</td><td>referentiel-c2in1-2008</td></tr>
+<tr><td>C2i2 Enseignant</td><td>referentiel-c2i2e.csv</td><td>referentiel-c2i2e.xml</td></tr>
+</table>
+<h2>Dossiers de sauvegarde / import export du module</h2>
+<p>Ce module enregistre les données utilisateurs et les fichiers d'exportation dans le dossier <code>VOTRE_MOODLEDATA/#course_id/moddata/referentiel</code><br />
+<b>Attention</b> : En cas de suppression du module referentiel ces dossier doivent être <i>purgés à la main</i> par l'administrateur système !</p>
+<h2>Historique des versions et consignes d'installation</h2>
+<p>Consultez le fichier <a href="README.txt">README.txt</a> présent dans la distribution.</p>
+<p>Documentation d'<a href="documentation/installation_module_referentiel.html">installation</a> du module.</p>
+
+<h3>Utiliser les Objectifs (outcomes) pour évaluer des activités de Moodle</h3>
+<p>Une documentation est dédiée à cet aspect de l'utilisation du module :
+<br>
+<a href="./documentation/Referentiel_et_objectifs.pdf">Referentiel_et_objectifs.pdf</a>
+</p>
+<p><b>N.B.</b>
+Si les objectifs ne sont pas déjà activés sur votre serveur Moodle (ils n’apparaissent pas dans
+la rubrique "Notes" de votre cours) demandez à l'administrateur de les activer.</p>
+<b>Protocole</b>
+<p>Avec le rôle d'administrateur aller dans la rubrique "Notes / Réglages généraux" et cocher la
+case « Activer les objectifs (enableoutcomes) »
+<br><b>Disponibilité des objectifs</b>
+<br>Il est recommandé d’éviter de charger les objectifs au niveau global du serveur car cela
+pollue inconsidérément toutes les activités de tous les cours du serveur.
+<br>
+<b>Autoriser les enseignants à charger un fichier d’Objectifs dans un cours</b>
+<p>Certaines versions de Moodle ne supportent pas correctement l'importation des fichiers
+d'Objectifs par les enseignants (<a href="http://tracker.moodle.org/browse/MDL-18506" target="_blank">http://tracker.moodle.org/browse/MDL-18506</a>)
+<br>Ceci est commenté ici <a href="http://moodle.org/mod/forum/discuss.php?d=145112" target="_blank"></a>
+et corrigé par un patch  <br>
+<a href="http://moodle.org/file.php/5/moddata/forum/397/634415/grade_edit_outcome.zip" target="_blank">http://moodle.org/file.php/5/moddata/forum/397/634415/grade_edit_outcome.zip</a>
+<br>
+à faire installer par l’administrateur du serveur.
+</p>
+</body></html>

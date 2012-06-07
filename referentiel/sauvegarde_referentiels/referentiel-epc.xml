@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>EPC 2nde Français</name>
+ <code>EPC2FRA</code>
+ <description>
+<text>Référentiel d`évaluation par compétences en 2nde</text>
+</description>
+ <url>http://www.lcdf.ac-orleans-tours.fr</url>
+ <certificatethreshold>16</certificatethreshold>
+ <timemodified>1241173216</timemodified>
+ <nb_domaines>1</nb_domaines>
+ <liste_codes_competence>S1/S2/SFA1/SFA2/SFA3/SFB1/SFB2/SFB3/SFB4/SFC1/SFC2/SFC3/SFC4/SFC5/SFC6/SFD1/SFD2/SFD3/SFD4/SE1/SE2/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>EPC2F</code>
+  <description>
+<text>Référentiel 2nde</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>S</code>
+   <description>
+<text>Savoirs</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>S1</code>
+    <description>
+<text>Savoir son cours pour les évaluations planifiées</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>S2</code>
+    <description>
+<text>Savoir résumer la séance précédente</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>SFA</code>
+   <description>
+<text>Lire et comprendre</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>SFA1</code>
+    <description>
+<text>Lire un énoncé</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>SFA2</code>
+    <description>
+<text>Observer un dessin</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>SFA3</code>
+    <description>
+<text>Donner un sens aux mots</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>SFB</code>
+   <description>
+<text>Rechercher : Conjecturer, élaborer et organiser une démarche</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>SFB1</code>
+    <description>
+<text>Prévoir une réponse</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>SFB2</code>
+    <description>
+<text>Traduire</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>SFB3</code>
+    <description>
+<text>Trier des informations</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>SFB4</code>
+    <description>
+<text>Reconnaître une situation de référence</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>SFC</code>
+   <description>
+<text>Réaliser : Exécuter, critiquer</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>SFC1</code>
+    <description>
+<text>Mettre en oeuvre une stratégie</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>SFC2</code>
+    <description>
+<text>Exécuter une t</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>SFC3</code>
+    <description>
+<text>Appliquer directement une connaissance ou une technique de base</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>SFC4</code>
+    <description>
+<text>Contrôler la vraisemblance d'une proposition</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>SFC5</code>
+    <description>
+<text>Valider la cohérence d'une démarche</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>SFC6</code>
+    <description>
+<text>Répondre à la question posée</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>SFD</code>
+   <description>
+<text>Réaliser : Exécuter</text>
+</description>
+   <sortorder>5</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>SFD1</code>
+    <description>
+<text>Respecter les consignes</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>SFD2</code>
+    <description>
+<text>Utiliser un vocabulaire,  des notations ou un codage approprié</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>SFD3</code>
+    <description>
+<text>Présenter avec soin un texte,  un graphique</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>SFD4</code>
+    <description>
+<text>Rédiger une argumentation</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>SE</code>
+   <description>
+<text>Savoir être</text>
+</description>
+   <sortorder>6</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>SE1</code>
+    <description>
+<text>Savoir être 1</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>SE2</code>
+    <description>
+<text>Savoir être 2</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

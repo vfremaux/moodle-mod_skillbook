@@ -1,0 +1,41 @@
+<!-- Version: $Id$ -->
+
+<h1>Certificats</h1>
+<p>La certification est le processus par lequel les compétences sont déclarées, évaluées, validées.
+<br>
+Qu’il y ait ou pas certification formelle, 
+la démarche consiste à évaluer des savoirs et savoir faire, des compétences métier, 
+des capacités, en utilisant un barème multi critères.
+<br>Le certificat fournit une vue instantanée 
+de l’avancement de l'étudiant dans le processus de certification. 
+<br>
+Et pour finir le certificat permet de produire un &quot;document&quot;
+qui est décerné à l’étudiant en fin de parcours d’apprentissage.
+</p>
+<p>Un certificat contient  :
+<ul>
+<li>Une liste de compétences validées pour le référentiel considéré ; </li>
+<li>La référence de l'enseignant ayant validé le certificat ; </li>
+<li>La date et la décison du jury quant à la certification ; </li>
+<li>Une synthèse éventuelle rédigée par l'étudiant certifé et un commentaire du formateur référent ; </li>
+</ul>
+
+<p>Quand un certificat est verrouillé (liste de compétences sur fond rose), 
+plus aucune compétence ne peut s’y ajouter, le dossier de l'étudiant étant considéré comme clos.</p>
+
+<h3>Validation d'un certificat</h3>
+<p>Les item d'empreinte nulle ne sont pas retenus dans la certification</p>
+<p>Un Item de compétence n'est pris en compte dans la validation du certificat 
+que si le nombre de déclarations validées pour cet item est supérieur à l'empreinte de l'item.</p>
+<h3>Calcul d'une note</h3>
+<p>Pour permettre d'apprécier le chemin qui reste à faire pour obtenir une compétence ou un domaine de compétences, 
+des notes sont affichées par compétence et par domaine sous forme de pourcentages.</p>
+<ul>
+<li>Au niveau de l'Item :<br>100% * NOMBRE_ITEM_VALIDE / ENPREINTE_ITEM</li>
+<li>Au niveau de la compétence :<br>100 * SOMME_SUR_ITEMS_COMPETENCE(NOMBRE_ITEM_VALIDE / weight) / SOMME_SUR_ITEMS_COMPETENCE(weight * ENPREINTE_ITEM)</li>
+<li>Au niveau du domaine :<br>100% * SOMME_SUR_ITEMS_DOMAINE(NOMBRE_ITEM_VALIDE / weight) / SOMME_SUR_ITEMS_DOMAINE(weight * ENPREINTE_ITEM)</li>
+</ul>
+<p>Autrement dit la contribution d'un Item à la note de la compétence et du domaine qui le contiennent
+est proportionnelle au produit POIDS * EMPREINTE.</p>
+
+<p>&nbsp;</p>

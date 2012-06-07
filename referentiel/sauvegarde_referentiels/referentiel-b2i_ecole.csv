@@ -1,0 +1,42 @@
+#Moodle Referentiel CSV Export;latin1;Jean FRUITET;;;;;;;
+#code;nom_referentiel;description;url;timecreated;nb_domaines;certificatethreshold;liste_codes_competences;liste_empreintes;logo
+B2i Ecole;Brevet Informatique et Internet - Ecole;Le B2i Ecole Â® constitue une attestation de compétences développées par les élèves tout au long de leur cursus lors dâ€™activités intégrant les TIC dans le cadre de lâ€™enseignement scolaire. Il donne une vision d ensemble du dispositif (objectifs, capacités à atteindre, feuilles de position) et permet de comparer  les niveaux, en comprenant l évolution.;http://www.educnet.education.fr/textes/reglementaires/b2i.htm;Y:2009m:12d:19;1;11;Eco_1.1/Eco_1.2/Eco_1.3/Eco_1.4/Eco_2.1/Eco_2.2/Eco_2.3/Eco_2.4/Eco_3.1/Eco_3.2/Eco_3.3/Eco_3.4/Eco_3.5/Eco_3.6/Eco_4.1/Eco_4.2/Eco_4.3/Eco_4.4/Eco_5.1/Eco_5.2/Eco_5.3/Eco_5.4/;1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/;
+#code;description;referentielid;sortorder;nb_competences;;;;;
+B2i Ecole;Les 5 domaines du B2i  : - S approprier un environnement informatique de travail - Adopter une attitude responsable - Créer, produire, traiter, exploiter des domaines - S informer, se documenter - Communiquer, échanger.;1;1;;;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+Eco_1;S approprier un environnement informatique de travail;1;4;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+Eco_1.1;Je sais désigner et nommer les principaux éléments composant l équipement informatique que j utilise et je sais à quoi ils servent.;;1;1;1;;;;
+Eco_1.2;1.2) Je sais allumer et éteindre l équipement informatique;je sais lancer et qu;1;1;1;;;;
+Eco_1.3;Je sais déplacer le pointeur, placer le curseur, sélectionner, effacer et valider.;;1;3;1;;;;
+Eco_1.4;Je sais accéder à un dossier, ouvrir et enregistrer un fichier.;;1;4;1;;;;
+#code;description;sortorder;nb_item_competences;;;;;;
+Eco_2;Adopter une attitude responsable;2;4;;;;;;
+#code;description;type;weight;sortorder;footprint;;;;
+Eco_2.1;Je connais les droits et devoirs indiqués dans la charte dâ€™usage des TIC de mon école.;;1;1;1;;;;
+Eco_2.2;Je respecte les autres et je me protège moi-même dans le cadre de la communication et de la publication électroniques.;;1;2;1
+Eco_2.3;Si je souhaite récupérer un document, je vérifie que j ai le droit de l utiliser et à quelles conditions.;;1;3;1
+Eco_2.4;Je trouve des indices avant dâ€™accorder ma confiance aux informations et propositions que la machine me fournit.;;1;4;1
+#code;description;sortorder;nb_item_competences;;
+Eco_3;Créer, produire, traiter, exploiter des données;3;6;;
+#code;description;type;weight;sortorder;footprint
+Eco_3.1;Je sais produire et modifier un texte, une image ou un son.;;1;1;1
+Eco_3.2;Je sais saisir les caractères en minuscules, en majuscules, les différentes lettres accentuées et les signes de ponctuation.;;1;2;1
+Eco_3.3;Je sais modifier la mise en forme des caractères et des paragraphes.;;1;3;1
+Eco_3.4;Je sais utiliser les fonctions copier, couper, coller, insérer, glisser, déposer.;;1;4;1
+Eco_3.5;Je sais regrouper dans un même document du texte ou des images ou du son.;;1;5;1
+Eco_3.6;Je sais imprimer un document.;;1;6;1
+#code;description;sortorder;nb_item_competences;;
+Eco_4;S informer, se documenter;4;4;;
+#code;description;type;weight;sortorder;footprint
+Eco_4.1;4.1) Je sais utiliser les fenêtres, ascenseurs, boutons de défilement, liens, listes déroulantes, icônes et onglets.;;1;1;1
+Eco_4.2;4.2) Je sais repérer les informations affichées à l écran.;;1;2;1
+Eco_4.3;4.3) Je sais saisir une adresse internet et naviguer dans un site.;;1;3;1
+Eco_4.4;4.4) Je sais utiliser un mot-clé ou un menu pour faire une recherche.;;1;4;1
+#code;description;sortorder;nb_item_competences;;
+Eco_5;Communiquer, échanger;5;4;;
+#code;description;type;weight;sortorder;footprint
+Eco_5.1;5.1) Je sais envoyer et recevoir un message.;;1;1;1
+Eco_5.2;5.2) Je sais dire de qui provient un message et à qui il est adressé.;;1;2;1
+Eco_5.3;5.3) Je sais trouver le sujet dâ€™un message.;;1;3;1
+Eco_5.4;5.4) Je sais trouver la date d envoi d un message.;;1;4;1

@@ -1,0 +1,479 @@
+<?php // $Id: add.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+/**
+ * This page defines the form to edit an instance of referentiel ans create a new referentiel
+ * It is used from add.php.  The whole instance is available as $form.
+ *
+ * @author jfruitet
+ * @version $Id: mod.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+ * @package referentiel
+ **/
+ 
+ 
+if ($referentiel){
+	$form->name = $referentiel->name;
+	$form->description = $referentiel->description;
+	$form->domainlabel = $referentiel->domainlabel;
+	$form->skilllabel = $referentiel->skilllabel;
+	$form->itemlabel = $referentiel->itemlabel;
+	$form->referentielid = $referentiel->referentielid;	
+	$form->timecreated = @$referentiel->timecreated;
+	$form->course = $referentiel->course;
+	$form->instance = $referentiel->id;	// tres important
+
+
+	// configuration
+	$form->config = $referentiel->config;
+	$form->printconfig = $referentiel->printconfig;
+
+    $ok_existe_au_moins_un_referentiel = (referentiel_referentiel_exists()>0);
+	$ok_creer_importer_referentiel = referentiel_get_configuration_item('creref', $referentiel->id);
+    // creation importation possible si $ok_selectionner_referentiel
+    $ok_selectionner_referentiel = referentiel_get_configuration_item('selref', $referentiel->id);
+
+
+?>
+<link rel="stylesheet" type="text/css" href="referentiel.css"></link>
+
+<h3 align="center"><?php  print_string('modifier_instance_referentiel','referentiel') ?></h3>
+<form name="form" method="post" action="<?php echo 'add.php?id='.$cm->id; ?>">
+<center>
+<table class="saisie">
+<tr valign="top">
+    <td align="right"><b><?php  print_string('name','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="name" size="60" maxlength="80" value="<?php   echo stripslashes($form->name); ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description); ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_domaine_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="domainlabel" size="60" maxlength="80" value="<?php  echo stripslashes($form->domainlabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_competence_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="skilllabel" size="60" maxlength="80" value="<?php  echo stripslashes($form->skilllabel) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('label_item_question','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="itemlabel" size="60" maxlength="80" value="<?php  echo stripslashes($form->itemlabel) ?>" />
+    </td>
+</tr>
+<?php
+/*
+// PAS DE CONFIGURATION TANT QUE LE REFERENTIEL n'est PAS CHOISI
+    echo '
+<tr valign="top">
+    <td align="right"><b>
+';
+    print_string('referentiel_config_local','referentiel');
+    echo ':</b></td>
+    <td align="left">
+';
+    print_string('aide_referentiel_config_local','referentiel');
+    echo '<br />'.referentiel_selection_configuration($form->config);
+echo '    </td>
+</tr>
+';
+*/
+
+?>
+
+
+</table>
+</center>
+<p align="center">
+<input type="hidden" name="action" value="modifierinstance" />
+<!-- <input type="hidden" name="referentielid" value="  echo($form->referentielid); " /> -->
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  echo sesskey(); ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="add" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+</p>
+</form>
+<br />
+
+<?php 
+echo '<p align="center">'.get_string('aide_creer_referentiel','referentiel').'</p>'; 
+if (($ok_selectionner_referentiel==0) || ($ok_creer_importer_referentiel==0)){
+?>
+<h3 align="center"><?php print_string('associer_referentiel','referentiel'); ?></h3>
+<center>
+<table class="saisie">
+<tr valign="top">
+<?php
+	// creation importation possible
+	if (($ok_selectionner_referentiel==0) && $ok_existe_au_moins_un_referentiel) {
+?>
+	<td align="center">
+<form name="form" method="post" action="<?php echo 'selection.php?id='.$cm->id; ?>">
+<input type="hidden" name="name" value="<?php  echo($form->name) ?>" />
+<input type="hidden" name="description" value="<?php  echo($form->description) ?>" />
+<input type="hidden" name="domainlabel" value="<?php  echo($form->domainlabel) ?>" />
+<input type="hidden" name="skilllabel" value="<?php  echo($form->skilllabel) ?>" />
+<input type="hidden" name="itemlabel" value="<?php  echo($form->itemlabel) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  echo sesskey(); ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="add" />
+<input type="submit" value="<?php print_string('selectreferentiel','referentiel'); ?>" />
+
+</form></td>
+<?php
+	}
+	if ($ok_creer_importer_referentiel==0) { 
+?>
+	<td align="center">
+<form name="form" method="post" action="<?php echo 'import_instance.php?id='.$cm->id; ?>">
+<input type="hidden" name="name" value="<?php  echo($form->name) ?>" />
+<input type="hidden" name="description" value="<?php  echo($form->description) ?>" />
+<input type="hidden" name="domainlabel" value="<?php  echo($form->domainlabel) ?>" />
+<input type="hidden" name="skilllabel" value="<?php  echo($form->skilllabel) ?>" />
+<input type="hidden" name="itemlabel" value="<?php  echo($form->itemlabel) ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  echo sesskey(); ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="add" />
+<input type="submit" value="<?php print_string('importreferentiel','referentiel'); ?>" />
+</form>
+    </td>
+<?php
+	}
+?>
+</tr>
+</table>
+</center>
+<?php
+}
+
+/* ###################################################################### */
+// creation du referentiel avec un éditeur
+
+// developpement en cours
+if (($ok_creer_importer_referentiel==0) && referentiel_editor_is_ok()){
+// editeur de referentiel
+    echo '<br />
+<h3 align="center">'.get_string('editer_referentiel_xml','referentiel').'</h3>'."\n";
+    // 	$returnlink_modification="$CFG->wwwroot/mod/referentiel/edit.php?id=$cm->id&amp;sesskey=".sesskey();
+    echo '<p align="center"> ';
+    echo '<a href="'.$CFG->wwwroot.'/mod/referentiel/editor/editeur_referentiel.php?id='.$cm->id.'&amp;sesskey='.sesskey().'&amp;return_link=add.php">'.get_string('editeur_referentiel','referentiel').'</a></p>'."\n";
+    echo '<br />'."\n";
+    
+    echo '<h3 align="center">'.get_string('import_referentiel_xml','referentiel').'</h3>'."\n";
+    echo '
+<center>
+<table class="saisie">
+<tr valign="top"> <td align="center">
+<form name="form" method="post" action="editor/import_referentiel_xml.php?id='.$cm->id.'">
+<input type="hidden" name="name" value="'.$form->name.'" />
+<input type="hidden" name="description" value="'.$form->description.'" />
+<input type="hidden" name="domainlabel" value="'.$form->domainlabel.'" />
+<input type="hidden" name="skilllabel" value="'.$form->skilllabel.'" />
+<input type="hidden" name="itemlabel" value="'.$form->itemlabel.'" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="'.$form->course.'" />
+<input type="hidden" name="sesskey"     value="'.sesskey().'" />
+<input type="hidden" name="instance"      value="'.$form->instance.'" />
+<input type="hidden" name="mode"          value="add" />
+<input type="submit" value="'.get_string('import_referentiel_xml','referentiel').'" />
+</form>
+</td>
+</tr>
+</table>
+</center>
+';
+}
+
+
+// creation du referentiel 
+if ($ok_creer_importer_referentiel==0) { 
+	// CREATION
+
+	if (!isset($form->name)) {
+    	$form->name = '';
+	}
+	if (!isset($form->code)) {
+    	$form->code = '';
+	}
+	if (!isset($form->refkey)) {
+    	$form->refkey = '';
+	}
+	if (!isset($form->password)) {
+    	$form->password = '';
+	}
+	if (!isset($form->old_pass_referentiel)){
+		$form->old_pass_referentiel = '';
+	}
+
+	if (!isset($form->referentielauthormail)) {
+    	$form->referentielauthormail = '';
+	}
+	if (!isset($form->description)) {
+    	$form->description = '';
+	}
+	if (!isset($form->url)){
+		$form->url="";
+	}
+	if (!isset($form->certificatethreshold)){
+		$form->certificatethreshold="";
+	}
+	if (!isset($form->local)){
+		$form->local=0; // initialiser à global
+	}
+	if (!isset($form->liste_codes_competence)){
+		$form->liste_codes_competence="";
+	}
+	if (!isset($form->liste_empreintes_competence)) {
+    	$form->liste_empreintes_competence = '';
+	}
+	if (!isset($form->liste_poids_competence)) {
+    	$form->liste_poids_competence = '';
+	}
+	if (!isset($form->logo)) {
+    	$form->logo = '';
+	}
+	
+?>
+<br />
+<h3 align="center"><?php  print_string('creer_referentiel','referentiel') ?></h3>
+<form name="form" method="post" action="<?php echo 'add.php?id='.$cm->id.'&amp;sesskey='.sesskey(); ?>">
+<center>
+<table class="saisie">
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('name','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+        <input type="text" name="name" size="60" maxlength="80" value="<?php echo stripslashes($form->name) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($form->code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  echo '<b>'.get_string('password','referentiel').'</b> : <br /><span="small"><i>'.get_string('aide_pass_referentiel','referentiel').'</i></span>'; ?></td>
+    <td class="saisie" align="left">
+        <input type="password" name="password" size="20" maxlength="20" value="<?php  echo stripslashes($form->password) ?>" />
+   
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('url','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+        <input type="text" name="url" size="60" maxlength="255" value="<?php  p($form->url) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('certificatethreshold','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+        <input type="text" name="certificatethreshold" size="5" maxlength="10" value="<?php  p($form->certificatethreshold) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('referentiel_global','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+<?php	
+if (isset($form->local)){
+	if ($form->local!=0){ // si local == course_id le referentiel est local
+		echo '<input type="radio" name="local" value="0" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->local.'" checked="checked" />'. get_string("no")."\n";
+	}
+	else{
+		echo '<input type="radio" name="local" value="0" checked="checked" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->course.'" />'. get_string("no")."\n";
+	}
+}
+else {
+	echo '<input type="radio" name="local" value="0" checked="checked" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->course.'" />'. get_string("no")."\n";
+}
+?>
+    </td>
+</tr>
+<!-- tr valign="top">
+    <td class="saisie" align="right"><b><?php  print_string('nombre_domaines_supplementaires','referentiel') ?>:</b></td>
+    <td class="saisie" align="left">
+        <input type="text" name="nb_domaines" size="2" maxlength="2" value="<?php  p($form->nb_domaines) ?>" />
+    </td>
+</tr -->
+</table>
+</center>
+
+
+<!-- DOMAINE -->
+<!-- h3 align="center"><?php  print_string('creation_domaine','referentiel') ?></h3>
+<center>
+<table class="saisie_domaine">
+<tr valign="top">
+    <td class="saisie_domaine" align="left" colspan="2"><i><?php  print_string('domaine','referentiel') ?></i></td>
+</tr>
+
+<tr valign="top">
+    <td class="saisie_domaine" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="saisie_domaine" align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($form->code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_domaine" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="saisie_domaine" align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_domaine" align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td class="saisie_domaine" align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="<?php  p($form->sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_domaine" align="right"><b><i><?php  print_string('nombre_competences_supplementaires','referentiel') ?></i></b>:</td>
+    <td class="saisie_domaine" align="left">
+        <input type="text" name="nb_competences" size="2" maxlength="2" value="<?php  p($form->nb_competences) ?>" />
+    </td>
+</tr>
+
+</table>
+</center>
+
+<!-- COMPETENCE -->
+<!-- h3 align="center"><?php  print_string('creation_competence','referentiel') ?></h3>
+<center>
+<table class="saisie_competence">
+
+<tr valign="top">
+    <td class="saisie_competence" align="left" colspan="2"><i><?php  print_string('competence','referentiel') ?></i></td>
+</tr>
+<tr valign="top">
+    <td class="saisie_competence" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="saisie_competence" align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($form->code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_competence" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="saisie_competence" align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_competence" align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td class="saisie_competence" align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="<?php  p($form->sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_competence" align="right"><b><i><?php  print_string('nombre_item_competences_supplementaires','referentiel') ?></i></b>:</td>
+    <td class="saisie_competence" align="left">
+        <input type="text" name="nb_item_competences" size="2" maxlength="2" value="<?php  p($form->nb_item_competences) ?>" />
+    </td>
+</tr>
+
+</table>
+</center>
+
+<!-- ITEM -->
+<!-- h3 align="center"><?php  print_string('creation_item','referentiel') ?></h3>
+<center>
+<table class="saisie_item">
+
+<tr valign="top">
+    <td class="saisie_item" align="left" colspan="2"><i><?php  print_string('item','referentiel') ?></i></td>
+</tr>
+
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($form->code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('type','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+        <input type="text" name="type" size="20" maxlength="20" value="<?php  echo stripslashes($form->type) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('weight','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+        <input type="text" name="weight" size="5" maxlength="10" value="<?php  p($form->weight) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('footprint','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+        <input type="text" name="footprint" size="3" maxlength="3" value="<?php  p($form->footprint) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="saisie_item" align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td class="saisie_item" align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="<?php  p($form->sortorder) ?>" />
+    </td>
+</tr>
+
+</table -->
+<br />
+
+<input type="hidden" name="action" value="modifierreferentiel" />
+<input type="hidden" name="referentielauthormail" value="<?php  p($form->referentielauthormail); ?>" />
+<input type="hidden" name="old_pass_referentiel" value="<?php  p($form->old_pass_referentiel); ?>" />
+<input type="hidden" name="refkey" value="<?php  p($form->refkey); ?>" />
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="name" value="<?php  echo($form->name); ?>" />
+<input type="hidden" name="description" value="<?php  echo($form->description); ?>" />
+<input type="hidden" name="domainlabel" value="<?php  echo($form->domainlabel); ?>" />
+<input type="hidden" name="skilllabel" value="<?php  echo($form->skilllabel); ?>" />
+<input type="hidden" name="itemlabel" value="<?php  echo($form->itemlabel); ?>" />
+<input type="hidden" name="logo" value="<?php  p($form->logo); ?>" />
+
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="sesskey"     value="<?php  echo sesskey(); ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="add" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+
+
+</form>
+</center>
+<?php
+}
+}
+?>

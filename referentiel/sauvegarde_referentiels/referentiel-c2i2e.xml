@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>Référentiel C2i2e</name>
+ <code>C2i2e</code>
+ <description>
+<text>Certificat Informatique et Internet niveau 2 &quot;Enseignant&quot;</text>
+</description>
+ <url>http://www.education.gouv.fr/bo/2006/1/MENT0502170C.htm</url>
+ <certificatethreshold>95</certificatethreshold>
+ <timemodified>1277197124</timemodified>
+ <nb_domaines>2</nb_domaines>
+ <liste_codes_competence>A.1.1/A.1.2/A.1.3/A.1.4/A.1.5/A.2.1/A.2.2/A.2.3/A.3.1/A.3.2/A.3.3/A.3.4/B.1.1/B.1.2/B.1.3/B.2.1/B.2.2/B.2.3/B.2.4/B.3.1/B.3.2/B.3.3/B.3.4/B.3.5/B.4.1/B.4.2/B.4.3/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>A</code>
+  <description>
+<text>Compétences générales liées à l'exercice du métier.</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>A.1</code>
+   <description>
+<text>Maîtrise de l'environnement numérique professionnel.</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>A.1.1</code>
+    <description>
+<text>Identifier les personnes ressources TIC et leurs rôles respectifs dans l'école ou l'établissement, et en dehors (circonscription, bassin, Académie, niveau national...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.2</code>
+    <description>
+<text>S'approprier les différentes composantes informatiques (lieux, outils...) de son environnement professionnel</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.3</code>
+    <description>
+<text>Choisir et utiliser les ressources et services d'un environnement numérique de travail (ENT)</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.4</code>
+    <description>
+<text>Choisir et utiliser les outils les plus adaptés pour communiquer avec les acteurs et usagers du système éducatif</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.5</code>
+    <description>
+<text>Se constituer et organiser des ressources en utilisant des sources professionnelles</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A.2</code>
+   <description>
+<text>Développement des compétences pour la formation tout au long de la vie</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>A.2.1</code>
+    <description>
+<text>Utiliser les ressources en ligne et les dispositifs de Formation Ouverte et à Distance (FOAD) pour sa formation</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.2</code>
+    <description>
+<text>Se référer à des travaux de recherche liant savoirs, apprentissages et TICE</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.3</code>
+    <description>
+<text>Pratiquer une veille pédagogique et institutionnelle, notamment par l'identification des réseaux d'échange concernant son domaine, sa discipline, son niveau d'enseignement</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A.3</code>
+   <description>
+<text>Responsabilité professionnelle dans le cadre du système éducatif</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>A.3.1</code>
+    <description>
+<text>S'exprimer et communiquer en s'adaptant aux différents destinataires et espaces de diffusion (institutionnel, public, privé, interne, externe...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A.3.2</code>
+    <description>
+<text>Prendre en compte les enjeux et respecter les règles concernant notamment la recherche et les critères de contrôle de validité des informations, la sécurité informatique, le filtrage Internet</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A.3.3</code>
+    <description>
+<text>Prendre en compte les lois et les exigences d'une utilisation professionnelle et citoyenne des TICE concernant : la protection des libertés individuelles et publiques, la sécurité des personnes, la protection des mineurs, la confidentialité des données, la propriété intellectuelle, le droit à l'image</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A.3.4</code>
+    <description>
+<text>Respecter et faire respecter la charte d'usage de l'établissement, dans une perspective éducative d'apprentissage de la citoyenneté</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>B</code>
+  <description>
+<text>Compétences nécessaires à l'intégration des TICE dans sa pratique</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>B.1</code>
+   <description>
+<text>Travail en réseau avec l'utilisation des outils de travail collaboratif</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>B.1.1</code>
+    <description>
+<text>Rechercher, produire, partager et mutualiser des documents, des informations, des ressources dans un environnement numérique</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.2</code>
+    <description>
+<text>Contribuer à une production ou à un activite collectif au sein d'équipes disciplinaires, interdisciplinaires, transversales ou éducatives</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.3</code>
+    <description>
+<text>Concevoir des situations de recherche d'information dans le cadre de activités transversales et interdisciplinaires</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.2</code>
+   <description>
+<text>Conception et préparation de contenus d'enseignement et de situations d'apprentissage</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>B.2.1</code>
+    <description>
+<text>Identifier les situations d'apprentissage propices à l'utilisation des TICE</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.2.2</code>
+    <description>
+<text>Concevoir des situations d'apprentissage et d'évaluation mettant en oeuvre des logiciels généraux ou spécifiques à la discipline, au domaine enseigné, au niveau de la classe</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.2.3</code>
+    <description>
+<text>Intégrer des outils et des ressources dans une séquence d'enseignement, en opérant des choix entre les supports et médias utilisables et leurs modalités d'utilisation</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.2.4</code>
+    <description>
+<text>Préparer des ressources adaptées à la diversité des publics et des situations pédagogiques en respectant les règles de la communication</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.3</code>
+   <description>
+<text>Mise en oeuvre pédagogique en présentiel et à distance</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B.3.1</code>
+    <description>
+<text>Conduire des situations d'apprentissage en tirant partie du potentiel des TIC : travail collectif, individualisé, en petits groupes</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.2</code>
+    <description>
+<text>Gérer l'alternance, au cours d'une séance, entre les activités utilisant les TICE et celles qui n'y ont pas recours</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.3</code>
+    <description>
+<text>Prendre en compte la diversité des élèves la difficulté scolaire en utilisant les TICE pour gérer des temps et des modalités de travail différenciés, en présentiel et/ou à distance</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.4</code>
+    <description>
+<text>Utiliser les TICE pour accompagner des élèves, des groupes d'élèves dans leurs activites de production ou de recherche d'information</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.5</code>
+    <description>
+<text>Anticiper un incident technique ou y faire face</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.4</code>
+   <description>
+<text>Compétences d'évaluation</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>B.4.1</code>
+    <description>
+<text>Identifier les compétences des référentiels TIC (B2i ® ou C2i ®) mises en oeuvre dans une situation de formation proposée aux élèves, aux étudiants</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.2</code>
+    <description>
+<text>S'intégrer dans une démarche collective d'évaluation des compétences TIC (B2i ® ou C2i ®)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>5</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.3</code>
+    <description>
+<text>Exploiter les résultats produits par des logiciels institutionnels d'évaluation des élèves (J'ADE).</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<referentiel>
+<idcode>Test_01</idcode>
+ <name>Test Editeur</name>
+ <definition><text>  Le référentiel national de 2008 comprend 44 items de compétences répartis en 9 compétences et 2 domaines.</text></definition>
+  <domaine>
+      <idcode>A</idcode>
+     <definition><text>Aptitudes générales et transversales</text></definition>
+   <competence>
+      <idcode>A1</idcode>
+     <definition><text>- Tenir compte du caractère évolutif des TIC</text></definition>
+    <item>
+      <idcode>A1-1</idcode>
+     <definition><text> Être conscient de l’évolution constante des TIC et de la déontologie qui doit leur être associée et capable d’en tenir compte dans le cadre des apprentissages.</text></definition>
+    </item>
+    <item>
+      <idcode>A1-2</idcode>
+     <definition><text> Prendre conscience des nécessaires actualisations du référentiel du C2i® niveau 1.</text></definition>
+    </item>
+    <item>
+      <idcode>A1-3</idcode>
+     <definition><text> Travailler dans un esprit d’ouverture et d’adaptabilité (adaptabilité aux différents environnements de travail, échanges).</text></definition>
+    </item>
+    <item>
+      <idcode>A1-4</idcode>
+     <definition><text> Tenir compte des problèmes de compatibilité, de format de fichier, de norme et procédure de compression et d’échange.</text></definition>
+    </item>
+   </competence>
+  </domaine>
+ 
+ </referentiel>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+<idcode>TestRef</idcode>
+<name>Référentiel Test</name>
+<definition><text>Un référentiel de test pour voir si ça marche...</text></definition>
+<domaine>
+    <idcode>D1</idcode>
+    <definition><text>Domaine 1</text></definition>
+    <competence>
+      <idcode>C11</idcode>
+      <definition><text>Compétence1</text></definition>
+        <item>
+            <idcode>I111</idcode>
+            <definition><text> Item 1</text></definition>
+        </item>
+        <item>
+            <idcode>I112</idcode>
+            <definition><text> Item 2</text></definition>
+        </item>
+    </competence>
+    <competence>
+        <idcode>C12</idcode>
+        <definition><text>Compétence 2</text></definition>
+        <item>
+            <idcode>I121</idcode>
+            <definition><text> Item2</text></definition>
+        </item>
+    </competence>
+</domaine>
+<domaine>
+    <idcode>D2</idcode>
+    <definition><text>Domaine 2</text></definition>
+    <competence>
+        <idcode>C21</idcode>
+        <definition><text>Compétence 3</text></definition>
+        <item>
+            <idcode>I211</idcode>
+            <definition><text> Item 3</text></definition>
+        </item>
+    </competence>
+</domaine>
+</referentiel>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>Référentiel C2i niveau 1</name>
+ <code>C2i_N1</code>
+ <description>
+<text>Certificat Informatique et Internet niveau 1</text>
+</description>
+ <url>http://www.enseignementsup-recherche.gouv.fr/pid20536/rubrique-bo.html?cid_bo=22087</url>
+ <certificatethreshold>80</certificatethreshold>
+ <timemodified>1253352946</timemodified>
+ <nb_domaines>2</nb_domaines>
+ <liste_codes_competence>A.1.1/A.1.2/A.1.3/A.1.4/A.2.1/A.2.2/A.2.3/A.2.4/A.2.5/A.2.6/A.2.7/B.1.1/B.1.2/B.1.3/B.1.4/B.1.5/B.1.6/B.1.7/B.2.1/B.2.2/B.2.3/B.3.1/B.3.2/B.3.3/B.3.4/B.3.5/B.3.6/B.4.1/B.4.2/B.4.3/B.4.4/B.4.5/B.4.6/B.5.1/B.5.2/B.5.3/B.6.1/B.6.2/B.6.3/B.6.4/B.6.5/B.7.1/B.7.2/B.7.3/</liste_codes_competence>
+ <liste_empreintes_competence>2/2/3/3/2/2/1/2/2/2/2/1/2/2/3/1/2/1/3/4/3/1/1/2/2/3/1/2/2/2/2/2/2/2/2/2/4/1/3/1/1/3/2/2/</liste_empreintes_competence>
+ <domaine>
+  <code>A</code>
+  <description>
+<text>Aptitudes générales et transversales</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>A.1</code>
+   <description>
+<text>Tenir compte du caractère évolutif des TIC</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>A.1.1</code>
+    <description>
+<text>Être conscient de l’évolution constante des TIC et de la déontologie qui doit leur être associée et capable d’en tenir compte dans le cadre des apprentissages</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.2</code>
+    <description>
+<text>Prendre conscience des nécessaires actualisations du référentiel du C2i® niveau 1.</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.3</code>
+    <description>
+<text>Travailler dans un esprit d’ouverture et d’adaptabilité (adaptabilité aux différents environnements de travail, échanges)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A.1.4</code>
+    <description>
+<text>Tenir compte des problèmes de compatibilité, de format de fichier, de norme et procédure de compression et d’échange</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>A.2</code>
+   <description>
+<text>Intégrer la dimension éthique et le respect de la déontologie</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>7</nb_item_competences>
+
+   <item>
+    <code>A.2.1</code>
+    <description>
+<text>Respecter les droits fondamentaux de l’homme, les normes internationales et les lois qui en découlent</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.2</code>
+    <description>
+<text>Maîtriser son identité numérique</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.3</code>
+    <description>
+<text>Sécuriser les informations sensibles - personnelles et professionnelles - contre les intrusions frauduleuses, les disparitions, les destructions volontaires ou involontaires</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.4</code>
+    <description>
+<text>Assurer la protection de la confidentialité</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.5</code>
+    <description>
+<text>Faire preuve d’esprit critique et être capable d’argumenter sur la validité des sources d’information</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.6</code>
+    <description>
+<text>Mettre en œuvre des règles de bons comportements, de politesse et de civilité</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>A.2.7</code>
+    <description>
+<text>Comprendre et s’approprier des chartes de comportement</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.6</weight>
+    <footprint>2</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>B</code>
+  <description>
+<text>Savoir-faire pratiques</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>B.1</code>
+   <description>
+<text>S’approprier son environnement de travail</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>7</nb_item_competences>
+
+   <item>
+    <code>B.1.1</code>
+    <description>
+<text>Organiser et personnaliser son bureau de travail</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.5</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.2</code>
+    <description>
+<text>Être capable, constamment, de retrouver ses données</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.3</code>
+    <description>
+<text>Structurer et gérer une arborescence de fichiers</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.4</code>
+    <description>
+<text>Utiliser les outils adaptés (savoir choisir le logiciel qui convient aux objectifs poursuivis)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.5</code>
+    <description>
+<text>Maintenir(mise à jour, nettoyage, défragmentation…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.5</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.6</code>
+    <description>
+<text>Organiser les liens (favoris - signets) dans des dossiers</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>B.1.7</code>
+    <description>
+<text>Se connecter aux différents types de réseaux (filaires et sans fil)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.2</code>
+   <description>
+<text>Rechercher l'information</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>B.2.1</code>
+    <description>
+<text>Distinguer les différents types d’outils de recherche</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.2.2</code>
+    <description>
+<text>Formaliser les requêtes de recherche</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>4</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.2.3</code>
+    <description>
+<text>Récupérer et savoir utiliser les informations (texte, image, son, fichiers, pilote, applications, site…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.3</code>
+   <description>
+<text>Sauvegarder, sécuriser, archiver ses données en local et en réseau</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>B.3.1</code>
+    <description>
+<text>Rechercher un fichier (par nom, par date, par texte…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.2</code>
+    <description>
+<text>Assurer la protection contre les virus</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.3</code>
+    <description>
+<text>Protéger ses fichiers et ses dossiers (en lecture/écriture)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.4</code>
+    <description>
+<text>Assurer une sauvegarde (sur le réseau, support externe…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.5</code>
+    <description>
+<text>Compresser, décompresser un fichier ou un ensemble de fichiers/dossiers</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B.3.6</code>
+    <description>
+<text>Récupérer et transférer des données sur et à partir de terminaux mobiles</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.4</code>
+   <description>
+<text>Réaliser des documents destinés à être imprimés</text>
+</description>
+   <sortorder>4</sortorder>
+   <nb_item_competences>6</nb_item_competences>
+
+   <item>
+    <code>B.4.1</code>
+    <description>
+<text>Réaliser des documents courts (CV, lettre…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.3</weight>
+    <footprint>2</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.2</code>
+    <description>
+<text>Élaborer un document complexe et structuré (compte rendu, rapport, mémoire, bibliographie...)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.3</code>
+    <description>
+<text>Maîtriser les fonctionnalités nécessaires à la structuration de documents complexes (notes de bas de pages, sommaire, index, styles…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.8</weight>
+    <footprint>2</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.4</code>
+    <description>
+<text>Intégrer les informations (images, fichiers, graphiques…)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.5</weight>
+    <footprint>2</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.5</code>
+    <description>
+<text>Traiter des données chiffrées dans un tableur (formules arithmétiques et fonctions simples comme la somme et la moyenne, notion et usage de la référence absolue), les présenter sous forme de tableau (mises en forme dont format de nombre et bordures) et sous forme graphique (graphique simple intégrant une ou plusieurs séries)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>2.3</weight>
+    <footprint>2</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>B.4.6</code>
+    <description>
+<text>Créer des schémas (formes géométriques avec texte, traits, flèches et connecteurs, disposition en profondeur, groupes d’objets, export sous forme d’image)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>0.3</weight>
+    <footprint>2</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.5</code>
+   <description>
+<text>Réaliser la présentation de ses travaux en présentiel et en ligne</text>
+</description>
+   <sortorder>5</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>B.5.1</code>
+    <description>
+<text>Communiquer le résultat de ses travaux en s’appuyant sur un outil de présentation assistée par ordinateur</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>2</weight>
+    <footprint>2</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.5.2</code>
+    <description>
+<text>Adapter des documents initialement destinés à être imprimés pour une présentation sur écran</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1.5</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.5.3</code>
+    <description>
+<text>Réaliser des documents hypermédias intégrant textes, sons, images fixes et animées et liens internes et externes</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1.5</weight>
+    <footprint>2</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.6</code>
+   <description>
+<text>Echanger et communiquer à distance</text>
+</description>
+   <sortorder>6</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>B.6.1</code>
+    <description>
+<text>Le courrier électronique (en-têtes, taille et format des fichiers, organisation des dossiers, filtrage)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>4</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.6.2</code>
+    <description>
+<text>Les listes de diffusion (s’inscrire, se désabonner)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.6.3</code>
+    <description>
+<text>Les forums de discussion (modéré, non modéré)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>3</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>B.6.4</code>
+    <description>
+<text>Le dialogue en temps réel</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>B.6.5</code>
+    <description>
+<text>Les terminaux mobiles</text>
+</description>
+    <type>Optionnel</type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>B.7</code>
+   <description>
+<text>Mener des projets en travail collaboratif à distance</text>
+</description>
+   <sortorder>7</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>B.7.1</code>
+    <description>
+<text>Utiliser les outils d’un espace de travail collaboratif (environnement numérique de travail)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>2</weight>
+    <footprint>3</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>B.7.2</code>
+    <description>
+<text>Elaborer en commun un document de travail (assurer le suivi des corrections, ajouts et suppressions)</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>B.7.3</code>
+    <description>
+<text>Gérer différentes versions de documents partagés</text>
+</description>
+    <type>Obligatoire</type>
+    <weight>1</weight>
+    <footprint>2</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

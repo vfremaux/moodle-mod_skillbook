@@ -1,0 +1,420 @@
+Moodle module referentiel 
+Module Moodle - Référentiel / Pository - Documentation
+jean.fruitet@univ-nantes.fr
+2007/2010
+
+FRANCAIS
+--------------------------------------------------
+"referentiel"  est un module Moodle pour les certifications basées sur l'utilisation de référentiels de compétences.
+Ce module doit être intégré dans le répertoire ./mod/ d'un serveur Moodle (version 1.8 ou version 1.9)
+Vous pouvez :
+- spécifier un référentiel ou en importer un tout prêt.
+- déclarer des activités et liéer celles-ci à des compétences
+- suivre les déclarations des étudiants
+- proposer des tâches (une mission, une liste de compétences mobilisées, des documents attachés...)
+- exporter et imprimer des certificats de compétences
+
+Si votre site Moodle autorise la notation par Objectifs (outcomes) vous pouvez aussi exporter
+le référentiel comme un fichier d'objectifs puis importer ce dernier dans vos cours.
+Il est alors possible d'évaluer toute activité Moodle (forum, devoir, tests, etc.) en utilisant
+le barème de notation affecté aux objectifs. Le module référentiel récupèrera ces évaluations et
+insèrera automatiquement les objectifs validés sous forme de compétences dans une déclaration d'activité.
+
+Marche à suivre pour installer ET pour mettre à jour ce module
+--------------------------------------------------
+
+La procédure suivante s'applique à toute installation Moodle
+VOTRE_DOSSIER_MOODLE = le nom du dossier où est placé votre moodle, en général "moodle"
+URL_SERVEUR_MOODLE = le nom de votre serveur moodle, en général "http://machine.domaine.fr/moodle/"
+
+1. Décomprimer l'archive "referentiel_xxx.zip" dans le dossier "VOTRE_DOSSIER_MOODLE/mod/"
+Les fichiers de langue peuvent être laissés dans le dossier
+"VOTRE_DOSSIER_MOODLE/mod/referentiel/lang/"
+
+2. se loger avec le role admin sur "URL_SERVEUR_MOODLE"
+
+3. Installer le module referentiel comme un nouveau module en passant par la rubrique
+Administration / Notification
+S'il y a des messages d'erreur m'avertir aussitôt par mail en m'envoyant une copie d'écran du message d'erreur.
+
+4. paramétrer le module au niveau du site en passant par la rubrique
+Administration / Plugins / Activités / Référentiel
+
+ERREUR FREQUENTE LORS DES MISE A JOUR
+------------------------------------------------
+L'erreur à éviter est de créer une copie de sauvegarde (sous un autre nom) dans le dossier
+VOTRE_DOSSIER_MOODLE/mod/
+
+-------------------------------------------------
+Marche à suivre pour désinstaller ce module
+-------------------------------------------------
+1. Logez-vous avec le role admin
+
+2. Supprimez le module
+Administration / Plugins / Activités / Gestion des activités
+Sélectionnner  Référentiel :: Supprimer
+
+3. Supprimez le dossier VOTRE_DOSSIER_MOODLE/mod/referentiel
+
+4. Supprimer les dossiers
+./moodledata/#course_id/moddata/referentiel
+de tous les cours où une instance a été déclarée
+
+
+
+ENGLISH
+---------------------------------------------------------
+
+The following steps should get you up and running with this module code.
+---------------------------------------------------------
+1. Unzip the archive in moodle/mod/ directory
+Languages files can be left in the moodle/mod/referentiel/lang/ directory.
+2. log on with admin role
+
+3. install new module as usual (admin Notification)
+
+4. Set module parameters
+Administration / Plugins / Activity / Repository
+
+---------------------------------------------------------
+Documentation et mises à jours sous forme d'archive ZIP 
+---------------------------------------------------------
+sur les sites du MoodleMoot2008 (Nantes) et du MoodleMoot2009 (Lyon)
+
+    * MoodleMoot2008 : http://moodlemoot2008.vet-nantes.fr/moodle/course/view.php?id=36
+    * MoodleMoot2009 : http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24
+    * MoodleMoot2010 : http://moodlemoot2010.utt.fr/course/view.php?id=33
+
+Pour être tenu informé des mise à jour inscrivez-vous dans les forums de ces cours.
+
+---------------------------------------------------
+CVS / Subversion
+---------------------------------------------------
+Le serveur public des sources CVS / Subversion est  :
+Subversion server at: 
+https://subversion.cru.fr/referentiel/
+
+
+----------------------------------------------------
+Forums et Tests du module
+----------------------------------------------------
+A french thread is at 
+http://moodle.org/mod/forum/discuss.php?d=127647
+
+Un fil de discussion sur Moodle en Français est consacré au module : 
+http://moodle.org/mod/forum/discuss.php?d=127647
+
+A test server here : http://ateliers.moodlelab
+
+Un espace de test est disponible sur le serveur Moodle des Ateliers du  MoodleLab 
+http://ateliers.moodlelab
+dans la catégorie Référentiels
+
+---------------------------------------------------------
+Liste des documents disponibles sur ces différents sites
+Useful documentation
+---------------------------------------------------------
+
+    * Documentation utilisateurs / Users doc
+    * Documentation développeurs / Developers doc
+    * Communications au MoodleMoot2008 et MoodleMoot2009 / French MoodleMoots 
+    * Captures d'écran et présentations animées / Print screens
+    * Vidéos 
+
+--------------------------------------------------------
+Liste de référentiels disponibles pour importation
+--------------------------------------------------------
+After you get runing the referentiel module, go to "./mod/referentiel/sauvegarde_referentiel" directory 
+to import some ready made repositories. (In french)
+Après installation du module sur un serveur Moodle, le dossier "./mod/referentiel/sauvegarde_referentiel" 
+contient les exports/imports suivants :
+
+Référentiel		Format d'import CSV			Format d'import XML
+B2i Ecole		referentiel-b2i_ecole.csv	referentiel-b2i_ecole.xml
+B2i Collège		referentiel-b2i_college.csv	referentiel-b2i_college.xml
+B2i Lycée		referentiel-b2i_lycee.csv	referentiel-b2i_lycee.xml
+C2IN1			referentiel-c2n1.csv		referentiel-c2in1.xml
+C2i2 Enseignant	referentiel-c2i2e.csv		referentiel-c2i2e.xml
+
+
+Moodle Referentiel v5.3.5 de juin 2010 et suivantes
+---------------------------------------------------
+
+Un nouveau format XML est proposé en importation : XML simplifié
+Il est généré par l'éditeur de référentiel wysiwyg intégré à Moodle depuis la version 5.3.5
+On le reconnaît à la présence dans le nom de fichier du suffixe _sxml.xml
+Vous pouvez trouver des modèles pour ce format dans le dossier
+./mod/referentiel/editor/data de votre serveur.
+
+Les fichiers .txt, .dat de ce dossier sont des modèles pour le module référentiel.
+Les fichier _sxml.xml sont au format XML simplifié.
+Ils peuvent être importés dans le module lors de la création d'une nouvelle instance de référentiel
+en cliquant sur le bouton "Import XML simplifié".
+
+N'essayez pas d'importer un référentiel XML simplifié (dont le nom est de la forme xxx_sxml.xml)
+depuis la rubrique "Référentiel/Importer" de l'activité Référentiel
+
+
+--------------------------------------------------------
+Sauvegarde des données sur le serveur Moodle
+et importation /  exportation et restauration du module
+-------------------------------------------------------
+Exports and user data are in ./moodledata/#course_id/moddata/referentiel
+
+Ce module enregistre les exportations dans le dossier ./moodledata/#course_id/moddata/referentiel
+Attention : En cas de suppression du module Référentiel ces dossier doivent être purgés à la main 
+par l'administrateur système !
+
+
+
+---------------------------------------------------------
+Historique des versions 
+---------------------------------------------------------
+Version 5.4.2 - 2010/10/07 mise à jour du 2010/10/15
+Correction d'un bug dans l'affichage des consignes
+La gestion des groupes est introduite dans la validation globale de tâches.
+
+Version 5.4.1 - 2010/10/07 mise à jour du 2010/10/07
+Affichage des consignes et documents attachés aux déclarations d'activités issues de tâches.
+Correction d'un bug à l'import d'un fichier de tâches
+Désormais lors de l'importation d'un fichier de tâches celles-ci sont masquées par défaut
+Les URL relatives sont transformées en URL absolues lors de l'export/import des tâches
+Cela peut provoquer des erreurs si la restauration concerne un autre serveur.
+
+Version 5.3.7 - 2010/09/28 mise à jour du 2010/10/06
+Ajout dans le fichier lib.php contient deux constantes qui règlent de façon globale
+le régime de notification.
+NOTIFICATION_DELAI = 0 : pas de delai avant l'envoi des notification ni la prise en compte de la notation par objectifs
+NOTIFICATION_AUTEUR = 0 : pas de notification de l'auteur d'une tâche ou d'une activité
+Correction d'un bug pour la notification des déclarations d'activités
+
+Version 5.3.6 - 2010/09/18 mise à jour du 2010/09/18
+Correction d'un bug lors de l'import XML des tâches.
+
+Version 5.3.5 - 2010/06/26 mise à jour du 2010/09/18
+Correction d'un bug lors de l'export XML des tâches.
+
+Version 5.3.5 - 2010/06/26 mise à jour du 2010/07/04
+Correction d'un bug lors de l'import / export XML des référentiels.
+
+Version 5.3.5 - 2010/06/26
+Un nouveau format de référentiel XML simplifié est proposé en édition wysiwyg.
+Ce format ne peut être utilisé qu'en importation.
+On le reconnaît à la présence dans le nom de fichier du suffixe _sxml
+
+Version 5.3.4 - 2010/25/14
+Contrôle du format de fichier sélectionné lors de l'imporation.
+Amélioration de l'interface d'édition des certificats.
+Amélioration des sorties CSV. le séparateur de chaine " est utilisé
+
+Version 5.3.3 - 2010/06/14
+Nouveau champ "synthese" dans le certificat, à remplir par l'étudiant.
+
+Version 5.3.2 - 2010/06/09
+Correction d'un bug lors de l'enregistrement des paramètres d'impression des certificats.
+
+Version 5.3.1 - 2010/05/29
+du 29 mai 2010
+Introduction de la capacité mod/referentiel:addactivity permettant de masquer la création d'activité nouvelle aux étudiants
+en agissant au niveau des permissions
+Possibilité de supprimer en bloc toutes les activités issues d'une tâche lors de la suppression de celle-ci.
+Amélioration de la sélection des référents accompagnateurs
+Coorection d'un bug lors de la consultation du rférentiel en connexion anonyme
+Autorisation aux utilisateur connectés de façon anonyme de consulter la liste des tâches
+(ceci est modulable par le jeu des capacités)
+
+===========================================
+Version 5.2.5 - 2010/05/04
+du 4 mai 2010
+Les créateurs de cours ne sont plus listés comme accompagnateurs potentiels
+ni ne reçoivent de notifications intempestives.
+
+Version 5.2.4 - 2010/04/29
+du 29 avril 2010
+Possibilité de sélectionner par groupe les certificats à exporter ou à imprimer.
+
+Version 5.2.2 - 2010/03/25
+du 25 mars 2010
+Introduction de la notion de formateur référent.
+Notification améliorée.
+Correction de bugs sur la récupération des Objectifs.
+
+Version 5.2.0 - 2010/03/16
+du 15 mars 2010
+
+Outcomes used in moodle activities are integrated in Pository activity.
+If your site enables Outcomes (also known as Competencies, Goals, Standards or Criteria), 
+you can now export a list of Outcomes from referentiel module then grade things using that scale (forum, database, assigments, etc.) 
+throughout the site. These grades will be automatically integrated in Referentiel module.
+
+
+Evaluer des activités Moodle (forum, devoirs, etc.) au regard d'un barème de référentiel.
+
+Si les objectifs sont activés sur votre serveur Moodle (voir avec l'administrateur comment les activer) 
+vous pouvez sauvegarder le référentiel sous forme d'un barême d'objectifs
+puis utiliser ce barême pour évaluer toute forme d'activité Moodle (forums, devoirs, bases de données, wiki, etc.)
+Le module Référentiel récupèrera ces évaluations et génèrera des déclarations qui seront dès lors accessibles 
+dans la liste des activités du module référentiel.
+
+Protocole
+
+   1. Avec le rôle d'administrateur activer les Objectifs au niveau du serveur
+   2. Depuis le module Référentiel Exporter les objectifs (Onglet "Référentiel / Exporter")
+      Enregistrez le fichier "outcomes_referentiel_xxx.csv" sur votre disque dur.
+   3. Au niveau du cours passer par Administration / Notes et sélectionner Modifier Objectifs
+   4. Choisir alors Importer comme objectifs de ce cours ou Importer comme objectifs standards 
+puis dans la rubrique Importer des objectifs (Taille maximale : xxMo) sélectionnez le fichier 
+"outcomes_referentiel_xxx.csv" ci-dessus enregistré.
+
+Désormais vous pouvez utiliser ce barême pour évaluer toute activité du cours.
+Les étudiants notés selon ce barême verront leurs productions intégrées directement 
+dans le module référentiel sous forme de déclarations d'activité accessibles et modifiables selon les modalités usuelles.
+ 
+
+ATTENTION : Moodle 1.9.5 to 1.9.7 does not permit outcomes to be imported by teachers.
+http://tracker.moodle.org/browse/MDL-18506
+Certaines versions de Moodle ne supportent pas correctement l'importation 
+des fichiers d'Objectifs.
+This is corrected with this patch :
+Il faut installer un patch :
+http://moodle.org/file.php/5/moddata/forum/397/634415/grade_edit_outcome.zip
+Commentaire à cette adresse :
+Commentary about this bug :
+http://moodle.org/mod/forum/discuss.php?d=145112
+ 
+
+===========================================
+Version 4.4.4 - 2010021200
+du 4 février 2010
+
+Notification des activités, tâches et certificats.
+Impression des certificats au format CSV, RTF, PDF, DOC, ODT, XHTML.
+La modificaton d'une tâche ne modifie par l'auteur de celle-ci
+Interface enseignant de modification / validation / correction des activités améliorée.
+
+===========================================
+Version 4.3.2 - 2010011100
+du 22 janvier 2010
+
+Par défaut le module s'ouvre sur les activités
+Possibilité d'associer une tâche à un groupe.
+
+===========================================
+Version 4.2.2 - 2010010900
+du 9 janvier 2010
+
+Possibilité de paramétrer les critères d'impression des certificats.
+Par défaut le numéro d'étudiant est récupéré dans le champ idnumber de la table user.
+Impression RTF des certificats
+Les enseignants ont à nouveau la possibilité de déclarer des activités.
+Saisie des documents associés et des consignes améliorée.
+
+===========================================
+Version 4.1.5 - 2009121700
+du 17 décembre 2009
+
+Une jauge des activités déclarées est affichée.
+Interface de validation améliorée.
+Impression individuelle et collective 
+des certificats en XHTML, PDF, MSWord Doc, OpenOffice Odt
+Nombreuses améliorations de l'interface.
+Accélération de l'affichage des certificats.
+L'utilisateur affiche toutes les activités qu'il a déclarées pour un référentiel sur tous les cours.
+
+===========================================
+Version 3.3.3 - 2009100400 du 4 Octobre 2009
+Cette version implémente les groupes, les empreintes de compétence, les tâches 
+et le paramétrage du module par l'administrateur au niveau du site.
+La Sauvegarde / Restauration (Backup / Restore) est implantée.
+La suppression d'un référentiel (et pas seulement des instances de celui-ci) est implantée.
+La suppression d'une instance dans un cours supprime les activités et tâches associées (les certificats sont aussi mis à jour)
+Le module certificat affiche les résultats consolidés par domaine et compétence
+Le calcul des pourcentages par compétence et domaine utilise les empreintes et les poids.
+L'import / export des données de scolarité et des tâches.
+Correction d'un bug dans la saisie des activités issues de tâches. 
+La validation partielle des compétences proposées dans la tâche est à nouveau possible
+Correction d'un bug lors de la selection d'un referentiel avec mot de passe
+
+===========================================
+v3.2.6 - 2009090500 du 5 Septembre 2009
+
+Sauvegarde / Restauration (Backup / Restore) d'une instance de Référentiel :
+Lors de la Sauvegarde pour que les déclarations d'activités, tâches, certificats et données de scolarité 
+soient intégrées dans la sauvegarde, cocher "Données utilisateurs" dans les options de sauvegarde.
+Lors de la restauration, si un référentiel portant la même clé que le référentiel restauré 
+existe déjà c'est celui-ci qui est associé à l'instance restaurée, sinon le nouveau référentiel est enregistré. 
+Suppression d'un référentiel :
+La suppression d'un référentiel nécessite au préalable la suppression de toutes instances associées.
+Suppression d'une instance 
+La suppression d'une instance dans un cours supprime les déclarations d'activité et tâches associées de ce cours 
+(les certificats sont aussi mis à jour).
+Bugs corrigés :
+Une erreur dans l'affichage des pourcentages des items des certificats.
+Une erreur dans la gestion des mots de passe du référentiel.
+
+
+Le poids d'une compétence est désormais stocké sous forme de nombre décimal ce qui autorise 
+un poids de 0.5
+Le seuil de certification est aussi un décimal.
+
+Nouvel algoritme de calcul des pourcentages de compétences et domaines.
+Calcul d'une note
+
+Pour permettre d'apprécier le chemin qui reste à faire pour obtenir une compétence ou un domaine de compétences, 
+des notes sont affichées par compétence et par domaine sous forme de pourcentages.
+
+    * Au niveau de l'Item :
+      100% * NOMBRE_VALIDATION_ITEM / ENPREINTE_ITEM
+    * Au niveau de la compétence :
+      100 * SOMME_SUR_ITEMS_COMPETENCE(NOMBRE_VALIDATION_ITEM / weight) / SOMME_SUR_ITEMS_COMPETENCE(weight * ENPREINTE_ITEM)
+    * Au niveau du domaine :
+      100% * SOMME_SUR_ITEMS_DOMAINE(NOMBRE_VALIDATION_ITEM / weight) / SOMME_SUR_ITEMS_DOMAINE(weight * ENPREINTE_ITEM)
+
+Autrement dit la contribution d'un Item à la note de la compétence et du domaine est proportionnelle au produit POIDS * EMPREINTE.
+
+
+===========================================
+V3.2.2 - 2009070912 du 9 Juillet 2009
+9/07/2009 : Les enseignants sans droit d'édition (tuteurs) peuvent consulter les activité et les certificats 
+des étudiants mais ne peuvent ni les modifier ni les évaluer.
+La suppression d'une activité issue d'une tâche par son souscripteur autorise 
+désormais celui-ci à souscrire à nouveau à cette tâche.
+L'ajout / suppression de fichiers attachés à une activité fonctionne ENFIN !
+Il est possible d'attacher plusieurs fichiers à une activité.
+L'affichage des activités est corrigé : si un référentiel est utilisés dans plusieurs cours, 
+vous ne voyez dans un cours donné que vos déclarations de celui-ci.
+
+Désormais le module et ses mise à jours seront disponibles sur le site du MoodleMoot2009 dans le cours "Référentiel"
+Inscrivez-vous sur le forum de ce cours pour recevoir les notifications de mise à jour.
+Il est formellement recommandé de mettre à jour vos versions antérieures qui ne sont plus du tout supportées.
+
+
+===========================================
+v3.1 11 mai 2009
+Cette version implémente les groupes, les empreintes de compétence, 
+les tâches et le paramétrage du module par l'administrateur au niveau du site.
+Ce module Référentiel remplace les versions antérieures.
+
+
+===========================================
+V2.0 janvier 2009 Cette version n'est pas distribuée.
+
+
+===========================================
+V1.0 29/11/2008
+ATTENTION le format des fichiers CSV a changé.
+Vous ne pouvez pas importer les fichiers CSV de la version Moodle Référentiel V.0xx 
+dans le module Référentiel V1.xxx
+
+Il est relativement facile de les corriger "à la main" 
+les fichiers de la version 0.xx en repérant les lignes commençant par # dans le fichier.
+Ce qui a été ajouté : 
+ - l'empreinte d'un item (1 par defaut pour chacun des items)
+Ce qui a été modifié : 
+ - les balise #code sont optimisées.Une seule balise avant la liste des item d'une compétence.
+ - le format de date d'export du fichier est modifié :  Y:2008m:10d:06 pour 06/10/2008
+
+
+===========================================
+V0.1 mai 2008
+Version initiale qui n'est plus du tout supportée.

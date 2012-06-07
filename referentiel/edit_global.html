@@ -1,0 +1,904 @@
+<?php // $Id: edit.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author jfruitet
+ * @version $Id: mod.html,v 1.0 2008/04/29 00:00:00 jfruitet Exp $
+ * @package referentiel
+ **/
+ 
+$email_user=referentiel_get_user_mail($USER->id); 
+// DEBUG
+// echo "<br />EMAIL_USER : $email_user<br />\n";
+ 
+/// First we check that form variables have been initialised
+// instance
+if (isset($referentiel) &&  ($referentiel) ){
+	// referentiel referentiel
+	if (isset($referentiel->referentielid) && ($referentiel->referentielid>0)){
+		$referentiel_referentiel = get_record('referentiel_referentiel', 'id', $referentiel->referentielid);
+	}
+	if (!isset($form->instance)) {
+    	$form->instance = $referentiel->referentielid;
+	}
+	else {
+    	$form->instance = '';
+	}
+}
+else if (!isset($form->instance)) {
+    	$form->instance = '';
+}
+
+
+if (isset($referentiel_referentiel) &&  ($referentiel_referentiel) ){
+	// MISE A JOUR
+	if (!isset($form->referentiel_id)) {
+    	$form->referentiel_id = $referentiel_referentiel->id;
+	}
+	if (!isset($form->instance) || ($form->instance=="")) {
+    	$form->instance = $referentiel_referentiel->id;
+	}
+	
+	if (!isset($form->referentiel_id)) {
+		$form->instance = $referentiel_referentiel->id;		
+	}
+	if (!isset($form->name)) {
+    	$form->name = $referentiel_referentiel->name;
+	}
+	if (!isset($form->code)) {
+    	$form->code = $referentiel_referentiel->code;
+	}
+	if (isset($referentiel_referentiel->password)) {
+    	$form->password = $referentiel_referentiel->password;
+		$form->old_pass_referentiel = $referentiel_referentiel->password;
+		$form->suppression_pass_referentiel = 0;
+	}
+	else{
+		$form->password = '';
+		$form->old_pass_referentiel = '';
+		$form->suppression_pass_referentiel = 0;
+	}
+	
+	if (isset($referentiel_referentiel->cle_referentiel)) {
+    	$form->cle_referentiel = $referentiel_referentiel->cle_referentiel;
+	}
+	else{
+		$form->cle_referentiel='';
+	}
+	
+	if (isset($referentiel_referentiel->referentielauthormail)
+		 && ($referentiel_referentiel->referentielauthormail!='')) {
+    	$form->referentielauthormail = $referentiel_referentiel->referentielauthormail;
+	}
+	else{
+		$form->referentielauthormail ='';
+	}
+	
+	if (!isset($form->description)) {
+    	$form->description = $referentiel_referentiel->description;
+	}
+	if (!isset($form->url)) {
+    	$form->url = $referentiel_referentiel->url;
+	}
+	if (!isset($form->certificatethreshold)) {
+    	$form->certificatethreshold = $referentiel_referentiel->certificatethreshold;
+	}
+	if (!isset($form->nb_domaines)) {
+    	$form->nb_domaines = $referentiel_referentiel->nb_domaines;
+	}
+	if (!isset($form->liste_codes_competence)) {
+    	$form->liste_codes_competence = $referentiel_referentiel->liste_codes_competence;
+	}
+
+	if (!isset($form->defaultsort)) {
+    	$form->defaultsort = '';
+	}
+	if (!isset($form->defaultsortdir)) {
+    	$form->defaultsortdir = '';
+	}
+	if (!isset($form->course)) {
+    	$form->course = $course->id;
+	}
+	
+	if (!isset($form->local)) {
+    	$form->local = $referentiel_referentiel->local;
+	}
+	
+	if (!isset($form->liste_empreintes_competence)) {
+    	$form->liste_empreintes_competence = $referentiel_referentiel->liste_empreintes_competence;
+	}
+
+	if (!isset($form->liste_poids_competence)) {
+    	$form->liste_poids_competence = $referentiel_referentiel->liste_poids_competence;
+	}
+
+	if (!isset($form->logo)) {
+    	$form->logo = $referentiel_referentiel->logo;
+	}
+
+	if (!isset($form->sesskey)) {
+    	$form->sesskey = sesskey();
+	}
+	if (!isset($form->mode)) {
+    	$form->mode = "update";
+	}
+	
+	
+
+}
+else {
+	// CREATION DE REFERENTIEL
+	if (!isset($form->referentiel_id)) {
+    	$form->referentiel_id = '';
+	}	
+	if (!isset($form->instance)) {
+    	$form->instance = '';
+	}	
+	if (!isset($form->name)) {
+    	$form->name = "";
+	}
+	if (!isset($form->code)) {
+    	$form->code = "";
+	}
+	if (!isset($form->password)) {
+    	$form->password = "";
+	}
+	if (!isset($form->old_pass_referentiel)){
+		$form->old_pass_referentiel='';
+	}
+	if (!isset($form->suppression_pass_referentiel)){
+		$form->suppression_pass_referentiel = 0;
+	}
+	
+	if (!isset($form->cle_referentiel)) {
+    	$form->cle_referentiel = "";
+	}
+	if (!isset($form->referentielauthormail)) {
+    	$form->referentielauthormail = "";
+	}
+	
+	if (!isset($form->description)) {
+    	$form->description = "";
+	}
+	if (!isset($form->url)) {
+    	$form->url = "";
+	}
+	if (!isset($form->certificatethreshold)) {
+    	$form->certificatethreshold = "";
+	}
+	if (!isset($form->nb_domaines)) {
+    	$form->nb_domaines = 1;
+	}
+	if (!isset($form->liste_codes_competence)) {
+    	$form->liste_codes_competence = "";
+	}	
+	if (!isset($form->local)) {
+    	$form->local = 0; // referentiel global 
+	}
+	if (!isset($form->liste_empreintes_competence)) {
+    	$form->liste_empreintes_competence = "";
+	}
+
+	if (!isset($form->liste_poids_competence)) {
+    	$form->liste_poids_competence = "";
+	}
+
+	if (!isset($form->logo)) {
+    	$form->logo = "";
+	}
+
+	if (!isset($form->sesskey)) {
+    	$form->sesskey = sesskey();
+	}
+	if (!isset($form->mode)) {
+    	$form->mode = "add";
+	}
+}
+// DEBUG
+// print_r($form);
+// exit;
+?>
+
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&mode=".$form->mode."&pass=".$pass."&sesskey=".sesskey()) ?>">
+
+<table cellpadding="5" align="center">
+<tr valign="top">
+    <td align="right"><b><?php  print_string('name','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="name" size="60" maxlength="80" value="<?php  echo stripslashes($form->name) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($form->code) ?>" />
+    </td>
+</tr>
+<?php
+	if (isset($form->referentielauthormail) && ($form->referentielauthormail!='')){
+		echo '
+<tr valign="top">
+    <td align="right"><b>'.get_string('auteur','referentiel').' : </b></td>
+    <td align="left">
+        '.$form->referentielauthormail.'
+    </td>
+</tr>
+';
+	}
+
+	if (($form->password=='') && ($form->referentielauthormail=='')){ // nouveau referentiel
+		echo '<tr valign="top">
+    <td align="right"><b>'.get_string('password','referentiel').' :</b></td>
+    <td align="left">
+        <input type="password" name="password" size="20" maxlength="20" value="" />
+'.get_string('aide_pass_referentiel','referentiel').'
+    </td>
+</tr>
+';
+	}
+	else if (($form->referentielauthormail!='') 
+		&& (trim($email_user)==trim($form->referentielauthormail))) { // mise a jour
+		echo '
+<tr valign="top">
+    <td align="right"><b>';
+		if ($form->password!=''){
+			echo get_string('ressaisir_pass_referentiel','referentiel');
+		}
+		else {
+			echo get_string('password','referentiel');
+		}
+		echo ' :</b></td>
+    <td align="left">
+        <input type="password" name="password" size="20" maxlength="20" value="" />  ';
+		if (($form->password!='')){
+			print_string('existe_pass_referentiel','referentiel');
+		}
+		else{
+			print_string('aide_pass_referentiel','referentiel');
+		}
+		echo '
+    </td>
+</tr>
+';
+	
+		if ($form->password!=''){
+			echo '
+<tr valign="top">
+    <td align="right"><b>';
+			echo get_string('suppression_pass_referentiel','referentiel');
+			echo ' :</b></td>
+    <td align="left">
+';		
+			echo '<input type="radio" name="suppression_pass_referentiel" value="0" checked="checked" /> '.get_string('no').'<input type="radio" name="suppression_pass_referentiel" value="1" /> '.get_string('yes');
+			echo '
+    </td>
+</tr>
+';
+		}
+	}
+	else{
+		echo '<input type="hidden" name="password" value="'.$form->password.'" />'."\n";
+	}
+?>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($form->description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('url','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="url" size="60" maxlength="255" value="<?php  p($form->url) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('logo','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="logo" size="60" maxlength="255" value="<?php  p($form->logo) ?>" />
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right"><b><?php  print_string('certificatethreshold','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="certificatethreshold" size="5" maxlength="10" value="<?php  p($form->certificatethreshold) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('referentiel_global','referentiel') ?>:</b></td>
+    <td align="left">
+<?php	
+if (isset($form->local)){
+	if ($form->local!=0){ // si local == course_id le referentiel est local
+		echo '<input type="radio" name="local" value="0" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->local.'" checked="checked" />'. get_string("no")."\n";
+	}
+	else{
+		echo '<input type="radio" name="local" value="0" checked="checked" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->course.'" />'. get_string("no")."\n";
+	}
+}
+else {
+	echo '<input type="radio" name="local" value="0" checked="checked" />'. get_string("yes").'
+<input type="radio" name="local" value="'.$form->course.'" />'. get_string("no")."\n";
+}
+?>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('nombre_domaines_supplementaires','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="nb_domaines" size="2" maxlength="2" value="<?php  p($form->nb_domaines) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="modifierreferentiel" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="referentielauthormail" value="<?php  p($form->referentielauthormail); ?>" />
+<input type="hidden" name="old_pass_referentiel" value="<?php  p($form->old_pass_referentiel); ?>" />
+<input type="hidden" name="cle_referentiel" value="<?php  p($form->cle_referentiel); ?>" />
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+</td>
+</tr>
+</table>
+
+</form>
+
+<?php
+// MODIF JF 14/3/2010
+// formulaire global
+
+$id_ligne=0;
+
+echo "\n\n".'<form name="form"  id="form" method="post" action="edit.php?d='.$referentiel->id.'&pass='.$pass.'">'."\n";
+echo  '<tr>
+<td class="ardoise" colspan="9">
+ <img class="selectallarrow" src="./pix/arrow_ltr_bas.png" width="38" height="22" alt="Pour la sélection :" />
+ <i>'.get_string('cocher_enregistrer', 'referentiel').'</i>
+<input type="submit" value="'.get_string("savechanges").'" />
+<input type="reset" value="'.get_string("corriger", "referentiel").'" /> "';
+// <input type="submit" name="delete" value="'.get_string("delete").'" />
+echo '<input type="submit" name="cancel" value="'.get_string("quit", "referentiel").'" />
+</td></tr>'."\n";
+?>
+<!-- DOMAINES -->
+
+<?php
+	// charger les domaines associes au referentiel courant
+	if (isset($form->referentiel_id) && ($form->referentiel_id>0)){
+		$referentielid=$form->referentiel_id; // plus pratique
+		// Nombre de domaines à creer
+		$objet_nb_domaines=referentiel_get_nb_domaines($referentielid);
+		$nb_domaines=$objet_nb_domaines->nb_domaines;
+		// DEBUG
+		// echo "<br/>DEBUG :: NOMBRE DE DOMAINES A AJOUTER : $nb_domaines <br />\n";
+
+		
+		// AFFICHER LA LISTE DES DOMAINES
+		$compteur_domaine=0;
+		$records_domaine = referentiel_get_domaines($referentielid);
+
+	    if ($records_domaine){
+    		// afficher
+			// DEBUG
+			// echo "<br/>DEBUG ::<br />\n";
+			// print_r($records_domaine);
+			// echo "<br/>DEBUG ::<br />\n";
+			
+			foreach ($records_domaine as $record){
+			 if ($record) {
+				$id_ligne++;
+        $compteur_domaine++;
+        $domaine_id=$record->id;
+				$nb_competences = $record->nb_competences;
+				$code = $record->code;
+				$description = $record->description;
+				$sortorder = $record->sortorder;
+
+				// DEBUG
+				// echo "<br/>DEBUG ::DOMAINE :: COMPTEUR : $compteur_domaine, DOMAINE_ID : $domaine_id, CODE : $code, DESCRIPTION : $description, NUM : $sortorder, COMPETENCES : $nb_competences<br />\n";
+
+				// afficher le formulaire
+echo '
+<!-- DOMAINE -->
+
+<table cellpadding="5" align="center">
+
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="center" colspan="2"><i>'.get_string('domaine','referentiel').'</i></td>
+</tr>
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="right"><b>'.get_string('id','referentiel').':</b></td>
+    <td align="left">
+        <input type="hidden" name="domaine_id" id="domaine_id_'.$id_ligne.'>" value="'.$domaine_id.'" /> '.$domaine_id.'
+    </td>
+</tr>
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="right"><b>'.get_string('code','referentiel').':</b></td>
+    <td align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="'.stripslashes($code).'" />
+    </td>
+</tr>
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="right"><b>'.get_string('description','referentiel').':</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description">'.stripslashes($record->description).'</textarea>
+    </td>
+</tr>	
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="right"><b>'.get_string('numero','referentiel').':</b></td>
+    <td align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="'.$sortorder.'" />
+    </td>
+</tr>
+<tr valign="top"  bgcolor="#ffffcc">
+    <td align="right"><i>'.get_string('nombre_competences_supplementaires','referentiel').'</i>:</td>
+    <td align="left">
+        <input type="text" name="nb_competences" size="2" maxlength="2" value="'.$nb_competences.'" />
+    </td>
+</tr>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="modifierdomaine" />
+<input type="hidden" name="referentiel_id"  value="'.$form->referentiel_id.'" />
+<!-- These hidden variables are always the same -->
+<input type="hidden" name="referentielauthormail" value="'.$form->referentielauthormail).'" />
+
+<input type="hidden" name="liste_codes_competence" value="'.$form->liste_codes_competence).'" />
+<input type="hidden" name="liste_empreintes_competence" value="'.$form->liste_empreintes_competence).'" />
+
+<input type="hidden" name="liste_poids_competence" value="'.$form->liste_poids_competence.'" />
+'."\n";
+echo  '<input type="checkbox" name="tligne_id[]" id="tligne_id_'.$ligne_id.'" value="'.$ligne_id.'" />';      
+	</td>
+</tr>
+</table>
+';
+
+
+<?php
+				// LISTE DES COMPETENCES DE CE DOMAINE
+				$compteur_competence=0;
+				$records_competences = referentiel_get_competences($domaine_id);
+
+			    if ($records_competences){
+    				// afficher
+					// DEBUG
+					// echo "<br/>DEBUG :: COMPETENCES <br />\n";
+					// print_r($records_competences);
+
+					foreach ($records_competences as $record_c){
+						$compteur_competence++;
+        				$competence_id=$record_c->id;
+						$nb_item_competences = $record_c->nb_item_competences;
+						$code = $record_c->code;
+						$description = $record_c->description;
+						$sortorder = $record_c->sortorder;
+						$domainid = $record_c->domainid;
+						
+						// DEBUG
+						// echo "<br/>DEBUG ::COMPETENCE :: COMPTEUR : $compteur_competence, ID : $competence_id, CODE : $code, DESCRIPTION : $description, NUM : $sortorder, NB ITEM COMPETENCES : $nb_item_competences<br />\n";
+
+						// afficher le formulaire
+?>
+<!-- COMPETENCE -->
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&pass=".$pass) ?>">
+<table cellpadding="5" align="center">
+<tr valign="top"  bgcolor="#ccffff">
+    <td align="center" colspan="2"><i><?php  print_string('competence','referentiel') ?>:</i></td>
+</tr>
+<tr valign="top" bgcolor="#ccffff">
+    <td align="right"><b><?php  print_string('id','referentiel') ?>:</b></td>
+    <td align="left">
+<input type="hidden" name="competence_id" value="<?php  p($competence_id) ?>" /> 
+<?php  p($competence_id) ?>
+<input type="hidden" name="domainid" value="<?php  p($domainid) ?>" /> 	
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffff">
+    <td align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  echo stripslashes($code) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffff">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="description"><?php  echo stripslashes($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffff">
+    <td align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="<?php  p($sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffff">
+    <td align="right"><i><?php  print_string('nombre_item_competences_supplementaires','referentiel') ?></i>:</td>
+    <td align="left">
+        <input type="text" name="nb_item_competences" size="2" maxlength="2" value="<?php  p($nb_item_competences) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="modifiercompetence" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" /> 
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+	</td>
+</tr>
+</table>
+</form>
+<br/>
+<?php
+						// ITEM
+						// LISTE DES ITEMS DE CETTE COMPETENCES
+						$compteur_item=0;
+						$records_items = referentiel_get_item_competences($competence_id);
+
+			    		if ($records_items){
+    						// afficher
+							// DEBUG
+							// echo "<br/>DEBUG :: ITEMS <br />\n";
+							// print_r($records_items);
+							foreach ($records_items as $record_i){
+								if ($record_i){
+									$compteur_item++;
+		        					$item_id=$record_i->id;
+									$code = $record_i->code;
+									$description = $record_i->description;
+									$sortorder = $record_i->sortorder;
+									$type = $record_i->type;
+									$weight = $record_i->weight;	
+									$footprint = $record_i->footprint;
+									$skillid=$record_i->skillid;						
+									// DEBUG
+									// echo "<br/>DEBUG 428 ::ITEM :: COMPTEUR : $compteur_item, ID : $item_id, CODE : $code, DESCRIPTION : $description, NUM : $sortorder;<br />\n";
+									// afficher le formulaire
+?>
+<!-- ITEM -->
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&pass=".$pass) ?>">
+<table cellpadding="5" align="center" bgcolor="#f0ffe0">
+<tr valign="top">
+    <th class="item" align="center" colspan="6"><b><?php  print_string('item','referentiel') ?></b></th>
+</tr>
+<tr valign="top">
+    <td class="item" align="right"><b><?php  print_string('id','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+<input type="hidden" name="item_id" value="<?php  p($item_id) ?>" /> 
+<?php  p($item_id) ?>
+<input type="hidden" name="skillid" value="<?php  p($skillid) ?>" /> 	
+    </td>
+    <td class="item" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="item" align="left"  colspan="3">
+        <input type="text" name="code" size="20" maxlength="20" value="<?php  p($code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="item" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="item" align="left" colspan="5">
+		<textarea cols="60" rows="5" name="description"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td class="item" align="right"><b><?php  print_string('type','referentiel') ?>:</b></td>
+    <td class="item" align="left" colspan="5">
+        <input type="text" name="type" size="20" maxlength="20" value="<?php  p($type) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="item" align="right"><b><?php  print_string('weight','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="weight" size="5" maxlength="10" value="<?php  p($weight) ?>" />
+    </td>
+</tr>
+<tr valign="top">	
+    <td class="item" align="right"><b><?php  print_string('footprint','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="footprint" size="3" maxlength="3" value="<?php  p($footprint) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td class="item" align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="sortorder" size="2" maxlength="2" value="<?php  p($sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+<td  colspan="6" align="center">
+<input type="hidden" name="action" value="modifieritem" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" /> 
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+    </td>
+</tr>
+</table>
+</form>
+<br />
+<?php
+								}
+							}
+						}
+						// NOMBRE DE NOUVEAUX ITEMS DE COMPETENCE DEMANDES
+						$nb_items_a_afficher=$nb_item_competences-$compteur_item; // Tenir compte des items enregistres
+
+						if (isset($nb_items_a_afficher) &&  ($nb_items_a_afficher>0)){
+							// DEBUG
+							// echo "<br/>DEBUG :: NOMBRE DE itemS A AJOUTER : $nb_items_a_afficher <br />\n";
+							for ($k=0; $k<$nb_items_a_afficher; $k++){				
+								$code = '';
+								$description = '';
+								$compteur_item++;
+								$sortorder = $compteur_item;								
+								$type = '';
+								$weight = '1.0';
+								$footprint = '1';
+								$skillid=$competence_id;
+?>		
+
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&pass=".$pass) ?>">
+<table cellpadding="5" align="center">		
+<tr valign="top" bgcolor="#ffddaa">
+    <th class="item" align="center" colspan="2"><i><?php  print_string('saisie_item_supplementaire','referentiel') ?></i>
+<input type="hidden" name="new_ref_competence" value="<?php  p($skillid) ?>" /> 	
+	</th>
+</tr>				
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="new_code_item" size="20" maxlength="20" value="<?php  p($code) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+		<textarea cols="60" rows="5" name="new_description_item"><?php  p($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('type','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="new_type_item" size="20" maxlength="20" value="<?php  p($type) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('weight','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="new_poids_item" size="5" maxlength="10" value="<?php  p($weight) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('footprint','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="new_empreinte_item" size="3" maxlength="3" value="<?php  p($footprint) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ffddaa">
+    <td class="item" align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td class="item" align="left">
+        <input type="text" name="new_num_item" size="2" maxlength="2" value="<?php  p($sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="newitem" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+    </td>
+</tr>
+</table>
+
+</form>
+
+<?php						
+							}
+						}
+					}
+				}
+				// NOMBRE DE NOUVELLES COMPETENCES DEMANDEES
+				$nb_competences_a_afficher=$nb_competences-$compteur_competence; // Tenir compte des competences enregistres
+
+				if (isset($nb_competences_a_afficher) &&  ($nb_competences_a_afficher>0)){
+					for ($i=0; $i<$nb_competences_a_afficher; $i++){				
+						// DEBUG
+						// echo "<br/>DEBUG :: NOMBRE DE COMPETENCES A AJOUTER : $nb_competences <br />\n";
+						$nb_item_competences = '0';
+						$code = '';
+						$description = '';
+						$compteur_competence++;
+						$sortorder = $compteur_competence;
+						$domainid=$domaine_id;
+?>
+<!-- COMPETENCE -->
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&pass=".$pass) ?>">
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+
+<table cellpadding="5" align="center">
+
+<tr valign="top" bgcolor="#ccffcc">
+    <td align="center" colspan="2"><i><?php  print_string('saisie_competence_supplementaire','referentiel') ?>:</i>
+<input type="hidden" name="new_ref_domaine" value="<?php  p($domainid) ?>" /> 	
+	</td>
+</tr>
+<tr valign="top" bgcolor="#ccffcc">
+    <td align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="new_code_competence" size="20" maxlength="20" value="<?php  echo stripslashes($code) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffcc">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="new_description_competence"><?php  echo stripslashes($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffcc">
+    <td align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="new_num_competence" size="2" maxlength="2" value="<?php  p($sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffcc">
+    <td align="right"><i><?php  print_string('nombre_item_competences_supplementaires','referentiel') ?></i>:</td>
+    <td align="left">
+        <input type="text" name="new_nb_item_competences" size="2" maxlength="2" value="<?php  p($nb_item_competences) ?>" />
+    </td>
+</tr>
+<tr valign="top" bgcolor="#ccffcc">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="newcompetence" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+    </td>
+</tr>
+</table>
+</form>
+<br />
+<?php
+					}	
+				}	
+        }		
+			}
+		}
+		
+		// NOMBRE DE NOUVEAUX DOMAINES DEMANDES
+		$nb_domaines_a_afficher=$nb_domaines-$compteur_domaine; // Tenir compte des domaines enregistres
+		if (isset($nb_domaines_a_afficher) &&  ($nb_domaines_a_afficher>0)){
+			for ($j=0; $j<$nb_domaines_a_afficher; $j++){
+				// boite de saisie
+				$code = '';
+				$description = '';
+				$compteur_domaine++;
+				$sortorder = $compteur_domaine;
+				// DEBUG
+				// echo "<br/>DEBUG ::COMPTEUR : $compteur_domaine<br />\n";
+?>
+<!-- DOMAINE -->
+<form name="form" method="post" action="<?php p("edit.php?d=".$referentiel->id."&pass=".$pass) ?>">
+<table cellpadding="5" align="center">
+<tr valign="top">
+    <td align="center" colspan="2"><i><?php  print_string('saisie_domaine_supplementaire','referentiel') ?>:</i></td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('code','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="new_code_domaine" size="20" maxlength="20" value="<?php echo stripslashes($code) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('description','referentiel') ?>:</b></td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="new_description_domaine"><?php  echo stripslashes($description) ?></textarea>
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><b><?php  print_string('numero','referentiel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="new_num_domaine" size="2" maxlength="2" value="<?php  p($sortorder) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right"><i><?php  print_string('nombre_competences_supplementaires','referentiel') ?></i>:</td>
+    <td align="left">
+        <input type="text" name="new_nb_competences" size="2" maxlength="2" value="0" />
+    </td>
+</tr>
+<tr valign="top">
+<td colspan="2" align="center">
+<input type="hidden" name="action" value="newdomaine" />
+<input type="hidden" name="referentiel_id"      value="<?php  p($form->referentiel_id) ?>" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="liste_codes_competence" value="<?php  p($form->liste_codes_competence); ?>" />
+<input type="hidden" name="liste_empreintes_competence" value="<?php  p($form->liste_empreintes_competence); ?>" />
+
+<input type="hidden" name="liste_poids_competence" value="<?php  p($form->liste_poids_competence); ?>" />
+
+<input type="hidden" name="sesskey"     value="<?php  p($form->sesskey) ?>" />
+<input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+<input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("corriger", "referentiel") ?>" />
+<input type="submit" name="delete" value="<?php  print_string("delete") ?>" />
+<input type="submit" name="cancel" value="<?php  print_string("quit", "referentiel") ?>" />
+    </td>
+</tr>
+</table>
+</form>
+
+<?php		
+	 
+			}
+		}	
+	}
+?>
+

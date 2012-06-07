@@ -1,0 +1,47 @@
+<!-- Version: $Id$ -->
+
+<h1>Importer / Exporter un référentiel sous forme de barème d'objectifs</h1>
+
+<p>Si les objectifs sont activés sur votre serveur Moodle (voir ci après comment les activer) 
+vous pouvez sauvegarder le référentiel sous forme d'un barème d'objectifs puis utiliser ce barème 
+pour évaluer toute forme d'activité Moodle (forums, devoirs, bases de données, wiki, etc.)
+<br />Le module Référentiel récupèrera ces évaluations et génèrera des déclarations 
+qui seront dès lors accessibles dans la liste des activités du module référentiel.
+</p>
+<h2>Protocole</h2>
+<p>Le protocole est en trois étapes :
+<ol><li>Activer les objectifs au niveau du site</li>
+<li>Importer un fichier de barème par objectif</li>
+<li>Créer des activités et sélectionner ce barème pour les noter</li>
+</ol>
+<h3>Activer les objectifs au niveau du serveur</h3>
+<p>Avec le rôle d'administrateur <strong>activez les Objectifs</strong> au niveau du serveur 
+(Rubrique "Administration du site / Notes / Réglages généraux :: Activer les objectifs = 'Oui'") 
+<br />Vous pouvez alors importer un fichier d'objectifs du module Référentiel en passant par le rubrique 
+"Administration du site / Notes / Objectifs / Importer des objectifs.
+</p>
+<h3>Créer un fichier d'objectifs depuis le module Référentiel</h3>
+<p>Avec un rôle d'enseignant passer par l'onglet "Référentiel / Exporter" 
+puis <strong>Barème et Objectifs</strong> et cliquer sur le lien "Exporter le référentiel sous forme de barème et d'objectifs".
+<br />Le fichier "<code>outcomes_referentiel_xxx.csv</code>" sera enregistré sur votre disque dur.</p>
+<h3>Intéger des objectifs dans votre cours</h3>
+<p>Il y a deux situations possibles : </p>
+<ul><li>Soit le barème d'objectifs est disponible au niveau du site, comme liste d'objectifs standards ;
+ajoutez les tous à votre cours en passant par la rubrique 
+"Administration / Objectifs / Objectifs utilisés dans le cours"</li>
+<li>Soit le barème n'est pas encore disponible et il faut le charger en passant par 
+"Administration / Objectifs / Modifier les objectifs"
+<ol>
+<li>Choisir alors <strong>Importer comme objectifs de ce cours</strong> 
+ou <strong>Importer comme objectifs standards</strong> 
+</li><li>puis <strong>Importer des objectifs (Taille maximale : xx Mo)</strong>, 
+sélectionner le fichier "<code>outcomes_referentiel_xxx.csv</code>" ci-dessus enregistré.</li>
+</ol>
+</ul>
+<h2>Mise en oeuvre</h2>
+<p>Désormais vous pouvez utiliser ce barème d'objectifs pour évaluer toute activité du cours.
+<br />Les étudiants notés selon ce barème verront leurs productions intégrées 
+directement dans le module référentiel sous forme de déclarations d'activité accessibles
+et modifiables selon les modalités usuelles.
+<br /><strong>N.B.</strong> : Cette intégration est liée au lancement périodique du programme <i>cron</i> sur votre serveur.</p> 
+<p>&nbsp;</p>

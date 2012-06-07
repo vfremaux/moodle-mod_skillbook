@@ -1,0 +1,66 @@
+<?php // $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+/**
+ * This page defines the form to create or edit an instance of this module
+ * It is used from /course/mod.php.  The whole instance is available as $form.
+ *
+ * @author 
+ * @version $Id: mod.html,v 1.5 2006/10/07 12:28:57 gustav_delius Exp $
+ * @package referentiel
+ **/
+
+	// Nouvel etablissement
+	// filtres
+    $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+	
+	$isteacher = has_capability('mod/referentiel:approve', $context);
+	$isauthor = has_capability('mod/referentiel:write', $context) && !$isteacher;
+	$iseditor = has_capability('mod/referentiel:writereferentiel', $context);	
+
+	$form->idnumber = get_string('inconnu', 'referentiel');
+	$form->name = get_string('inconnu', 'referentiel');
+	$form->address = get_string('inconnu', 'referentiel');
+
+?>
+<center>
+<h3><?php  print_string('modifier_etablissement','referentiel') ?></h3>
+<form name="form" method="post" action="<?php p("etablissement.php?id=$cm->id") ?>">
+<table cellpadding="5" width="80%">
+<table cellpadding="5">
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('idnumber','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="idnumber" size="20" maxlength="20" value="<?php  p($form->idnumber) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('name','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+<input type="text" name="name" size="60" maxlength="255" value="<?php  p($form->name) ?>" />
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+	<b><?php  print_string('address','referentiel') ?>:</b>
+	</td>
+    <td align="left">
+		<textarea cols="60" rows="5" name="address"><?php  p($form->address) ?></textarea>
+    </td>
+</tr>
+</table>
+
+
+<input type="hidden" name="action" value="creer_etablissement" />
+<!-- These hidden variables are always the same -->
+
+<input type="hidden" name="sesskey"     value="<?php  p(sesskey()) ?>" />
+<input type="hidden" name="mode"          value="<?php  p($mode) ?>" />
+<input type="submit" value="<?php  print_string("savechanges") ?>" />
+<input type="reset" value="<?php  print_string("cancel") ?>" />
+
+</center>
+
+</form>	

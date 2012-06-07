@@ -1,0 +1,91 @@
+<!-- Version: $Id$ --><title>Aide</title>
+
+<h1>Formats d'importation / exportation</h1>
+<ul>
+<li>XML is a textual data format representing the information as a tag hierarchies and nested data.
+ It allows the backup and restore of skills repositories, activities and certificates.
+ <br>
+<div>
+<font size="-1">
+<pre>
+&lt;referentiel&gt;
+ &lt;id&gt;2&lt;/id&gt;
+ &lt;name&gt;Test&lt;/name&gt;
+
+ &lt;domaine&gt;
+  &lt;id&gt;3&lt;/id&gt;
+  &lt;code&gt;test1&lt;/code&gt;
+  &lt;description&gt;
+  &lt;text&gt;Description Test1&lt;/text&gt;
+  &lt;/description&gt;
+  &lt;referentielid&gt;2&lt;/referentielid&gt;
+
+  &lt;competence&gt;
+    &lt;id&gt;8&lt;/id&gt;
+    &lt;code&gt;Test1.1&lt;/code&gt;
+    &lt;description&gt;
+      &lt;text&gt;Description Test1.1&lt;/text&gt;
+    &lt;/description&gt;
+    
+    &lt;item&gt;
+      &lt;id&gt;28&lt;/id&gt;
+      &lt;code&gt;Test1.1.1&lt;/code&gt;
+      &lt;description&gt;
+        &lt;text&gt;Description Test1.1.1&lt;/text&gt;
+      &lt;/description&gt;
+    &lt;/item&gt;
+    
+    &lt;item&gt;
+      &lt;id&gt;30&lt;/id&gt;
+      &lt;code&gt;Test1.1.2&lt;/code&gt;
+      &lt;description&gt;
+        &lt;text&gt;Description Test1.1.2&lt;/text&gt;
+      &lt;/description&gt;
+    &lt;/item&gt;
+      
+  &lt;/competence&gt;
+
+ &lt;/domaine&gt;
+ 
+&lt;/referentiel&gt;
+  
+  </pre>
+</font>
+</div>
+</li>
+
+
+<li>The XHTML format is an export-type format intended for Web page display.
+<br /><br />
+</li>
+<li> The CSV is a textual format of tabular data (like in a spreadsheet).<br>
+  The CSV uses a separator, in general ';' between the cells of a table.<br>
+  <br>
+  For example:<br>
+<div>  
+  <pre>
+nom;prenom;mell;ville;cours1;role1;cours2;role2;
+HADDOCK;Archibald;a.haddock@moulinsart.be;Moulinsart;Navigation;professeur;
+TOURNESOL;Tryphon;t.tournesol@moulinsart.be;Moulinsart;Physique;professeur;
+CASTAFIORE;Bianca;la_castafiore@moulinsart.be;Moulinsart;Chant;professeur;
+;Tintin;tintin@moulinsart.be;Moulinsart;Chant;etudiant;
+  </pre>
+</font>
+This gives a table: <br />
+<font size="-1"> 
+<table cellspacing="1" cellpadding="2" bgcolor="#000000" border="0">
+<tr bgcolor="#999999"><th>nom</th><th>prenom</th><th>mel</th><th>ville</th><th>cours1</th><th>role1</th></tr>
+<tr bgcolor="#00CCFF"><td>HADDOCK</td><td>Archibald</td><td>a.haddock@moulinsart.be</td><td>Moulinsart</td><td>Navigation</td><td>professeur</td></tr>
+<tr bgcolor="#66FF66"><td>TOURNESOL</td><td>Tryphon</td><td>t.tournesol@moulinsart.be</td><td>Moulinsart</td><td>Physique</td><td>professeur</td></tr>
+<tr bgcolor="#00CCFF"><td>CASTAFIORE</td><td>Bianca</td><td>la_castafiore@moulinsart.be</td><td>Moulinsart</td><td>Chant</td><td>professeur</td></tr>
+<tr bgcolor="#66FF66"><td>&nbsp;</td><td>Tintin</td><td>tintin@moulinsart.be</td><td>Moulinsart</td><td>Chant</td><td>etudiant</td></tr>
+</table>
+</font>
+</div>
+  
+   <br />
+The CSV is not really suited for nested data, as in a skills repository.
+  </li>
+
+<p>&nbsp;</P>
+</ul>

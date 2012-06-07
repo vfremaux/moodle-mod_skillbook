@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>module-referentiel-Adminsitrer</name>
+ <code>ModRef-A</code>
+ <description>
+<text>Administrer le module Référentiel - JF 2010 - jean.fruitet@univ-nantes.fr</text>
+</description>
+ <url>http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24</url>
+ <certificatethreshold>0</certificatethreshold>
+ <timemodified>1277584921</timemodified>
+ <nb_domaines>1</nb_domaines>
+ <liste_codes_competence>RefA.1.1/RefA.1.2/RefA.1.3/RefA.1.4/RefB.1.1/RefB.1.2/RefB.1.3/RefB.1.4/RefB.2.1/RefB.2.2/RefB.2.3/RefB.2.4/RefB.2.5/RefB.3.1/RefB.3.2/RefB.3.3/RefB.3.4/RefB.3.4/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>RefA</code>
+  <description>
+<text>Administrer le module référentiel (rôle administrateur)</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>RefA.1</code>
+   <description>
+<text>Installer le module sur un serveur Moodle</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>0</nb_item_competences>
+
+   <item>
+    <code>RefA.1.1</code>
+    <description>
+<text>Télécharger le module</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RefA.1.2</code>
+    <description>
+<text>Paramétrer le module au niveau du serveur</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RefA.1.3</code>
+    <description>
+<text>Mettre à jour le module</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RefA.1.4</code>
+    <description>
+<text>Modifier les capacités pour le module référentiel</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RefB</code>
+  <description>
+<text>Ajouter une activité Référentiel à un cours (rôle enseignant)</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>RefB.1</code>
+   <description>
+<text>Associer un référentiel à une activité (instance)</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>0</nb_item_competences>
+
+   <item>
+    <code>RefB.1.1</code>
+    <description>
+<text>Créer un nouveau référentiel avec les formulaires de saisie</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.1.2</code>
+    <description>
+<text>Editer un référentiel (A partir de la version 5.3.5)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.1.3</code>
+    <description>
+<text>Importer un référentiel (SXML, XML, CSV)</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.1.4</code>
+    <description>
+<text>Associer un référentiel existant</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RefB.2</code>
+   <description>
+<text>Paramétrer l\'instance du référentiel (rôle enseignant)</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>0</nb_item_competences>
+
+   <item>
+    <code>RefB.2.1</code>
+    <description>
+<text>Autoriser / interdire l\'imporattion de référentiel</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.2.2</code>
+    <description>
+<text>Autoriser / interdire l\'impression des certificats</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.2.3</code>
+    <description>
+<text>Affichier / masquer les données de scolarité</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.2.4</code>
+    <description>
+<text>Masquer le référentiel aux étudiants</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.2.5</code>
+    <description>
+<text>Masquer l\'onglet Activité aux étudiants</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RefB.3</code>
+   <description>
+<text>Gérer les données du référentiel</text>
+</description>
+   <sortorder>3</sortorder>
+   <nb_item_competences>0</nb_item_competences>
+
+   <item>
+    <code>RefB.3.1</code>
+    <description>
+<text>Exporter les activités</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.3.2</code>
+    <description>
+<text>Exporter les tâches</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.3.3</code>
+    <description>
+<text>Exporter les certificats</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.3.4</code>
+    <description>
+<text>Sauvegarder un référentiel</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>RefB.3.4</code>
+    <description>
+<text>Restaurer un référentiel</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+

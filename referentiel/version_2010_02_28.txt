@@ -1,0 +1,335 @@
+Moodle module Referentiel 
+Module Moodle - Référentiel - Documentation
+jean.fruitet@univ-nantes.fr
+2007/2010
+
+
+Ce module doit être intégré dans le répertoire ./mod/ d'un serveur Moodle
+
+
+-------------------------------------------------
+Marche à suivre pour installer ET mettre à jour ce module
+--------------------------------------------------
+1. Unzip l'archive dans le dossier VOTRE_SERVEUR_MOODLE/mod/ 
+
+2. se loger avec le role admin sur VOTRE_SERVEUR_MOODLE
+http://localhost/VOTRE_SERVEUR_MOODLE/
+
+3. installer le module referentiel comme un nouveau module en passant par la rubrique 
+Administration / Notification
+
+4. paramétrer le module au niveau du site en passant par la rubrique 
+Administration / Plugins / Activités / Référentiel
+
+ERREUR FREQUENTE LORS DES MISE A JOUR
+------------------------------------------------
+L'erreur à éviter serait de créer une copie de sauvegarde (sous un autre nom) dans le dossier
+VOTRE_SERVEUR_MOODLE/mod/
+ 
+-------------------------------------------------
+Marche à suivre pour désinstaller ce module
+-------------------------------------------------
+1. logez-vous avec le role admin
+
+2. Supprimez le module 
+Administration / Plugins / Activités / Gestion des activités 
+Sélectionnner  Référentiel :: Supprimer
+
+3. Supprimez le dossier VOTRE_SERVEUR_MOODLE/mod/referentiel
+
+4. Supprimer les dossiers
+./moodledata/#course_id/moddata/referentiel
+de tous les cours où une instance a été déclarée
+
+---------------------------------------------------------
+The following steps should get you up and running with
+this module code.
+---------------------------------------------------------
+1. Unzip the archive in moodle/mod/ directory
+
+2. log on with admin role 
+
+3. install new module as usual 
+
+4. Set module parameters 
+Administration / Plugins / Activity / Pository
+
+---------------------------------------------------------
+Documentation et mises à jours sous forme d'archive ZIP 
+---------------------------------------------------------
+sur les sites du MoodleMoot2008 (Nantes) et du MoodleMoot2009 (Lyon)
+
+    * MoodMoot2008 : http://moodlemoot2008.vet-nantes.fr/moodle/course/view.php?id=36
+    * MoodMoot2009 : http://moodlemoot2009.insa-lyon.fr/course/view.php?id=24
+
+Pour être tenu informé des mise à jour inscrivez-vous dans les forums de ces cours.
+
+---------------------------------------------------
+CVS / Subversion
+---------------------------------------------------
+Le serveur public des sources CVS / Subversion est 
+https://subversion.cru.fr/referentiel/
+
+
+----------------------------------------------------
+Forums et Tests du module
+----------------------------------------------------
+Un fil de discussion sur Moodle en Français est consacré au module : 
+http://moodle.org/mod/forum/discuss.php?d=127647
+
+Un espace de test est disponible sur le serveur Moodle des Ateliers du  MoodleLab 
+http://ateliers.moodlelab
+dans la catégorie Référentiels
+
+---------------------------------------------------------
+Liste des documents disponibles sur ces différents sites
+---------------------------------------------------------
+
+    * Documentation utilisateurs
+    * Documentation développeurs
+    * Communications au MoodleMoot2008 et MoodleMoot2009
+    * Captures d'écran et présentations animées
+    * Vidéos
+
+--------------------------------------------------------
+Liste de référentiels disponibles pour importation
+--------------------------------------------------------
+
+Après installation du module sur un serveur Moodle, le dossier "./mod/referentiel/sauvegarde_referentiel" 
+contient les exports/imports suivants :
+
+Référentiel		Format d'import CSV			Format d'import XML
+B2i Ecole		referentiel-b2i_ecole.csv	referentiel-b2i_ecole.xml
+B2i Collège		referentiel-b2i_college.csv	referentiel-b2i_college.xml
+B2i Lycée		referentiel-b2i_lycee.csv	referentiel-b2i_lycee.xml
+C2IN1			referentiel-c2n1.csv		referentiel-c2in1.xml
+C2i2 Enseignant	referentiel-c2i2e.csv		referentiel-c2i2e.xml
+
+--------------------------------------------------------
+Sauvegarde des données sur le serveur Moodle
+et importation /  exportation et restauration du module
+-------------------------------------------------------
+
+Ce module enregistre les exportations dans le dossier ./moodledata/#course_id/moddata/referentiel
+Attention : En cas de suppression du module Référentiel ces dossier doivent être purgés à la main 
+par l'administrateur système !
+
+
+
+
+---------------------------------------------------------
+Historique des versions 
+---------------------------------------------------------
+
+
+===========================================
+Version 5.1.0 - 2010022800
+du 28 février 2010
+
+Evaluer des activités Moodle (forum, devoirs, etc.) au regard d'un barême de référentiel.
+
+Si les objectifs sont activés sur votre serveur Moodle (voir avec l'administrateur comment les activer) 
+vous pouvez sauvegarder le référentiel sous forme d'un barême d'objectifs
+puis utiliser ce barême pour évaluer toute forme d'activité Moodle (forums, devoirs, bases de données, wiki, etc.)
+Le module Référentiel récupèrera ces évaluations et génèrera des déclarations qui seront dès lors accessibles 
+dans la liste des activités du module référentiel.
+
+Protocole
+
+   1. Avec le rôle d'administrateur activer les Objectifs au niveau du serveur
+   2. Depuis le module Référentiel Exporter les objectifs (Onglet "Référentiel / Exporter")
+      Enregistrez le fichier "outcomes_referentiel_xxx.csv" sur votre disque dur.
+   3. Au niveau du cours passer par Administration / Notes et sélectionner Modifier Objectifs
+   4. Choisir alors Importer comme objectifs de ce cours ou Importer comme objectifs standards 
+puis dans la rubrique Importer des objectifs (Taille maximale : xxMo) sélectionnez le fichier 
+"outcomes_referentiel_xxx.csv" ci-dessus enregistré.
+
+Désormais vous pouvez utiliser ce barême pour évaluer toute activité du cours.
+Les étudiants notés selon ce barême verront leurs productions intégrées directement 
+dans le module référentiel sous forme de déclarations d'activité accessibles et modifiables selon les modalités usuelles.
+ 
+
+===========================================
+Version 4.4.4 - 2010021200
+du 4 février 2010
+
+Notification des activités, tâches et certificats.
+Impression des certificats au format CSV.
+
+===========================================
+Version 4.3.3 - 2010020400
+du 4 février 2010
+
+La modificaton d'une tâche ne modifie par l'auteur de celle-ci
+Interface enseignant de modification / validation / correction des activités améliorée.
+
+===========================================
+Version 4.3.2 - 2010011100
+du 22 janvier 2010
+
+Par défaut le module s'ouvre sur les activités
+
+
+===========================================
+Version 4.3.1 - 2010011100
+du 11 janvier 2010
+
+Possibilité d'associer une tâche à un groupe.
+
+
+===========================================
+Version 4.2.2 - 2010010900
+du 9 janvier 2010
+
+Possibilité de paramétrer les critères d'impression des certificats.
+Par défaut le numéro d'étudiant est récupéré dans le champ idnumber de la table user.
+Impression RTF des certificats
+
+===========================================
+Version 4.2.0 - 2009122009
+du 20 décembre 2009
+
+Les enseignants ont à nouveau la possibilité de déclarer des activités.
+Saisie des documents associés et des consignes améliorée.
+
+===========================================
+Version 4.1.5 - 2009121700
+du 17 décembre 2009
+
+Une jauge des activités déclarées est affichée.
+Interface de validation améliorée.
+Impression individuelle et collective 
+des certificats en XHTML, PDF, MSWord Doc, OpenOffice Odt
+
+===========================================
+Version 4.1.3 - 2009120900
+du 9 décembre 2009
+
+Une jauge des activités déclarées est affichée.
+Interface de validation améliorée.
+
+===========================================
+Version 4.1.0 - 2009110800
+du 08 novembre 2009
+
+Nombreuses améliorations de l'interface.
+Accélération de l'affichage des certificats.
+L'utilisateur affiche toutes les activités qu'il a déclarées pour un référentiel sur tous les cours.
+
+===========================================
+Version 3.3.3 - 2009100400 du 4 Octobre 2009
+Correction d'un bug dans la saisie des activités issues de tâches. 
+La validation partielle des compétences proposées dans la tâche est à nouveau possible
+
+===========================================
+Version 3.3.2 - 2009091900 du 19 Septembre 2009
+Correction d'un bug lors de la selection d'un referentiel avec mot de passe
+
+===========================================
+Version 3.3.1 - 2009090700 du 7 Septembre 2009
+Cette version implémente les groupes, les empreintes de compétence, les tâches 
+et le paramétrage du module par l'administrateur au niveau du site.
+La Sauvegarde / Restauration (Backup / Restore) est implantée.
+La suppression d'un référentiel (et pas seulement des instances de celui-ci) est implantée.
+La suppression d'une instance dans un cours supprime les activités et tâches associées (les certificats sont aussi mis à jour)
+Le module certificat affiche les résultats consolidés par domaine et compétence
+Le calcul des pourcentages par compétence et domaine utilise les empreintes et les poids.
+L'import / export des données de scolarité et des tâches.
+
+
+===========================================
+v3.2.6 - 2009090500 du 5 Septembre 2009
+Nouvel algoritme de calcul des pourcentages de compétences et domaines.
+Calcul d'une note
+
+Pour permettre d'apprécier le chemin qui reste à faire pour obtenir une compétence ou un domaine de compétences, des notes sont affichées par compétence et par domaine sous forme de pourcentages.
+
+    * Au niveau de l'Item :
+      100% * NOMBRE_VALIDATION_ITEM / ENPREINTE_ITEM
+    * Au niveau de la compétence :
+      100 * SOMME_SUR_ITEMS_COMPETENCE(NOMBRE_VALIDATION_ITEM / weight) / SOMME_SUR_ITEMS_COMPETENCE(weight * ENPREINTE_ITEM)
+    * Au niveau du domaine :
+      100% * SOMME_SUR_ITEMS_DOMAINE(NOMBRE_VALIDATION_ITEM / weight) / SOMME_SUR_ITEMS_DOMAINE(weight * ENPREINTE_ITEM)
+
+Autrement dit la contribution d'un Item à la note de la compétence et du domaine est proportionnelle au produit POIDS * EMPREINTE.
+
+
+===========================================
+V3.2.5 - 2009083100 du 31 Août 2009
+Le poids d'une compétence est désormais stocké sous forme de nombre décimal ce qui autorise 
+un poids de 0.5
+Le seuil de certification est aussi un décimal.
+
+
+===========================================
+V3.2.4 - 2009081310 du 29 Août 2009
+Sauvegarde / Restauration (Backup / Restore) d'une instance de Référentiel :
+Lors de la Sauvegarde pour que les déclarations d'activités, tâches, certificats et données de scolarité 
+soient intégrées dans la sauvegarde, cocher "Données utilisateurs" dans les options de sauvegarde.
+Lors de la restauration, si un référentiel portant la même clé que le référentiel restauré 
+existe déjà c'est celui-ci qui est associé à l'instance restaurée, sinon le nouveau référentiel est enregistré. 
+Suppression d'un référentiel :
+La suppression d'un référentiel nécessite au préalable la suppression de toutes instances associées.
+Suppression d'une instance 
+La suppression d'une instance dans un cours supprime les déclarations d'activité et tâches associées de ce cours 
+(les certificats sont aussi mis à jour).
+Bugs corrigés :
+Une erreur dans l'affichage des pourcentages des items des certificats.
+Une erreur dans la gestion des mots de passe du référentiel.
+
+
+===========================================
+V3.2.2 - 2009070912 du 9 Juillet 2009
+9/07/2009 : Les enseignants sans droit d'édition (tuteurs) peuvent consulter les activité et les certificats 
+des étudiants mais ne peuvent ni les modifier ni les évaluer.
+La suppression d'une activité issue d'une tâche par son souscripteur autorise 
+désormais celui-ci à souscrire à nouveau à cette tâche.
+L'ajout / suppression de fichiers attachés à une activité fonctionne ENFIN !
+Il est possible d'attacher plusieurs fichiers à une activité.
+L'affichage des activités est corrigé : si un référentiel est utilisés dans plusieurs cours, 
+vous ne voyez dans un cours donné que vos déclarations de celui-ci.
+
+
+===========================================
+v3.2.1 - 2009062600 publiée le 26 juin 2009
+Correction de bugs concernant la modification des activités par l'étudiant ou par l'enseignant et l'ajout de documents attachés
+à des activités et de consignes aux tâches.
+
+
+===========================================
+v3.2.0 - 2009062300 publiée le 23 juin 2009 au "MoodleMoot2009"
+Correction de bugs concernant l'affichage des activités dans un cours, l'ajout de documents attachés, l'ajout de consignes dans les tâces.
+Désormais le module et ses mise à jours seront disponibles sur le site du MoodleMoot2009 dans le cours "Référentiel"
+Inscrivez-vous sur le forum de ce cours pour recevoir les notifications de mise à jour.
+Il est formellement recommandé de mettre à jour vos versions antérieures qui ne sont plus du tout supportées.
+
+
+===========================================
+v3.1 11 mai 2009
+Cette version implémente les groupes, les empreintes de compétence, 
+les tâches et le paramétrage du module par l'administrateur au niveau du site.
+Ce module Référentiel remplace les versions antérieures.
+
+
+===========================================
+V2.0 janvier 2009 Cette version n'est pas distribuée.
+
+
+===========================================
+V1.0 29/11/2008
+ATTENTION le format des fichiers CSV a changé.
+Vous ne pouvez pas importer les fichiers CSV de la version Moodle Référentiel V.0xx 
+dans le module Référentiel V1.xxx
+
+Il est relativement facile de les corriger "à la main" 
+les fichiers de la version 0.xx en repérant les lignes commençant par # dans le fichier.
+Ce qui a été ajouté : 
+ - l'empreinte d'un item (1 par defaut pour chacun des items)
+Ce qui a été modifié : 
+ - les balise #code sont optimisées.Une seule balise avant la liste des item d'une compétence.
+ - le format de date d'export du fichier est modifié :  Y:2008m:10d:06 pour 06/10/2008
+
+
+===========================================
+V0.1 mai 2008
+Version initiale qui n'est plus du tout supportée.

@@ -1,0 +1,36 @@
+<!-- Version: $Id$ -->
+
+<h1>Exporter des données de scolarité</h1>
+<p>Les données de scolarité sont indispensables pour l'impression des certificats</p>
+
+<p>La procédure d'exportation est l'étape préalable et obligée qui permet de préparer un fichier afin d'ensuite 
+importer ces données dans Moodle.<br />
+Car pour pouvoir injecter des données de scolarité dans Moodle (par l'onglet "Importer") il faut associer à chaque utilisateur
+ses identifiants Moodle.
+<br />Autrement dit avant d'importer des données suivez scrupuleusement la procédure ci-après faute de quoi l'opération échouera.
+<ol>
+<li>Première étape : obtenir une sauvegarde contenant les identifiants Moodle des établissements et des étudiants.
+<br />Commencez mettre à jour la liste des établissements du cours (onglet <strong>Etablissements</strong>)
+<br />Puis affichez la liste de tous les <strong>étudiants</strong> du cours (onglet <strong>Etudiants</strong>).
+<br /><b>N.B.</b> : Inutile de compléter les champs manquants, vous le ferez hors Moodle.
+<br />Exportez maintenant (onglet <strong>Exporter</strong>) les données de scolarité de votre cours au format CSV.
+<br />Le fichier exporté est au format CSV se trouve dans le dossier <code>moddata/referentiel</code> de votre espace Moodle.
+</li>
+<li>Seconde étape : modifier cette sauvegarde avec l'éditeur de votre choix. Tous les champs marqués 'INCONNU'
+peuvent être modifiés sous éditeur
+<br /><b>Attention</b> : Champs à ne modifier sous aucun prétexte :
+<ul>
+<li><code>#id_etablissement</code>
+</li><li><code>#id_etudiant</code>
+</li><li><code>user_id</code></li>
+</li><li><code>login</code></li>
+</ul>
+<img src="./mod/referentiel/pix/export_scolarite.png" title="Export CSV de la scolarite" border="0">
+<br />
+N.B : Il suffit qu'un des trois champs '#id_etudiant', 'user_id' ou 'login' soit correctement renseigné pour chaque étudiant.
+</li>
+<li>Troisème étape :
+Importer le fichier modifié au format CSV avec séparateur ';' (onglet <strong>Importer</strong>)
+</li>
+</ol>
+<p>&nbsp;</p>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<referentiel>
+ <name>RefMoodle-B Savoir communiquer</name>
+ <code>RefMoodle-B</code>
+ <description>
+<text>V6 - Domaine B - Université du Maine - SCIRN-PRN Avenue Olivier Messiaen 72085 LE MANS Cedex 9 - Contacts : Nicolas Postec  - Nicolas.Postec@univ.lemans.fr, Michel Lopez - Michel.lopez@univ.lemans.fr, Maelle Crosse - Maelle.Crosse@univ.lemans.fr, Frédéric Habert - Frederic.Habert@uni-nantes.fr, Nathalie Lusson - Nathalie.Lusson@univ-angers.fr</text>
+</description>
+ <url></url>
+ <certificatethreshold>0</certificatethreshold>
+ <timemodified>1277542922</timemodified>
+ <nb_domaines>8</nb_domaines>
+ <liste_codes_competence>RMDB1.1.1/RMDB1.1.2/RMDB1.1.3/RMDB1.2.1/RMDB1.2.2/RMDB1.2.3/RMDB1.2.4/RMDB1.2.5/RMDB1.2.6/RMDB1.2.7/RMDB1.2.8/RMDB2.1.1/RMDB2.1.2/RMDB2.1.3/RMDB2.2.1/RMDB2.2.2/RMDB2.2.3/RMDB3.1.1/RMDB3.1.2/RMDB3.2.1/RMDB3.2.2/RMDB3.2.3/RMDB3.2.4/RMDB3.2.5/RMDB4.1.1/RMDB4.1.2/RMDB4.2.1/RMDB4.2.3/RMDB4.2.4/RMDB5.1.1/RMDB5.1.2/RMDB5.2.1/RMDB5.2.2/RMDB5.2.3/RMDB5.2.4/</liste_codes_competence>
+ <liste_empreintes_competence>1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/</liste_empreintes_competence>
+ <domaine>
+  <code>RMDB1</code>
+  <description>
+<text>Communiquer via l'outil « Forum »</text>
+</description>
+  <sortorder>1</sortorder>
+  <nb_competences>1</nb_competences>
+
+  <competence>
+   <code>RMDB1.1</code>
+   <description>
+<text>Ajouter un forum</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>RMDB1.1.1</code>
+    <description>
+<text>Choisir un type de forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.1.2</code>
+    <description>
+<text>Déployer un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.1.3</code>
+    <description>
+<text>Paramétrer un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDB1.2</code>
+   <description>
+<text>Utiliser un forum</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>8</nb_item_competences>
+
+   <item>
+    <code>RMDB1.2.1</code>
+    <description>
+<text>Lire un message dans un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.2</code>
+    <description>
+<text>Ecrire et publier un message dans un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.3</code>
+    <description>
+<text>Modifier un message</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.4</code>
+    <description>
+<text>Déplacer un message</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.5</code>
+    <description>
+<text>Supprimer un message</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.6</code>
+    <description>
+<text>Créer un fil de discussion</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>6</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.7</code>
+    <description>
+<text>Utiliser tous les modes de visualisation des messages dans un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>7</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB1.2.8</code>
+    <description>
+<text>Retrouver une information dans un forum</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>8</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDB2</code>
+  <description>
+<text>Communiquer via l'outil « Chat »</text>
+</description>
+  <sortorder>2</sortorder>
+  <nb_competences>2</nb_competences>
+
+  <competence>
+   <code>RMDB2.1</code>
+   <description>
+<text>Ajouter un chat</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>RMDB2.1.1</code>
+    <description>
+<text>Définir l'objectif pédagogique relatif à l'utilisation du chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB2.1.2</code>
+    <description>
+<text>Déployer un chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB2.1.3</code>
+    <description>
+<text>Paramétrer un chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDB2.2</code>
+   <description>
+<text>Utiliser un chat</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>RMDB2.2.1</code>
+    <description>
+<text>Lire un message dans un chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB2.2.2</code>
+    <description>
+<text>Écrire et publier un message dans un chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB2.2.3</code>
+    <description>
+<text>Retrouver une session dans un chat</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDB3</code>
+  <description>
+<text>Communiquer via l'outil « Sondage »</text>
+</description>
+  <sortorder>3</sortorder>
+  <nb_competences>3</nb_competences>
+
+  <competence>
+   <code>RMDB3.1</code>
+   <description>
+<text>Ajouter un sondage</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDB3.1.1</code>
+    <description>
+<text>Déployer un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB3.1.2</code>
+    <description>
+<text>Paramétrer un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDB3.2</code>
+   <description>
+<text>Utiliser un sondage</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>5</nb_item_competences>
+
+   <item>
+    <code>RMDB3.2.1</code>
+    <description>
+<text>Consulter un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB3.2.2</code>
+    <description>
+<text>Répondre à un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB3.2.3</code>
+    <description>
+<text>Modifier un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB3.2.4</code>
+    <description>
+<text>Consulter les réponses d'un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB3.2.5</code>
+    <description>
+<text>Télécharger les réponses d'un sondage</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>5</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDB4</code>
+  <description>
+<text>Communiquer via l'outil « Consultation »</text>
+</description>
+  <sortorder>4</sortorder>
+  <nb_competences>4</nb_competences>
+
+  <competence>
+   <code>RMDB4.1</code>
+   <description>
+<text>Ajouter une consultation</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDB4.1.1</code>
+    <description>
+<text>Déployer une consultation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB4.1.2</code>
+    <description>
+<text>Paramétrer une consultation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDB4.2</code>
+   <description>
+<text>Utiliser une consultation</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>3</nb_item_competences>
+
+   <item>
+    <code>RMDB4.2.1</code>
+    <description>
+<text>Consulter une consultation RMDB4.2.2 Répondre à une consultation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB4.2.3</code>
+    <description>
+<text>Consulter les réponses d'une consultation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB4.2.4</code>
+    <description>
+<text>Télécharger les réponses d'une consultation</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+ <domaine>
+  <code>RMDB5</code>
+  <description>
+<text>Communiquer via la messagerie</text>
+</description>
+  <sortorder>5</sortorder>
+  <nb_competences>5</nb_competences>
+
+  <competence>
+   <code>RMDB5.1</code>
+   <description>
+<text>Ajouter un bloc « Messages »</text>
+</description>
+   <sortorder>1</sortorder>
+   <nb_item_competences>2</nb_item_competences>
+
+   <item>
+    <code>RMDB5.1.1</code>
+    <description>
+<text>Déployer le bloc « Messages »</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB5.1.2</code>
+    <description>
+<text>Paramétrer la messagerie</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+  </competence>
+
+  <competence>
+   <code>RMDB5.2</code>
+   <description>
+<text>Utiliser la messagerie</text>
+</description>
+   <sortorder>2</sortorder>
+   <nb_item_competences>4</nb_item_competences>
+
+   <item>
+    <code>RMDB5.2.1</code>
+    <description>
+<text>Lire un message dans une messagerie</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>1</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB5.2.2</code>
+    <description>
+<text>Écrire un message dans une messagerie</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>2</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB5.2.3</code>
+    <description>
+<text>Entrer en contact avec un interlocuteur en ligne</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>3</sortorder>
+   </item>
+
+   <item>
+    <code>RMDB5.2.4</code>
+    <description>
+<text>Envoyer un message à un interlocuteur hors ligne</text>
+</description>
+    <type></type>
+    <weight>1</weight>
+    <footprint>1</footprint>
+    <sortorder>4</sortorder>
+   </item>
+
+  </competence>
+
+ </domaine>
+
+
+</referentiel>
+
