@@ -1,4 +1,4 @@
-moodle-mod_skillbase
+moodle-mod_skillbook
 ====================
 
 An industrialied version of the module Referentiel from Jean Fruitet
